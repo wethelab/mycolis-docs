@@ -1,0 +1,78 @@
+---
+sidebar_position: 3
+title: "Choisir le point dans l'admin"
+description: "Choisissez, changez ou retirez le point relais d'une commande depuis l'action myColis de sa fiche."
+---
+
+# Choisir le point dans l'admin
+
+Depuis la fiche d'une commande, vous pouvez choisir son point relais, le changer ou le retirer, puis créer l'étiquette dans la même fenêtre. Cette page décrit la recherche, le choix et les informations du destinataire que Colissimo exige.
+
+## Avant de commencer
+
+Il vous faut une connexion Colissimo par clé API et un expéditeur en France métropolitaine ou à Monaco, voir [Fonctionnement des points relais](/docs/points-relais/fonctionnement).
+
+## Choisir un point relais
+
+1. Ouvrez la commande dans Shopify.
+2. Ouvrez **Plus d'actions**, puis sélectionnez **Créer l'étiquette (myColis)**.
+3. Sélectionnez **Point relais** sous **Service**.
+4. Sélectionnez **Choisir un point relais**.
+5. Choisissez un point dans la liste **Points relais**.
+6. Sélectionnez **Valider ce point**.
+
+Pour une commande passée avec un tarif point relais, **Point relais** est déjà sélectionné. Si le client n'a pas choisi de point, l'action l'indique, avec le nom du tarif : « Le client a choisi le tarif point relais « … » sans choisir de point : choisissez-le ici. »
+
+Le bouton **Créer l'étiquette** du bloc **myColis** de la fiche commande ouvre la même action, et son bouton **Changer de point** ouvre l'action pour en choisir un autre.
+
+## La recherche
+
+La recherche part de l'adresse de livraison de la commande et se lance dès l'ouverture. Modifiez les champs **Adresse**, **Code postal**, **Ville** et **Pays** pour chercher ailleurs, par exemple près du lieu de travail du client, puis sélectionnez **Rechercher**. Le code postal et la ville sont obligatoires ; une commande sans adresse de livraison se cherche par code postal et ville. Le champ **Pays** propose la France et les 19 autres pays où myColis livre en point relais. Pour les Pays-Bas, l'aide « Pays-Bas : code postal de 4 chiffres et 2 lettres, par exemple 1012 AB. » s'affiche sous les champs.
+
+Chaque point de la liste affiche son nom, sa distance, son adresse, son type et ses horaires du jour. Un point en congés est grisé, avec la mention « En congés : non sélectionnable ». Un point que myColis ne peut pas utiliser porte « Point non pris en charge par myColis » ou « Adresse du point incomplète ».
+
+Si aucun point n'est trouvé, la recherche répond « Aucun point relais trouvé autour de cette adresse. Essayez un autre code postal ou une autre ville. » Les autres messages de la recherche sont dans [Codes d'erreur Colissimo](/docs/reference/codes-erreur).
+
+## Le point choisi
+
+Une fois validé, le point apparaît dans la section **Point relais** de l'action, avec son nom, son adresse, son type et son numéro. myColis l'enregistre sur la commande. Le bloc **myColis** de la fiche commande l'affiche aussi.
+
+**Changer de point** relance la recherche. **Retirer le point** l'efface de la commande. Pour expédier à domicile, choisissez un service à domicile.
+
+Le point est figé dès qu'une étiquette existe : « Une étiquette existe déjà pour cette commande : le point relais ne peut plus être changé. Pour en changer, abandonnez d'abord l'étiquette dans la page Envois de myColis (possible tant que la commande n'est pas expédiée). »
+
+## Le destinataire du point relais
+
+Colissimo exige le prénom, l'email et le mobile du destinataire pour un point relais. S'ils manquent sur la commande ou si l'un d'eux est refusé, l'action affiche la section **Destinataire du point relais** avec les champs **Prénom**, **Email** et **Mobile**. Comme elle le précise, ces informations servent à cette étiquette seulement : myColis ne les enregistre pas.
+
+Quand l'adresse de livraison n'a pas de téléphone et qu'aucun mobile valide n'est trouvé sur la commande, le champ **Mobile** est prérempli avec le téléphone de l'adresse de facturation, et l'aide du champ le signale : « Prérempli avec le téléphone de l'adresse de facturation : vérifiez qu'il s'agit du mobile du destinataire. Jamais enregistré. » Vérifiez ce numéro, et corrigez-le s'il ne s'agit pas du mobile du destinataire.
+
+Le mobile doit être un portable : 06 ou 07 pour un point en France, 04 ou +324 suivi de 8 chiffres en Belgique, avec l'indicatif du pays ailleurs. Un numéro dont les chiffres se suivent ou se répètent, comme 0612345678, est refusé par Colissimo : saisissez le vrai mobile du client.
+
+Pour que le mobile soit déjà sur la commande, rendez obligatoire le téléphone de l'adresse de livraison dans **Paramètres > Paiement** de votre admin Shopify, voir [Fonctionnement des points relais](/docs/points-relais/fonctionnement).
+
+## Créer l'étiquette
+
+Une fois le point choisi, la case **Assurer le colis** apparaît, avec le plafond de 1 000 € de Colissimo en point relais. Quand le destinataire est complet, sélectionnez **Générer l'étiquette**. L'étiquette est adressée au point relais, au nom du client. Si vous avez désactivé la transmission de l'email et du mobile dans les réglages, l'action rappelle qu'ils sont tout de même transmis à Colissimo : « L'email et le mobile du client seront transmis à Colissimo : ils sont obligatoires pour une livraison en point relais. »
+
+## Un point choisi par le client
+
+Quand le client a choisi son point au checkout ou après la commande, l'action l'affiche avec la mention « Point choisi par le client : myColis le vérifie auprès de Colissimo à la génération de l'étiquette. » Si le point n'existe plus, est fermé pour congés ou ne peut pas recevoir le colis, l'étiquette n'est pas créée et l'action vous demande d'en choisir un autre. Si Colissimo ne répond pas, réessayez quelques minutes plus tard.
+
+## Une commande créée dans l'admin
+
+Une commande que vous créez dans l'admin Shopify avec un tarif point relais n'a pas de point : elle arrive dans le filtre **Relais à choisir** de la page **Envois**. Si Shopify affiche « Unresolved business rules » à sa création, sélectionnez **Ignore and create order**. Choisissez ensuite le point dans l'action, comme pour toute commande sans point.
+
+## En génération groupée
+
+La génération groupée ne choisit jamais de point à votre place. Une commande à tarif point relais sans point, avec un point refusé ou avec un destinataire incomplet est ignorée, avec la raison dans le rapport. Traitez-la depuis sa fiche, avec l'action, voir [Générer des étiquettes en lot](/docs/etiquettes/generation-groupee).
+
+## En mode test
+
+En mode test, la recherche propose cinq points fictifs, badgés **Point fictif**. Sur une boutique réelle, le point choisi sert seulement à l'étiquette d'exemple et n'est pas enregistré sur la commande.
+
+## Pour aller plus loin
+
+- [Fonctionnement des points relais](/docs/points-relais/fonctionnement)
+- [Créer une étiquette](/docs/etiquettes/creer-une-etiquette)
+- [Choix après la commande](/docs/points-relais/choix-apres-la-commande)

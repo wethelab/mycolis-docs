@@ -1,0 +1,52 @@
+/**
+ * Plan badge. Fills are derived from the brand palette in src/css/custom.css:
+ * the indigo primary marks Shopify Plus, a lighter indigo marks every plan.
+ * Light mode uses the dark end of the ramp with white text, dark mode the
+ * light end with dark text, so contrast holds in both.
+ */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  margin-left: 0.5rem;
+  padding: 0.1rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  background-color: var(--mc-badge-bg);
+  color: var(--mc-badge-fg);
+}
+
+/* Headings set their own weight and size on descendants, so restate ours. */
+h1 .badge,
+h2 .badge,
+h3 .badge,
+h4 .badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: none;
+}
+
+.plus {
+  --mc-badge-bg: #2e14c4;
+  --mc-badge-fg: #ffffff;
+}
+
+.tous {
+  --mc-badge-bg: #5b45e6;
+  --mc-badge-fg: #ffffff;
+}
+
+[data-theme='dark'] .plus {
+  --mc-badge-bg: #9180f3;
+  --mc-badge-fg: #14104a;
+}
+
+[data-theme='dark'] .tous {
+  --mc-badge-bg: #b6a9f7;
+  --mc-badge-fg: #17103f;
+}

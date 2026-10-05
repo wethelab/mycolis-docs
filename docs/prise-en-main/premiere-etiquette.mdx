@@ -1,0 +1,53 @@
+---
+sidebar_position: 4
+title: "Créer votre première étiquette"
+description: "De l'installation à une première étiquette imprimée, en mode test, étape par étape."
+---
+
+# Créer votre première étiquette
+
+Cette page enchaîne les étapes qui mènent d'une app fraîchement installée à une première étiquette imprimée. Elle se fait en mode test, donc sans contrat Colissimo et sans risque d'expédier par erreur.
+
+## Avant de commencer
+
+Il vous faut myColis installé et une commande de test non expédiée, avec une adresse de livraison en France et des produits qui ont un poids. Une boutique de développement est l'idéal : la commande y sera marquée expédiée, sans prévenir personne.
+
+## Activer le mode test
+
+1. Ouvrez myColis, puis **Réglages**.
+2. Activez **Mode test** dans la section **Connexion Colissimo**.
+
+## Configurer l'expéditeur
+
+1. Repérez l'emplacement Shopify d'où part la commande, dans la section **Expéditeurs** des réglages.
+2. Sélectionnez **Configurer** sur sa ligne.
+3. Complétez les champs obligatoires : **Raison sociale**, **Nom du contact**, **Adresse (numéro et voie)**, **Code postal**, **Ville**, **Pays d'expédition** et **Email de l'expéditeur**.
+4. Laissez cochée la case **Utiliser cet emplacement comme expéditeur**.
+5. Sélectionnez **Enregistrer**.
+
+L'emplacement passe au statut **Actif**. L'adresse saisie sert uniquement à vos étiquettes et ne modifie pas votre emplacement Shopify.
+
+## Créer l'étiquette
+
+1. Ouvrez la commande de test dans Shopify.
+2. Ouvrez **Plus d'actions**, puis sélectionnez **Créer l'étiquette (myColis)**.
+3. Vérifiez le **Service** et le **Poids du colis** proposés.
+4. Sélectionnez **Générer l'étiquette**.
+
+Le bandeau du mode test rappelle avant la génération que l'étiquette sera un exemple marqué DEMO. Une fois l'étiquette générée, la fenêtre affiche **Étiquette créée** et le n° de colis fictif. Sur une boutique de développement, la commande est marquée comme expédiée avec ce numéro, sans notification au client. Sur une boutique réelle, elle n'est pas modifiée.
+
+## Imprimer l'étiquette
+
+Dans la même fenêtre, sélectionnez **Imprimer l'étiquette** : le PDF s'ouvre dans un nouvel onglet. Si vous avez choisi un format ZPL dans les réglages, le bouton s'appelle **Télécharger le fichier ZPL** et le fichier s'envoie à votre imprimante thermique, voir [Imprimer les étiquettes](/docs/etiquettes/impression).
+
+L'étiquette apparaît ensuite dans la page **Envois** de myColis, avec le badge **Démo**. Vous pouvez la réimprimer de là à tout moment.
+
+## Passer aux vraies étiquettes
+
+Quand le parcours vous convient, enregistrez votre n° client et votre clé API, désactivez le mode test et vérifiez la connexion, voir [Connecter votre contrat Colissimo](/docs/prise-en-main/connexion-colissimo). La prochaine étiquette sera créée chez Colissimo, sur votre contrat. Les étiquettes réelles comptent dans le quota de votre plan myColis : 10 par mois sur le plan Gratuit, voir [Plans et quotas](/docs/compte/plans-et-quotas).
+
+## Pour aller plus loin
+
+- [Créer une étiquette](/docs/etiquettes/creer-une-etiquette)
+- [Réglages d'expédition](/docs/reglages/expedition)
+- [La page Envois](/docs/envois/page-envois)

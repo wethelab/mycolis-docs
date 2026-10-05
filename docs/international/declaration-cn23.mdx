@@ -1,0 +1,65 @@
+---
+sidebar_position: 2
+title: "Déclaration CN23"
+description: "Quand une CN23 accompagne l'étiquette, d'où viennent ses données, et ce qui bloque sa création."
+---
+
+# Déclaration CN23
+
+La CN23 est la déclaration en douane qui accompagne un colis quittant le territoire douanier de l'Union européenne. myColis la remplit à partir de la commande et de vos fiches produits, et Colissimo la crée avec l'étiquette.
+
+## Quand une CN23 est jointe
+
+Depuis la France métropolitaine ou Monaco, une CN23 accompagne les envois vers un pays hors de l'Union européenne, vers Andorre, vers l'outre-mer et vers les territoires particuliers de l'Union, comme les Canaries. Les envois vers la France, Monaco et les autres pays de l'Union n'en ont pas. Le détail par destination est dans [Zones et services](/docs/international/zones-et-services).
+
+L'action **Créer l'étiquette (myColis)** l'annonce par la ligne **CN23 jointe**, avec le nombre d'articles et la valeur déclarée. Dans la page **Envois**, l'envoi porte le badge **CN23** suivi du code du pays.
+
+## Les données des articles
+
+Pour chaque article, la CN23 indique la description, la quantité, le poids, la valeur en euros, le code SH et le pays d'origine.
+
+La description est la description douane anglaise du produit, si vous l'avez renseignée, et sinon son titre. Pour les envois vers les États-Unis et en DDP, une description en anglais est exigée : sans elle, myColis reprend le titre et vous avertit, voir [International et USA](/docs/reglages/international-et-usa).
+
+Le code SH et le pays d'origine viennent de la fiche produit Shopify, rubrique Douane. Quand le produit a un code SH propre au pays de destination, myColis le préfère au code général. Pour un produit sans code SH ou sans pays d'origine, myColis applique les valeurs par défaut de vos réglages et le signale : « CN23 : code SH ou pays d'origine par défaut des réglages appliqué à : … ». Sans valeur par défaut, l'étiquette est refusée avant l'envoi à Colissimo, avec la liste des produits à compléter : « Code SH manquant ou invalide (6, 8 ou 10 chiffres) pour : … ». Le message sur le pays d'origine est construit de la même façon.
+
+La valeur d'un article est son prix payé, remises déduites et hors taxes. Un article offert est déclaré à 0,01 €, avec l'avertissement « Article offert déclaré à 0,01 € sur la CN23 : … ». Colissimo refuse une valeur totale inférieure à 1 €.
+
+## Dix lignes au plus
+
+Une CN23 compte 10 lignes d'articles au plus. Au-delà, myColis regroupe les articles qui partagent le même code SH et le même pays d'origine, et le signale : « Articles regroupés par code SH et pays d'origine pour tenir dans les 10 lignes de la CN23. » Si les articles ne tiennent toujours pas en 10 lignes, l'étiquette est refusée : expédiez la commande en plusieurs colis.
+
+## Le poids des articles
+
+La somme des poids des articles ne peut pas dépasser le poids du colis. myColis répartit le poids du colis, emballage déduit, entre les articles. Si le colis est trop léger pour ses articles, l'étiquette est refusée : « Poids du colis (… g) trop faible pour ses … articles. Corrigez le poids du colis ou celui des produits dans Shopify. »
+
+## La conversion en euros
+
+Colissimo attend des valeurs en euros. Si le client a payé en euros, myColis prend les montants payés. Sinon, si votre boutique est en euros, il prend les montants de la boutique. Sinon, il convertit au taux de référence de la Banque centrale européenne du jour.
+
+Pour une boutique dans une autre devise, l'action affiche la valeur convertie et le taux utilisé. Si le taux n'est pas disponible, l'étiquette est refusée le temps qu'il le redevienne : « Taux de change … vers EUR indisponible (taux de référence BCE), nécessaire pour la CN23 ou pour assurer le colis. Réessayez dans quelques minutes. »
+
+## Les frais de port déclarés
+
+La CN23 indique aussi le prix du transport, et Colissimo refuse 0 €. myColis déclare les frais de port payés par le client. Si la livraison était offerte, il déclare le montant du réglage **Frais de port à déclarer si la livraison est offerte**, avec la mention « Livraison offerte : … € de frais de port déclarés sur la CN23 (réglages). » Sans ce réglage, saisissez le montant dans le champ **Frais de port déclarés (CN23)** de l'action, entre 0,01 et 500 €.
+
+## Le n° EORI
+
+Le n° EORI de l'expéditeur est imprimé sur la CN23. Renseignez-le dans la section **Étiquettes et douane** des réglages. myColis l'exige pour tout envoi vers les États-Unis ; pour les autres destinations, Colissimo peut le demander et refuser l'envoi sans lui : « EORI de l'expéditeur obligatoire pour cet envoi. Renseignez-le dans les réglages. »
+
+## Imprimer la CN23
+
+La CN23 a le format de vos étiquettes : en PDF 10 x 15 cm, elle sort sur une page de 10 x 12 cm ; en A4, sur une page A4 ; en ZPL, en ZPL 10 x 12 cm. Elle suit son étiquette dans le même fichier, depuis Shopify comme depuis la page **Envois**. Avec un format « avec CN23 sur la même page », elle fait partie de l'étiquette et n'affiche que les trois premiers articles, avec des totaux complets.
+
+Dans de rares cas, Colissimo ne renvoie pas la CN23. L'action vous prévient alors : « Colissimo n'a pas renvoyé la CN23 de cet envoi : remplissez-la à la main avant de déposer le colis. »
+
+Un envoi avec CN23 se dépose avec un bordereau de dépôt, obligatoire dans ce cas, voir [Bordereaux de dépôt](/docs/envois/bordereaux).
+
+## Garder une copie de la CN23
+
+myColis réimprime la CN23 à partir du fichier qu'il conserve : il ne peut pas la redemander à Colissimo. Ce fichier est supprimé quand Shopify demande l'effacement des données du client, et 48 heures après la désinstallation de myColis. Si vous devez garder la CN23, par exemple pour la douane, enregistrez une copie du PDF au moment où vous l'imprimez, voir [Données de vos clients](/docs/compte/donnees-de-vos-clients).
+
+## Pour aller plus loin
+
+- [International et USA](/docs/reglages/international-et-usa)
+- [Envois vers les États-Unis](/docs/international/etats-unis)
+- [Zones et services](/docs/international/zones-et-services)

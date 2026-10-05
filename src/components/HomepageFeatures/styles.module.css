@@ -1,0 +1,39 @@
+/*
+ * Homepage features: one light-glass card holding the three arguments.
+ * The negative top margin pulls it over the hero's cream band, so the
+ * blur has a visible seam to sit on. Solid-ish fallback first, real
+ * glass only where backdrop-filter is supported.
+ */
+
+.features {
+  position: relative;
+  padding: 0 0 4rem;
+  margin-top: -4rem;
+  width: 100%;
+}
+
+.glassCard {
+  border-radius: 16px;
+  padding: 2.5rem 1rem;
+  background-color: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 16px 48px rgba(26, 21, 35, 0.08);
+}
+
+[data-theme='dark'] .glassCard {
+  background-color: rgba(29, 29, 43, 0.85);
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.45);
+}
+
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .glassCard {
+    background-color: rgba(255, 255, 255, 0.55);
+    -webkit-backdrop-filter: saturate(140%) blur(14px);
+    backdrop-filter: saturate(140%) blur(14px);
+  }
+
+  [data-theme='dark'] .glassCard {
+    background-color: rgba(29, 29, 43, 0.6);
+  }
+}

@@ -1,0 +1,79 @@
+---
+sidebar_position: 1
+title: "Expéditeurs"
+description: "Déclarez les emplacements Shopify d'où partent vos colis et l'adresse d'expéditeur imprimée sur l'étiquette."
+---
+
+# Expéditeurs
+
+Un expéditeur est un emplacement Shopify d'où partent vos colis, avec l'adresse que Colissimo imprime sur l'étiquette. Cette page explique comment le configurer et comment lire son statut.
+
+## Comment myColis choisit l'expéditeur
+
+Chaque commande est rattachée dans Shopify à l'emplacement qui doit l'expédier. myColis prend l'expéditeur configuré pour cet emplacement. Sans expéditeur actif, l'étiquette est refusée avec le message « Aucun expéditeur actif pour l'emplacement « … ». Configurez-le dans les réglages. », où figure le nom de l'emplacement.
+
+Une commande répartie entre plusieurs emplacements reçoit une étiquette par emplacement : l'action de création d'étiquette vous demande alors de choisir l'**Emplacement d'expédition**.
+
+## La liste des emplacements
+
+Dans **Réglages**, la section **Expéditeurs** liste les emplacements actifs de votre boutique Shopify, avec les colonnes **Emplacement**, **Adresse d'expédition**, **Statut** et **Actions**. Un emplacement qui ne traite pas les commandes en ligne porte la mention **Ne traite pas les commandes en ligne** sous son nom.
+
+Le statut indique où en est chaque emplacement :
+
+| Statut | Signification |
+|---|---|
+| **Actif** | L'expéditeur est configuré et sert aux étiquettes. |
+| **Désactivé** | L'expéditeur est configuré mais n'est pas utilisé. |
+| **Non configuré** | Aucun expéditeur n'a encore été enregistré pour cet emplacement. |
+| **Adresse à corriger** | L'adresse enregistrée n'est plus valable : ouvrez-la et corrigez-la. |
+| **Introuvable dans Shopify** | L'emplacement a été supprimé ou désactivé dans Shopify. |
+
+Le bouton **Activer** ou **Désactiver** de la colonne **Actions** met un expéditeur en service ou le retire sans effacer son adresse. Si aucun emplacement n'apparaît, la section indique « Aucun emplacement actif dans Shopify. »
+
+## Configurer un expéditeur
+
+1. Ouvrez myColis, puis **Réglages**.
+2. Sélectionnez **Configurer** sur la ligne de l'emplacement, dans la section **Expéditeurs**.
+3. Vérifiez les champs préremplis et complétez les autres.
+4. Laissez cochée la case **Utiliser cet emplacement comme expéditeur**.
+5. Sélectionnez **Enregistrer**.
+
+Le formulaire s'intitule **Expéditeur :** suivi du nom de l'emplacement. Il est prérempli avec l'adresse de l'emplacement Shopify et avec le nom et l'email de votre boutique. Cette adresse sert uniquement aux étiquettes : la modifier ne change pas votre emplacement Shopify. Le message **Expéditeur enregistré** confirme l'enregistrement.
+
+## Les champs du formulaire
+
+Les champs suivent les limites de Colissimo. Ceux qui sont obligatoires sont marqués comme tels dans le formulaire.
+
+| Champ | Obligatoire | Longueur maximale |
+|---|---|---|
+| **Raison sociale** | oui | 35 caractères |
+| **Nom du contact** | oui | 35 caractères |
+| **Prénom du contact** | non | 29 caractères |
+| **Adresse (numéro et voie)** | oui | 35 caractères |
+| **Complément (bâtiment, résidence)** | non | 35 caractères |
+| **Code postal** | oui | 5 chiffres, ou AD suivi de 3 chiffres en Andorre |
+| **Ville** | oui | 35 caractères |
+| **Pays d'expédition** | oui | liste |
+| **Email de l'expéditeur** | oui | |
+| **Téléphone** | non | 10 à 12 caractères |
+| **Mobile** | non | 15 caractères |
+
+La **Raison sociale** est aussi le nom commercial que Colissimo exige sur une étiquette en point relais. L'**Email de l'expéditeur** sert à Colissimo pour ses notifications de suivi adressées à l'expéditeur.
+
+Le **Pays d'expédition** se choisit parmi les pays d'où Colissimo accepte un envoi : la France, Monaco, Andorre, la Guadeloupe, la Martinique, la Guyane, La Réunion, Mayotte, Saint-Pierre-et-Miquelon, Saint-Martin et Saint-Barthélemy. Si l'emplacement Shopify se trouve dans un autre pays, le formulaire l'indique à l'ouverture et vous demande une adresse d'expédition dans l'un des pays proposés.
+
+Les messages de validation disent quoi corriger, par exemple « Code postal invalide : 5 chiffres, ou AD suivi de 3 chiffres pour Andorre. » ou « Téléphone invalide : 10 à 12 caractères, chiffres et + uniquement. »
+
+## Ce que le pays de l'expéditeur change
+
+Un expéditeur en France métropolitaine ou à Monaco expédie partout où votre contrat le permet, et c'est la seule origine possible pour une livraison en point relais. Un expéditeur en outre-mer expédie vers la métropole, Monaco et son propre territoire, et une étiquette vers une autre destination est refusée. Le détail des zones est dans [Zones et services](/docs/international/zones-et-services).
+
+## Quand Colissimo refuse l'expéditeur
+
+Si Colissimo refuse un champ de l'expéditeur, le message nomme le champ et renvoie aux réglages, par exemple « Email de l'expéditeur refusé par Colissimo. Corrigez l'expéditeur dans les réglages. » Corrigez l'expéditeur, puis relancez le test de connexion ou la génération de l'étiquette. La liste complète est dans [Codes d'erreur Colissimo](/docs/reference/codes-erreur).
+
+## Pour aller plus loin
+
+- [Connecter votre contrat Colissimo](/docs/prise-en-main/connexion-colissimo)
+- [Réglages d'expédition](/docs/reglages/expedition)
+- [Zones et services](/docs/international/zones-et-services)

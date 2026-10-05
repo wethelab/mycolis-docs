@@ -1,0 +1,386 @@
+/**
+ * Global styles for the myColis documentation site.
+ *
+ * Structure, comments and rules mirror the myDiagnostic documentation site
+ * (wethelab/mydiagnostic-docs), so the two themes stay easy to compare.
+ *
+ * Identity, derived from the myColis app icon, which uses the myDiagnostic
+ * colours (orange square, indigo box faces #4B30EB / #2E14C4 / #220F94,
+ * cream ribbon #F4F1E6):
+ *   indigo #2E14C4  primary (links, buttons, accents)
+ *   orange #F04A28  secondary accent (hover, active elements), never text
+ *   cream  #F4F1E6  card and inset backgrounds
+ *   white page background, near-black text.
+ *
+ * Contrast (WCAG 2.1, checked 2026-10-03). Text needs 4.5:1, non-text 3:1.
+ *   Light: link #2E14C4 10.4 on white, 9.2 on cream; hover #C93815 5.2 on
+ *   white, 4.6 on cream; body text 17.9; white on primary button 10.4.
+ *   Raw orange #F04A28 is 3.7 on white: borders and markers only.
+ *   Dark: link #9180F3 5.7 on the page, 5.2 on surfaces, 5.1 on admonitions
+ *   and blockquotes, 4.6 on inline code; hover #F47056 6.3; body text 14.1;
+ *   the primary button text is black (Infima dark), 6.6. The previous
+ *   #8774F1 was 4.48 on admonitions, below AA.
+ *   Footer: link #AEA2F5 8.4, hover #F47056 6.6, text 11.9 on #100A2E.
+ * Any new colour pairing is checked the same way before it ships.
+ *
+ * Glass (translucency + blur) is limited to the navbar and secondary
+ * surfaces. It never sits under the body text of documentation pages.
+ */
+
+:root {
+  /* Brand tokens */
+  --mc-indigo: #2e14c4;
+  --mc-orange: #f04a28;
+  /* Darkened orange: the raw brand orange is 3.7:1 on white, below AA for
+     text. This variant is 5.2:1 on white and 4.6:1 on cream. */
+  --mc-orange-text: #c93815;
+  --mc-cream: #f4f1e6;
+  --mc-ink: #1a1523;
+
+  /* Infima primary ramp on the brand indigo */
+  --ifm-color-primary: #2e14c4;
+  --ifm-color-primary-dark: #2912b0;
+  --ifm-color-primary-darker: #2711a5;
+  --ifm-color-primary-darkest: #200e87;
+  --ifm-color-primary-light: #3216d6;
+  --ifm-color-primary-lighter: #3417df;
+  --ifm-color-primary-lightest: #492dea;
+
+  /* Page: white background, near-black text */
+  --ifm-background-color: #ffffff;
+  --ifm-font-color-base: var(--mc-ink);
+  --ifm-heading-color: var(--mc-ink);
+
+  /* Documentation type scale, in the Stripe Docs / Shopify Dev range.
+     The markdown-specific overrides below keep doc pages on the same
+     scale, because the theme bumps them back up per selector. */
+  --ifm-font-size-base: 16px;
+  --ifm-line-height-base: 1.65;
+  --ifm-h1-font-size: 2.125rem;
+  --ifm-h2-font-size: 1.5rem;
+  --ifm-h3-font-size: 1.2rem;
+
+  /* Links: indigo, orange on hover (darkened variant for AA) */
+  --ifm-link-color: var(--ifm-color-primary);
+  --ifm-link-hover-color: var(--mc-orange-text);
+
+  /* Inline code sits on a cream chip */
+  --ifm-code-background: var(--mc-cream);
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(240, 74, 40, 0.12);
+
+  /* Soft, cream-tinted separators */
+  --ifm-toc-border-color: #e9e5d6;
+
+  /* Sidebar menu states carry a light indigo wash */
+  --ifm-menu-color-background-active: rgba(46, 20, 196, 0.07);
+  --ifm-menu-color-background-hover: rgba(46, 20, 196, 0.05);
+
+  --ifm-navbar-shadow: 0 1px 0 rgba(26, 21, 35, 0.06);
+}
+
+/* Dark mode: dark indigo-cast surfaces, lightened indigo for links,
+   lightened orange for hover.
+   This file is unlayered while the Docusaurus theme CSS sits in cascade
+   layers (future.v4), so every :root variable set above silently beats
+   the theme's own dark declension. Any mode-dependent variable defined
+   in :root MUST be declined here, or dark mode keeps the light value. */
+[data-theme='dark'] {
+  --mc-orange-text: #f47056;
+
+  --ifm-font-color-base: #e4e2ec;
+  --ifm-heading-color: #f2f0f8;
+
+  --ifm-color-primary: #9180f3;
+  --ifm-color-primary-dark: #6a54ee;
+  --ifm-color-primary-darker: #5a40ec;
+  --ifm-color-primary-darkest: #3417e0;
+  --ifm-color-primary-light: #a091f4;
+  --ifm-color-primary-lighter: #aea2f5;
+  --ifm-color-primary-lightest: #d8d2fa;
+
+  --ifm-background-color: #15151f;
+  --ifm-background-surface-color: #1d1d2b;
+
+  --ifm-link-hover-color: var(--mc-orange-text);
+
+  --ifm-code-background: #262637;
+  --docusaurus-highlighted-code-line-bg: rgba(244, 112, 86, 0.24);
+
+  --ifm-toc-border-color: #2a2a3c;
+
+  --ifm-menu-color-background-active: rgba(145, 128, 243, 0.12);
+  --ifm-menu-color-background-hover: rgba(145, 128, 243, 0.08);
+
+  --ifm-navbar-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+}
+
+/* ---------------------------------------------------------------------- */
+/* Type scale on doc pages. The theme raises markdown headings back to    */
+/* 3rem / 2rem / 1.5rem on these exact selectors, so the variable is      */
+/* redefined at the same level. Values stay variables, never font-size.   */
+/* ---------------------------------------------------------------------- */
+
+.markdown h1:first-child {
+  --ifm-h1-font-size: 2.125rem;
+}
+
+.markdown > h2 {
+  --ifm-h2-font-size: 1.5rem;
+}
+
+.markdown > h3 {
+  --ifm-h3-font-size: 1.2rem;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Navbar: translucent with blur. Solid fallback first, glass only where  */
+/* backdrop-filter is supported.                                          */
+/* ---------------------------------------------------------------------- */
+
+.navbar {
+  background-color: #ffffff;
+}
+
+[data-theme='dark'] .navbar {
+  background-color: #15151f;
+}
+
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .navbar {
+    background-color: rgba(255, 255, 255, 0.78);
+    -webkit-backdrop-filter: saturate(160%) blur(12px);
+    backdrop-filter: saturate(160%) blur(12px);
+  }
+
+  [data-theme='dark'] .navbar {
+    background-color: rgba(21, 21, 31, 0.72);
+  }
+
+  /* The mobile drawer covers page text: it stays opaque. */
+  .navbar-sidebar {
+    background-color: var(--ifm-background-surface-color);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
+
+/* The myColis icon is a full-bleed orange square: round it at display time. */
+.navbar__logo img {
+  border-radius: 6px;
+}
+
+/* Active navbar item: indigo text, orange marker underneath. */
+.navbar__link--active {
+  position: relative;
+}
+
+.navbar__link--active::after {
+  content: '';
+  position: absolute;
+  left: 0.25rem;
+  right: 0.25rem;
+  bottom: -2px;
+  height: 2px;
+  border-radius: 2px;
+  background-color: var(--mc-orange);
+}
+
+/* ---------------------------------------------------------------------- */
+/* Local search (@easyops-cn/docusaurus-search-local). Themed through the */
+/* plugin's documented --search-local-* variables plus the Infima navbar  */
+/* input variables. One plugin variable colors both the highlighted terms */
+/* and the active row, so both stay indigo; orange stays on link hovers.  */
+/* Every variable set here is mode-dependent and MUST be declined in the  */
+/* dark block: a defined variable disables the plugin's own dark fallback.*/
+/* ---------------------------------------------------------------------- */
+
+:root {
+  --search-local-modal-background: #ffffff;
+  --search-local-modal-shadow: 0 6px 24px rgba(26, 21, 35, 0.14),
+    0 0 0 1px rgba(26, 21, 35, 0.08);
+  --search-local-hit-background: #ffffff;
+  --search-local-hit-shadow: 0 1px 3px rgba(26, 21, 35, 0.08);
+  --search-local-hit-color: var(--mc-ink);
+  --search-local-muted-color: #6b6580;
+  --search-local-highlight-color: #2e14c4;
+  --search-local-hit-active-color: #ffffff;
+
+  --ifm-navbar-search-input-background-color: #ffffff;
+  --ifm-navbar-search-input-color: var(--mc-ink);
+  --ifm-navbar-search-input-placeholder-color: #6b6580;
+}
+
+[data-theme='dark'] {
+  --search-local-modal-background: #1d1d2b;
+  --search-local-modal-shadow: 0 6px 24px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(255, 255, 255, 0.08);
+  --search-local-hit-background: #262637;
+  --search-local-hit-shadow: none;
+  --search-local-hit-color: #e4e2ec;
+  --search-local-muted-color: #a49ec0;
+  /* Light indigo: readable as mark text on the dark hit background, and
+     dark ink flips onto it for the active row via hit-active-color. */
+  --search-local-highlight-color: #a091f4;
+  --search-local-hit-active-color: #17103f;
+
+  --ifm-navbar-search-input-background-color: #262637;
+  --ifm-navbar-search-input-color: #e4e2ec;
+  --ifm-navbar-search-input-placeholder-color: #a49ec0;
+}
+
+.navbar__search-input {
+  border: 1px solid rgba(26, 21, 35, 0.15);
+}
+
+/* Wider field at rest on desktop. Infima defaults it to 12.5rem (200px);
+   below 997px the plugin's own responsive behavior keeps control. */
+@media (min-width: 997px) {
+  .navbar__search-input {
+    width: 300px;
+  }
+}
+
+[data-theme='dark'] .navbar__search-input {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+/* ---------------------------------------------------------------------- */
+/* Footer: deep indigo near-black in both modes.                          */
+/* ---------------------------------------------------------------------- */
+
+.footer--dark {
+  --ifm-footer-background-color: #100a2e;
+  --ifm-footer-color: #cfc9e8;
+  --ifm-footer-link-color: #aea2f5;
+  --ifm-footer-title-color: #ffffff;
+}
+
+.footer--dark .footer__link-item:hover {
+  color: #f47056;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Admonitions: cream surface, accent left border per type, soft shadow.  */
+/* Text keeps the base ink color so contrast stays AA on cream.           */
+/* ---------------------------------------------------------------------- */
+
+.theme-admonition {
+  --mc-admonition-accent: var(--ifm-color-primary);
+  --ifm-alert-background-color: var(--mc-cream);
+  --ifm-alert-background-color-highlight: rgba(46, 20, 196, 0.08);
+  --ifm-alert-foreground-color: var(--ifm-font-color-base);
+  --ifm-alert-border-color: var(--mc-admonition-accent);
+  border: 1px solid rgba(26, 21, 35, 0.08);
+  border-left: 5px solid var(--mc-admonition-accent);
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(26, 21, 35, 0.05);
+}
+
+.theme-admonition-note {
+  --mc-admonition-accent: #6b6580;
+}
+
+.theme-admonition-info {
+  --mc-admonition-accent: #5b45e6;
+}
+
+.theme-admonition-tip {
+  --mc-admonition-accent: var(--mc-indigo);
+}
+
+.theme-admonition-warning,
+.theme-admonition-caution {
+  --mc-admonition-accent: var(--mc-orange);
+}
+
+.theme-admonition-danger {
+  --mc-admonition-accent: #c9301c;
+}
+
+[data-theme='dark'] .theme-admonition {
+  --ifm-alert-background-color: #1f1f2e;
+  --ifm-alert-background-color-highlight: rgba(145, 128, 243, 0.12);
+  border-color: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme='dark'] .theme-admonition-note {
+  --mc-admonition-accent: #a3a3b2;
+}
+
+[data-theme='dark'] .theme-admonition-info {
+  --mc-admonition-accent: #aea2f5;
+}
+
+[data-theme='dark'] .theme-admonition-tip {
+  --mc-admonition-accent: #9180f3;
+}
+
+[data-theme='dark'] .theme-admonition-warning,
+[data-theme='dark'] .theme-admonition-caution {
+  --mc-admonition-accent: #f47056;
+}
+
+[data-theme='dark'] .theme-admonition-danger {
+  --mc-admonition-accent: #f4917e;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Insets and secondary surfaces.                                         */
+/* ---------------------------------------------------------------------- */
+
+/* Markdown blockquotes: cream inset with an indigo edge. */
+.markdown blockquote {
+  background-color: var(--mc-cream);
+  border-left: 3px solid var(--ifm-color-primary);
+  border-radius: 0 8px 8px 0;
+  padding: 0.75rem 1rem;
+  color: var(--ifm-font-color-base);
+}
+
+[data-theme='dark'] .markdown blockquote {
+  background-color: #1f1f2e;
+}
+
+/* Doc cards (category pages, DocCardList): frosted cream, orange on hover. */
+.card {
+  background-color: rgba(244, 241, 230, 0.55);
+  border: 1px solid rgba(26, 21, 35, 0.08);
+  box-shadow: 0 1px 3px rgba(26, 21, 35, 0.04);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  border-color: rgba(240, 74, 40, 0.6);
+  box-shadow: 0 4px 14px rgba(26, 21, 35, 0.08);
+}
+
+[data-theme='dark'] .card {
+  background-color: rgba(29, 29, 43, 0.65);
+  border-color: rgba(255, 255, 255, 0.07);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme='dark'] .card:hover {
+  border-color: rgba(244, 112, 86, 0.55);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+}
+
+/* Previous / next pagination: same treatment as cards. */
+.pagination-nav__link {
+  border: 1px solid rgba(26, 21, 35, 0.12);
+  transition: border-color 0.2s ease;
+}
+
+.pagination-nav__link:hover {
+  border-color: rgba(240, 74, 40, 0.6);
+}
+
+[data-theme='dark'] .pagination-nav__link {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+[data-theme='dark'] .pagination-nav__link:hover {
+  border-color: rgba(244, 112, 86, 0.55);
+}

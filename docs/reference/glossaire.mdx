@@ -1,0 +1,106 @@
+---
+sidebar_position: 1
+title: "Glossaire"
+description: "Les termes de myColis, de Shopify et de Colissimo employés dans cette documentation, définis une fois."
+---
+
+# Glossaire
+
+Cette page définit une fois chaque terme que la documentation emploie pour une partie de myColis, de l'admin Shopify ou d'un envoi Colissimo. Vous n'avez ainsi jamais à deviner ce qu'une page veut dire.
+
+## Action Créer l'étiquette
+
+La fenêtre **Créer l'étiquette (myColis)**, ouverte depuis **Plus d'actions** sur la fiche commande ou depuis le bloc **myColis**. Elle prépare l'envoi, laisse modifier le service, le poids, l'assurance ou le point relais, puis crée l'étiquette, voir [Créer une étiquette](/docs/etiquettes/creer-une-etiquette).
+
+## Bloc myColis
+
+La carte **myColis** de la fiche commande dans Shopify. Elle affiche le statut de l'étiquette, le n° de colis et le point relais, et ouvre l'action. Shopify laisse chaque marchand l'ajouter et la placer sur la page, voir [Créer une étiquette](/docs/etiquettes/creer-une-etiquette).
+
+## Bordereau de dépôt
+
+La liste des colis remis à La Poste lors d'un dépôt, que l'agent tamponne et vous rend comme preuve de dépôt. Il est obligatoire pour les envois avec CN23 et compte 50 colis au plus, voir [Bordereaux de dépôt](/docs/envois/bordereaux).
+
+## Clé API
+
+Le code que vous générez dans Colissimo Box, rubrique Mon profil, pour autoriser myColis à créer des étiquettes sur votre contrat. C'est la méthode de connexion recommandée, et la seule qui permet les points relais, voir [Connecter votre contrat Colissimo](/docs/prise-en-main/connexion-colissimo).
+
+## CN23
+
+La déclaration en douane qui accompagne un colis hors du territoire douanier de l'Union européenne : vers un pays tiers, Andorre, l'outre-mer ou un territoire particulier de l'Union. Elle liste les articles, leur valeur, leur code SH et leur pays d'origine, voir [Déclaration CN23](/docs/international/declaration-cn23).
+
+## Code SH
+
+Le code du Système harmonisé, la nomenclature douanière internationale, qui classe chaque produit sur la CN23. Il compte 6 chiffres au moins, et se renseigne dans la fiche produit Shopify, rubrique Douane, voir [International et USA](/docs/reglages/international-et-usa).
+
+## Colissimo Box
+
+L'espace en ligne de votre contrat Colissimo. Vous y trouvez votre n° client et y générez votre clé API.
+
+## DDP
+
+Pour un envoi vers les États-Unis, l'option qui fait payer les droits et taxes d'importation par l'expéditeur : Colissimo les avance, puis vous les refacture. Sans DDP, le destinataire les paie à la livraison, voir [Envois vers les États-Unis](/docs/international/etats-unis).
+
+## Emplacement
+
+Un lieu de votre boutique Shopify d'où partent des commandes : un entrepôt, une boutique, un local. Chaque emplacement qui expédie avec myColis a son expéditeur, voir [Expéditeurs](/docs/reglages/expediteurs).
+
+## EORI
+
+Le numéro qui identifie une entreprise auprès des douanes de l'Union européenne, composé de 2 lettres et de 9 chiffres, par exemple FR suivi du SIREN. Il est imprimé sur la CN23 et obligatoire pour les envois vers les États-Unis, voir [Étiquettes et douane](/docs/reglages/etiquettes-et-douane).
+
+## Étiquette d'exemple
+
+L'étiquette que myColis produit en mode test, marquée DEMO, avec un n° de colis fictif. Elle n'est pas valable pour un envoi, voir [Mode test](/docs/prise-en-main/mode-test).
+
+## Étiquette réelle
+
+Une étiquette que Colissimo crée sur votre contrat, par opposition à l'étiquette d'exemple du mode test. Les étiquettes réelles comptent dans le quota de votre plan myColis, même abandonnées ensuite, voir [Plans et quotas](/docs/compte/plans-et-quotas).
+
+## Expéditeur
+
+Un emplacement Shopify configuré dans myColis, avec l'adresse imprimée sur l'étiquette comme adresse d'expédition, voir [Expéditeurs](/docs/reglages/expediteurs).
+
+## Génération groupée
+
+La création en une fois des étiquettes de 50 commandes au plus, depuis la liste des commandes, avec l'action **Créer les étiquettes (myColis)**, voir [Générer des étiquettes en lot](/docs/etiquettes/generation-groupee).
+
+## Mode test
+
+Le réglage qui fait produire à myColis des étiquettes d'exemple au lieu de vraies étiquettes, sans contacter Colissimo pour créer l'étiquette. Il permet d'essayer l'app sans contrat, voir [Mode test](/docs/prise-en-main/mode-test).
+
+## N° client
+
+Le numéro à six chiffres de votre contrat Colissimo, visible dans Colissimo Box, voir [Connecter votre contrat Colissimo](/docs/prise-en-main/connexion-colissimo).
+
+## N° de colis
+
+Le numéro que Colissimo attribue à une étiquette. myColis l'inscrit sur la commande comme numéro de suivi, et Shopify en tire le lien de suivi envoyé au client.
+
+## Palier d'assurance
+
+Le montant jusqu'auquel un colis est assuré : 150, 300, 500, 1 000, 2 000 ou 5 000 €. myColis retient le plus petit palier qui couvre la valeur du colis, dans la limite du plafond de votre contrat, et de 1 000 € en point relais, voir [Réglages d'expédition](/docs/reglages/expedition).
+
+## Plan myColis
+
+L'abonnement à myColis : Gratuit, Starter, Pro ou Plus. Il fixe le nombre d'étiquettes réelles par mois, et le plan Plus ajoute le choix du point relais dans le checkout, sur Shopify Plus, voir [Plans et quotas](/docs/compte/plans-et-quotas).
+
+## Point relais
+
+Un commerce, un bureau de poste ou une consigne où le client retire son colis au lieu d'être livré chez lui, voir [Fonctionnement des points relais](/docs/points-relais/fonctionnement).
+
+## Règle du checkout
+
+Une règle que vous activez dans **Paramètres > Paiement** de Shopify et qui peut bloquer le paiement. La règle « myColis : point relais à choisir » empêche de payer un tarif point relais sans point quand des points ont été proposés au client, ou avec un téléphone qui n'est pas un mobile valide. Elle fonctionne sur Shopify Plus, avec le plan Plus de myColis, voir [Choix au checkout](/docs/points-relais/choix-au-checkout).
+
+## Tarif point relais
+
+Un tarif de livraison de votre boutique que vous avez déclaré dans myColis comme livrant en point relais. Une commande passée avec ce tarif part en point relais, voir [Tarifs point relais](/docs/points-relais/tarifs-point-relais).
+
+## ZPL
+
+Le langage de nombreuses imprimantes thermiques. Une étiquette en ZPL se télécharge sous forme de fichier `.zpl` et s'envoie directement à l'imprimante, sans aperçu dans le navigateur, voir [Imprimer les étiquettes](/docs/etiquettes/impression).
+
+## Pour aller plus loin
+
+- [Pays couverts](/docs/reference/pays-couverts)
+- [Codes d'erreur Colissimo](/docs/reference/codes-erreur)

@@ -1,0 +1,60 @@
+---
+sidebar_position: 3
+title: "Étiquettes et douane"
+description: "Choisissez le format de vos étiquettes, PDF ou ZPL, et renseignez le n° EORI de l'expéditeur."
+---
+
+# Étiquettes et douane
+
+La section **Étiquettes et douane** des réglages fixe le format de vos étiquettes et le n° EORI imprimé sur vos déclarations douanières. Choisissez le format d'après votre imprimante, une fois pour toutes : il s'applique à chaque étiquette et à sa CN23.
+
+## Choisir le format d'étiquette
+
+Le champ **Format d'étiquette** propose huit formats. Le réglage d'origine est **PDF 10 x 15 cm**.
+
+| Format | Usage |
+|---|---|
+| **PDF 10 x 15 cm** | Étiquette au format colis, pour une imprimante thermique ou une planche d'étiquettes. |
+| **PDF A4** | Étiquette sur une feuille A4, pour une imprimante de bureau. |
+| **ZPL 10 x 15 cm, 203 dpi (imprimante thermique)** | Fichier pour une imprimante thermique ZPL en 203 dpi. |
+| **ZPL 10 x 15 cm, 300 dpi (imprimante thermique)** | Fichier pour une imprimante thermique ZPL en 300 dpi. |
+| **PDF 10 x 15 cm, avec CN23 sur la même page** | Comme PDF 10 x 15 cm, avec la déclaration douanière intégrée. |
+| **PDF A4, avec CN23 sur la même page** | Comme PDF A4, avec la déclaration douanière intégrée. |
+| **ZPL 10 x 15 cm, 203 dpi, avec CN23 sur la même page** | Comme ZPL 203 dpi, avec la déclaration douanière intégrée. |
+| **ZPL 10 x 15 cm, 300 dpi, avec CN23 sur la même page** | Comme ZPL 300 dpi, avec la déclaration douanière intégrée. |
+
+Les modifications s'enregistrent avec la barre d'enregistrement de Shopify, comme les sections **Expédition** et **International et USA**.
+
+## Imprimante thermique : PDF ou ZPL
+
+Avec une imprimante thermique, le plus simple est de rester en PDF. La section le conseille dès qu'un format PDF est choisi : « Imprimante thermique (Zebra, Rollo, Dymo, Xprinter...) : choisissez PDF 10 x 15 cm et imprimez en taille réelle avec le pilote de l'imprimante. Vous gardez l'aperçu et l'impression depuis Shopify, unitaire ou groupée. »
+
+Le ZPL est le langage natif de nombreuses imprimantes thermiques. Quand vous choisissez un format ZPL, un avertissement s'affiche, **Le ZPL ne s'imprime pas depuis le navigateur** : Shopify ne montre ni aperçu ni bouton d'impression, et myColis fournit à la place un fichier `.zpl`, pour une étiquette ou pour un lot. Vous l'envoyez vous-même à l'imprimante, qui doit comprendre le ZPL et avoir la même résolution que le format choisi, 203 ou 300 dpi. L'avertissement donne trois façons de le faire : Zebra Setup Utilities sous Windows, la commande `lp -o raw` sous macOS, ou le port 9100 d'une imprimante réseau. Sauf besoin particulier, préférez PDF 10 x 15 cm.
+
+## La CN23 et les formats avec CN23
+
+Un envoi qui demande une déclaration douanière reçoit une CN23 en plus de l'étiquette, au même type de format : avec PDF 10 x 15 cm, la CN23 sort en PDF au format 10 x 12 cm ; avec PDF A4, en A4 ; avec un format ZPL, en ZPL 10 x 12 cm à la même résolution. Elle s'imprime avec l'étiquette. Les envois concernés sont décrits dans [Déclaration CN23](/docs/international/declaration-cn23).
+
+Les formats « avec CN23 sur la même page » regroupent l'étiquette et la déclaration sur une seule page, sans document séparé. La déclaration intégrée n'affiche que les trois premiers articles, avec des totaux complets, et l'action le signale : « Étiquette unifiée : la CN23 n'affiche que les 3 premiers articles, les totaux restent complets. »
+
+## Renseigner le n° EORI
+
+Le **N° EORI de l'expéditeur** identifie votre entreprise auprès des douanes. Il se compose de 2 lettres, le code pays, suivies de 9 chiffres, par exemple FR123456789 pour un EORI français basé sur le SIREN. Il est obligatoire pour tout envoi vers les États-Unis et imprimé sur les CN23 des envois hors de l'Union européenne et vers l'outre-mer. Pour un envoi qui n'a pas de CN23, il ne sert pas.
+
+1. Ouvrez myColis, puis **Réglages**.
+2. Saisissez votre n° dans **N° EORI de l'expéditeur**, dans la section **Étiquettes et douane**.
+3. Enregistrez depuis la barre d'enregistrement de Shopify.
+
+Le numéro est vérifié pendant la saisie et à l'enregistrement. Un format incorrect est refusé avec « EORI invalide : 2 lettres (code pays) suivies de 9 chiffres, par exemple FR123456789. » Le champ peut rester vide si vous n'expédiez pas hors de l'Union européenne. Une fois l'EORI enregistré, l'étape **Renseigner votre EORI** de la page **Envois** se coche.
+
+## Ancien EORI basé sur le SIRET
+
+Un ancien EORI français basé sur le SIRET, FR suivi de 14 chiffres, est refusé. La section affiche l'avertissement **Ancien EORI basé sur le SIRET** : « L'EORI basé sur le SIRET (FR + 14 chiffres) est en cours de désactivation par la douane (second semestre 2026). L'EORI est désormais FR + SIREN (9 chiffres). »
+
+Le bouton **Utiliser** suivi du numéro proposé remplit le champ avec FR et les 9 premiers chiffres de votre ancien numéro, c'est-à-dire votre SIREN. Vérifiez avant d'enregistrer, comme le rappelle la section : « Ce numéro doit correspondre à un EORI SIREN obtenu sur SOPRANO. »
+
+## Pour aller plus loin
+
+- [International et USA](/docs/reglages/international-et-usa)
+- [Imprimer les étiquettes](/docs/etiquettes/impression)
+- [Déclaration CN23](/docs/international/declaration-cn23)

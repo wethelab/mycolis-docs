@@ -1,0 +1,73 @@
+---
+sidebar_position: 1
+title: "La page Envois"
+description: "Retrouvez les étiquettes créées par myColis, filtrez-les, imprimez-les et relancez ou abandonnez une étiquette."
+---
+
+# La page Envois
+
+La page **Envois** est l'accueil de myColis : elle liste toutes les étiquettes créées par l'app, avec leur statut, et permet d'agir sur chacune. Cette page explique ses filtres, ses statuts et ses actions.
+
+## Ce que montre la page
+
+En haut de la page s'affiche, quand Shopify en a transmis une, le bandeau **Demande d'accès aux données d'un client**, voir [Données de vos clients](/docs/compte/donnees-de-vos-clients). Vient ensuite la carte de votre plan, avec le compteur d'étiquettes réelles du mois et le lien **Voir le plan**, voir [Plans et quotas](/docs/compte/plans-et-quotas). Tant que la configuration n'est pas terminée, la carte **Configuration de myColis** suit, voir [Installer l'app](/docs/prise-en-main/installation). Un encadré rappelle ensuite où créer une étiquette : le bloc **myColis** de la fiche commande, ou **Plus d'actions**, **Créer l'étiquette (myColis)**.
+
+La liste affiche les étiquettes de la plus récente à la plus ancienne, 50 par page, avec les colonnes **Commande**, **Statut**, **N° de colis**, **Créé le**, **Service**, **Poids** et **Actions**. Le nom de la commande ouvre sa fiche dans Shopify. La page se met à jour d'elle-même toutes les cinq minutes et quand vous revenez sur l'onglet.
+
+## Filtrer et rechercher
+
+Les filtres, au-dessus de la liste, restreignent ce qu'elle affiche :
+
+| Filtre | Contenu |
+|---|---|
+| **Tous** | Toutes les étiquettes. |
+| **À imprimer** | Les étiquettes dont le fichier n'a jamais été ouvert ni marqué comme imprimé. Le nombre est affiché à côté du filtre. |
+| **Expédiés** | Les étiquettes dont la commande est marquée expédiée. |
+| **Erreurs** | Les étiquettes refusées et celles dont l'expédition est à relancer. Le nombre est affiché à côté du filtre. |
+| **Démo** | Les étiquettes d'exemple du mode test. |
+| **Relais à choisir** | Les commandes passées avec un tarif point relais sans point choisi. |
+
+Le champ de recherche trouve une étiquette par son n° de commande ou son n° de colis, en partie ou en entier. Sélectionnez **Rechercher** pour lancer la recherche.
+
+## Les statuts
+
+| Statut | Signification |
+|---|---|
+| **Génération en cours** | myColis est en train de créer l'étiquette. |
+| **Étiquette créée** | L'étiquette existe, la commande n'est pas encore marquée expédiée. |
+| **Expédition à relancer** | L'étiquette existe, mais Shopify n'a pas marqué la commande expédiée. |
+| **Expédié** | La commande est marquée expédiée avec le n° de colis. |
+| **Démo, non expédié** | Mode test sur une boutique réelle : étiquette d'exemple, commande non modifiée. |
+| **Erreur** | L'étiquette n'a pas été créée, ou a été abandonnée. |
+
+Pour les statuts **Erreur** et **Expédition à relancer**, la raison s'affiche sous le statut. Des badges complètent la ligne : **À imprimer**, **Démo** pour une étiquette d'exemple, et **CN23** suivi du code du pays pour un envoi avec déclaration douanière.
+
+## Imprimer depuis la liste
+
+Chaque ligne a un bouton **Imprimer**, qui ouvre le PDF dans un nouvel onglet, ou **Télécharger le ZPL** si l'étiquette est en ZPL.
+
+Sur le filtre **À imprimer**, la carte **Étiquettes à imprimer** réunit les étiquettes en attente dans un seul fichier, des plus anciennes aux plus récentes, par lots de 50. Ses boutons s'appellent **Imprimer** ou **Télécharger** suivis du nombre d'étiquettes. Les étiquettes passent en imprimées à l'ouverture du fichier, et le lot suivant apparaît.
+
+## Agir sur une étiquette
+
+Le menu de chaque ligne propose les actions possibles selon son état. **Marquer comme imprimée** fait sortir l'étiquette du filtre **À imprimer**, et **Marquer comme à imprimer** l'y remet.
+
+**Relancer l'expédition** redemande à Shopify de marquer la commande comme expédiée, avec l'étiquette déjà créée, et le message **Commande marquée comme expédiée** confirme la réussite. **Abandonner l'étiquette** détache l'étiquette de la commande. Ces deux actions ne s'offrent qu'aux étiquettes **Étiquette créée** ou **Expédition à relancer**, c'est-à-dire avant que la commande soit expédiée.
+
+## Abandonner une étiquette
+
+Abandonnez une étiquette créée par erreur, ou à refaire avec un autre poids, un autre service ou un autre point relais. La fenêtre de confirmation rappelle les conséquences : « L'étiquette … de la commande … sera détachée de la commande, qui pourra recevoir une nouvelle étiquette. Une étiquette non déposée n'est pas facturée. Ne déposez pas ce colis. »
+
+Sélectionnez **Abandonner** pour confirmer. L'étiquette passe au statut **Erreur** avec la mention « Étiquette abandonnée. Une étiquette non déposée n'est pas facturée. », et vous pouvez créer une nouvelle étiquette depuis la commande. Détruisez l'ancienne étiquette si elle est déjà imprimée. Colissimo ne la facture pas, mais elle reste comptée dans le quota de votre plan myColis.
+
+## Commandes relais à choisir
+
+Le filtre **Relais à choisir** n'affiche pas des étiquettes, mais des commandes Shopify : les commandes non expédiées des 60 derniers jours, passées avec un tarif point relais, sans point relais choisi et sans étiquette en cours. Y figurent aussi les commandes payées sans point quand le choix au checkout était impossible, par exemple si la recherche a échoué ou si le client a payé en paiement express depuis le panier, et les commandes que vous créez dans l'admin Shopify avec un tarif point relais. Les colonnes sont **Commande**, **Tarif** et **Passée le**, et le bouton **Ouvrir la commande** ouvre sa fiche, où l'action **Créer l'étiquette (myColis)** vous laisse choisir le point.
+
+Si aucun tarif point relais n'est indiqué dans les réglages, la vue vous invite à le faire avec le lien **Indiquer les tarifs point relais**, voir [Tarifs point relais](/docs/points-relais/tarifs-point-relais). La vue examine les 100 commandes non expédiées les plus récentes, et le précise quand il y en a davantage.
+
+## Pour aller plus loin
+
+- [Imprimer les étiquettes](/docs/etiquettes/impression)
+- [Bordereaux de dépôt](/docs/envois/bordereaux)
+- [Dépannage](/docs/depannage)

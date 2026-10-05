@@ -1,0 +1,78 @@
+---
+sidebar_position: 11
+title: "Questions fréquentes"
+description: "Réponses courtes aux questions posées avant et après l'installation de myColis."
+---
+
+# Questions fréquentes
+
+Des réponses courtes aux questions qui reviennent avant l'installation de myColis et pendant les premières semaines d'usage. Chacune renvoie à la page qui traite le sujet en entier.
+
+## Faut-il un contrat Colissimo ?
+
+Oui, pour de vraies étiquettes. myColis crée vos étiquettes sur votre propre contrat Colissimo, avec votre n° client et une clé API générée dans Colissimo Box, et Colissimo vous facture selon votre contrat. Sans contrat, vous pouvez essayer toute l'app en mode test, avec des étiquettes d'exemple, voir [Mode test](/docs/prise-en-main/mode-test).
+
+## Combien d'étiquettes puis-je créer avec le plan Gratuit ?
+
+10 étiquettes réelles par mois. Le plan Starter en compte 20, et les plans Pro et Plus n'ont pas de limite. Le mode test, les réimpressions et les bordereaux ne comptent pas, et le compteur repart de zéro le 1er de chaque mois, à 0 h, heure de Paris, voir [Plans et quotas](/docs/compte/plans-et-quotas).
+
+## Clé API ou mot de passe ?
+
+La clé API. Colissimo marque l'authentification par mot de passe comme obsolète, et la recherche de points relais ne fonctionne qu'avec une clé API. Le mot de passe reste possible en secours, pour les étiquettes à domicile, voir [Connecter votre contrat Colissimo](/docs/prise-en-main/connexion-colissimo).
+
+## Quelle différence avec le bouton « Créer des étiquettes d'expédition » de Shopify ?
+
+Ce bouton achète une étiquette avec le contrat Shopify Shipping. myColis crée l'étiquette avec votre contrat Colissimo, depuis l'action **Créer l'étiquette (myColis)** dans **Plus d'actions** ou depuis le bloc **myColis** de la fiche commande. Les deux ne se mélangent pas : myColis ne voit pas les étiquettes achetées avec le bouton de Shopify, voir [Créer une étiquette](/docs/etiquettes/creer-une-etiquette).
+
+## Qui prévient mes clients de l'expédition ?
+
+Shopify et Colissimo, jamais myColis, qui n'envoie aucun email. Quand myColis marque la commande comme expédiée, Shopify envoie son email de confirmation d'expédition avec le lien de suivi, si le réglage **Notifier le client à l'expédition** est activé. Colissimo envoie ses propres notifications de livraison par email et SMS quand myColis lui transmet l'email et le mobile du client, voir [Réglages d'expédition](/docs/reglages/expedition).
+
+## Une étiquette que je n'utilise pas est-elle facturée ?
+
+Une étiquette non déposée n'est pas facturée par Colissimo, mais elle reste comptée dans le quota de votre plan myColis. Si vous ne comptez pas l'utiliser, abandonnez-la dans la page **Envois** tant que la commande n'est pas expédiée, et ne déposez pas le colis avec elle. Les étiquettes d'exemple du mode test ne sont jamais créées chez Colissimo, voir [La page Envois](/docs/envois/page-envois).
+
+## Puis-je imprimer sur une imprimante thermique ?
+
+Oui. Le plus simple est le format PDF 10 x 15 cm, imprimé en taille réelle avec le pilote de l'imprimante, qui garde l'aperçu et l'impression depuis Shopify. Les formats ZPL en 203 ou 300 dpi produisent un fichier à envoyer directement à une imprimante qui comprend le ZPL, voir [Imprimer les étiquettes](/docs/etiquettes/impression).
+
+## Le choix du point relais fonctionne-t-il sans Shopify Plus ?
+
+Oui, après la commande. Sur tous les plans Shopify, le client choisit ou change son point sur la page de remerciement et dans le suivi de commande, et vous pouvez toujours le choisir dans l'admin. Seul le choix au checkout, avant le paiement, demande Shopify Plus, avec le plan Plus de myColis, voir [Choix après la commande](/docs/points-relais/choix-apres-la-commande).
+
+## Dans quels pays livrez-vous en point relais ?
+
+En France et dans 19 pays d'Europe : Allemagne, Autriche, Belgique, Danemark, Espagne, Estonie, Hongrie, Irlande, Italie, Lettonie, Lituanie, Luxembourg, Pays-Bas, Pologne, Portugal, République tchèque, Slovaquie, Slovénie et Suède, au départ de la France métropolitaine ou de Monaco. Votre contrat doit aussi ouvrir ces pays, voir [Pays couverts](/docs/reference/pays-couverts).
+
+## Puis-je expédier depuis plusieurs entrepôts ?
+
+Oui. Chaque emplacement Shopify d'où partent des colis a son expéditeur, avec sa propre adresse. Une commande répartie entre plusieurs emplacements reçoit une étiquette par emplacement, créée depuis l'action, voir [Expéditeurs](/docs/reglages/expediteurs).
+
+## Combien d'étiquettes puis-je créer à la fois ?
+
+Jusqu'à 50 commandes en une fois, depuis la liste des commandes, avec l'action groupée **Créer les étiquettes (myColis)**. Les étiquettes s'impriment ensuite en un seul fichier, voir [Générer des étiquettes en lot](/docs/etiquettes/generation-groupee).
+
+## Comment fonctionne l'assurance ?
+
+L'assurance est une option de votre contrat Colissimo. Vous assurez un colis à la demande dans l'action, ou automatiquement au-delà d'un montant fixé dans les réglages. myColis retient le palier qui couvre la valeur, jusqu'au plafond de votre contrat. À domicile, un colis assuré part avec signature ; en point relais, l'assurance va jusqu'à 1 000 €, voir [Réglages d'expédition](/docs/reglages/expedition).
+
+## Puis-je annuler une étiquette ?
+
+Oui, tant que la commande n'est pas expédiée : abandonnez-la depuis la page **Envois**. La commande peut alors recevoir une nouvelle étiquette, avec un autre poids, un autre service ou un autre point relais, voir [La page Envois](/docs/envois/page-envois).
+
+## Que fait myColis des données de mes clients ?
+
+myColis lit le nom, l'adresse, l'email et le téléphone du client sur la commande au moment de créer l'étiquette, et les transmet à Colissimo, qui en a besoin pour livrer. Il ne les enregistre pas dans sa base. Le prénom, l'email et le mobile que vous saisissez dans l'action pour un point relais servent à cette étiquette seulement. Les fichiers d'étiquette, de CN23 et de bordereau, qui portent l'adresse du destinataire, sont conservés pour la réimpression, et supprimés quand Shopify demande l'effacement des données du client. Les demandes d'accès s'affichent sur la page **Envois**. Vos identifiants Colissimo sont chiffrés et ne sont jamais réaffichés, voir [Données de vos clients](/docs/compte/donnees-de-vos-clients).
+
+## L'outre-mer est-il couvert ?
+
+Oui, à domicile. Depuis la métropole ou Monaco, myColis expédie vers les départements et collectivités d'outre-mer, avec une CN23. Depuis l'outre-mer, il expédie vers la métropole, Monaco et le même territoire. La livraison en point relais n'y est pas proposée, voir [Zones et services](/docs/international/zones-et-services).
+
+## Où trouver de l'aide ?
+
+Écrivez au support myColis à [support@webesencia.com](mailto:support@webesencia.com) pour toute question que cette documentation ne règle pas. Commencez par le symptôme : la page [Dépannage](/docs/depannage) mène des messages les plus fréquents à leur solution, et [Codes d'erreur Colissimo](/docs/reference/codes-erreur) explique chaque refus de Colissimo.
+
+## Pour aller plus loin
+
+- [Créer votre première étiquette](/docs/prise-en-main/premiere-etiquette)
+- [Dépannage](/docs/depannage)

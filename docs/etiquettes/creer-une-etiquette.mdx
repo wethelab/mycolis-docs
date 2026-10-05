@@ -1,0 +1,103 @@
+---
+sidebar_position: 1
+title: "Créer une étiquette"
+description: "Créez l'étiquette Colissimo d'une commande depuis sa fiche dans Shopify, avec l'action et le bloc myColis."
+---
+
+# Créer une étiquette
+
+L'action **Créer l'étiquette (myColis)** crée l'étiquette Colissimo d'une commande, sur votre contrat, puis marque la commande comme expédiée avec le n° de colis. Cette page décrit ce que l'action vous montre, ce que vous pouvez y changer et ce qui se passe après la génération.
+
+## Avant de commencer
+
+Il vous faut un expéditeur actif pour l'emplacement qui expédie la commande, voir [Expéditeurs](/docs/reglages/expediteurs), et vos identifiants Colissimo enregistrés ou le mode test activé. Sans l'un ni l'autre, l'action répond « Connectez votre compte Colissimo dans les réglages, ou activez le mode test. »
+
+## Ouvrir l'action
+
+1. Ouvrez la commande dans Shopify.
+2. Ouvrez **Plus d'actions**.
+3. Sélectionnez **Créer l'étiquette (myColis)**.
+
+Le bouton **Créer l'étiquette** du bloc **myColis**, sur la même fiche commande, ouvre la même action.
+
+N'utilisez pas le bouton de Shopify « Créer des étiquettes d'expédition » pour vos envois Colissimo : il achète une étiquette avec le contrat Shopify Shipping, pas avec votre contrat Colissimo, et myColis n'en a pas connaissance.
+
+## Ce que l'action vous montre
+
+L'action lit la commande, puis présente l'envoi tel que myColis le prépare : l'emplacement, la destination, le service, le poids et, selon les cas, l'assurance, la déclaration douanière et le DDP. Les contrôles ont lieu avant la génération : un message bloquant empêche de générer tant que le problème n'est pas réglé, un avertissement ou une information n'empêche rien.
+
+### Emplacement d'expédition
+
+Une commande répartie entre plusieurs emplacements Shopify affiche le champ **Emplacement d'expédition** : choisissez l'emplacement dont vous préparez le colis. Un emplacement sans expéditeur configuré apparaît avec la mention « (expéditeur à configurer) ». L'action crée une étiquette par emplacement : refaites l'opération pour l'autre emplacement.
+
+### Destination et valeur
+
+Une ligne résume la destination : la zone (**France**, **Monaco**, **Outre-mer**, **Union européenne** ou **International**), le pays et le code du produit Colissimo retenu. Pour une boutique dans une autre devise que l'euro, une ligne **Valeur des articles** donne la valeur convertie en euros, avec le taux de référence de la BCE utilisé, ou la mention « payée en EUR » si le client a payé en euros. Quand une déclaration douanière est nécessaire, la ligne **CN23 jointe** donne le nombre d'articles et la valeur déclarée.
+
+### Service
+
+Le champ **Service** propose **Domicile sans signature**, **Domicile avec signature** et **Point relais**. Le service présélectionné est celui de vos réglages, ou **Point relais** quand le client a choisi un tarif point relais.
+
+Une option indisponible est grisée, avec sa raison. **Domicile sans signature** n'est pas proposé vers les pays où Colissimo ne livre qu'avec signature (« Non proposé vers ce pays (…). ») ni pour un colis assuré (« Envoi assuré : signature obligatoire, comme l'exige Colissimo. »). **Point relais** demande une clé API et un expéditeur en France métropolitaine ou à Monaco. Le choix du point est décrit dans [Choisir le point dans l'admin](/docs/points-relais/choix-dans-l-admin).
+
+### Poids du colis
+
+Le **Poids du colis** est calculé à partir des produits et du poids de l'emballage de vos réglages. Corrigez-le si besoin, en kilogrammes, entre 0,001 et 30 kg. Si un article n'a pas de poids dans Shopify, l'aide du champ indique « Poids de secours appliqué aux articles sans poids. Vérifiez-le. » et un avertissement liste les articles concernés.
+
+### Frais de port déclarés (CN23)
+
+Pour un envoi avec CN23, le champ **Frais de port déclarés (CN23)** reprend les frais de port payés par le client, ou le montant de vos réglages si la livraison était offerte. Colissimo refuse 0 € : si le champ est vide, saisissez le prix du transport à déclarer, entre 0,01 et 500 €.
+
+### Assurer le colis
+
+Cochez **Assurer le colis** pour assurer l'envoi. L'aide indique le palier retenu, par exemple « Jusqu'à 300 €. Envoi avec signature, comme l'exige Colissimo. » À domicile, cocher la case passe le service en **Domicile avec signature** ; la décocher rend le service de vos réglages. Si la valeur dépasse le plafond de votre contrat, l'aide précise que le colis n'est assuré que jusqu'au plafond. En point relais, la case apparaît une fois le point choisi, avec le plafond de 1 000 € de Colissimo. La case est cochée d'office quand la valeur atteint le seuil d'assurance automatique de vos réglages, voir [Réglages d'expédition](/docs/reglages/expedition).
+
+### DDP pour les États-Unis
+
+Pour un envoi vers les États-Unis, l'interrupteur **Droits et taxes payés par l'expéditeur (DDP)** reprend votre réglage par défaut. Activé, il affiche les champs **Longueur**, **Largeur** et **Hauteur**, en centimètres, préremplis avec les dimensions par défaut de vos réglages. Les règles des envois vers les États-Unis sont dans [Envois vers les États-Unis](/docs/international/etats-unis).
+
+## Générer l'étiquette
+
+Vérifiez les champs et les messages, puis sélectionnez **Générer l'étiquette**. Le bouton reste grisé tant qu'un champ est invalide ou qu'aucun emplacement n'est choisi.
+
+Quand tout se passe bien, la fenêtre affiche **Étiquette créée** et le n° de colis. myColis marque la commande comme expédiée dans Shopify, avec Colissimo comme transporteur et le n° de colis comme numéro de suivi. Si **Notifier le client à l'expédition** est activé dans vos réglages, Shopify envoie au client son email de confirmation d'expédition, avec le lien de suivi.
+
+Sélectionnez ensuite **Imprimer l'étiquette** pour ouvrir le PDF dans un nouvel onglet, ou **Télécharger le fichier ZPL** si vos étiquettes sont en ZPL. La CN23 éventuelle est dans le même fichier. Vous pourrez réimprimer l'étiquette plus tard depuis le menu **Imprimer** de la commande ou depuis la page **Envois**.
+
+Si Colissimo ou myColis refuse l'envoi, la fenêtre affiche **Étiquette non créée** et les messages qui expliquent pourquoi. Corrigez la cause, par exemple l'adresse de livraison de la commande dans Shopify, puis sélectionnez **Modifier et réessayer**. Les messages les plus fréquents sont détaillés dans [Dépannage](/docs/depannage) et [Codes d'erreur Colissimo](/docs/reference/codes-erreur).
+
+## Quand la commande n'est pas marquée expédiée
+
+Il arrive que l'étiquette soit créée mais que Shopify refuse ou ne puisse pas marquer la commande comme expédiée. L'action l'indique à sa prochaine ouverture par **Étiquette déjà créée** : « L'étiquette … existe, mais la commande n'est pas encore marquée expédiée dans Shopify. La relance réutilise cette étiquette. »
+
+Sélectionnez **Relancer l'expédition**. myColis réutilise l'étiquette déjà créée, sans en créer une seconde. La même relance est possible depuis le bloc **myColis** et depuis la page **Envois**.
+
+## Une étiquette par commande et par emplacement
+
+Une fois la commande expédiée, l'action n'a plus rien à générer pour cet emplacement : elle affiche **Dernière étiquette de la commande** avec son n° de colis et un bouton pour la réimprimer.
+
+Pour remplacer une étiquette qui n'a pas encore servi, abandonnez-la d'abord dans la page **Envois**, tant que la commande n'est pas expédiée, voir [La page Envois](/docs/envois/page-envois). Une étiquette non déposée n'est pas facturée.
+
+## Quota de votre plan
+
+Sur les plans Gratuit et Starter, myColis compte les étiquettes réelles du mois. Une fois le quota atteint, l'action refuse d'en créer une nouvelle, avant tout envoi à Colissimo : « Quota du plan Starter atteint : 20 étiquettes ce mois-ci. Choisissez un plan supérieur, ou attendez le 1er du mois prochain (heure de Paris). Le mode test reste illimité. » Le bouton **Voir les plans** ouvre la page **Plans**.
+
+Une étiquette déjà créée pour la commande reste imprimable, et la relance de l'expédition ne compte pas dans le quota. Le détail est dans [Plans et quotas](/docs/compte/plans-et-quotas).
+
+## Commande de plus de 60 jours
+
+myColis n'accède qu'aux commandes des 60 derniers jours. Pour une commande plus ancienne, ou supprimée, l'action répond : « Commande introuvable dans Shopify. myColis n'accède qu'aux commandes des 60 derniers jours : pour une commande plus ancienne ou supprimée, créez l'étiquette dans Colissimo Box. » Créez alors l'étiquette directement dans votre espace Colissimo Box.
+
+## Le bloc myColis
+
+Le bloc **myColis** de la fiche commande résume l'étiquette de la commande sans ouvrir l'action. Replié, il affiche le statut et le n° de colis, ou « Aucune étiquette pour cette commande. »
+
+Déplié, il montre le statut (**Génération en cours**, **Expédition à relancer**, **Étiquette créée**, **Expédiée**, **Démo, non expédiée** ou **Erreur**), les badges **À imprimer**, **Démo** et **CN23 jointe** selon le cas, le n° de colis et le point relais éventuel. Ses boutons ouvrent l'action (**Créer l'étiquette**, **Relancer l'expédition**, **Changer de point**), impriment l'étiquette (**Imprimer** ou **Télécharger le fichier ZPL**) ou rafraîchissent le bloc (**Actualiser**).
+
+Si le bloc n'apparaît pas sur la fiche commande, ajoutez-le parmi les blocs d'apps de la page.
+
+## Pour aller plus loin
+
+- [Imprimer les étiquettes](/docs/etiquettes/impression)
+- [Générer des étiquettes en lot](/docs/etiquettes/generation-groupee)
+- [Déclaration CN23](/docs/international/declaration-cn23)

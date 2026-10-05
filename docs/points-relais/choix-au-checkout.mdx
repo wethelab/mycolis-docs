@@ -1,0 +1,104 @@
+---
+sidebar_position: 4
+title: "Choix au checkout"
+description: "Avec Shopify Plus et le plan Plus de myColis, laissez le client choisir son point relais au checkout, et demandez-le avant le paiement dès que des points lui sont proposés."
+---
+
+# Choix au checkout <PlanBadge plan="plus" />
+
+Sur Shopify Plus, avec le plan Plus de myColis, le client choisit son point relais au checkout, juste sous le tarif point relais, et ne peut pas payer sans l'avoir choisi dès que des points lui sont proposés. Cette page explique les trois réglages à faire dans Shopify, ce que voit le client et ce qui se passe quand le choix est impossible.
+
+## Avant de commencer
+
+Ce choix demande Shopify Plus : Shopify réserve aux boutiques Plus les blocs d'apps dans les étapes du checkout. Il fonctionne aussi sur une boutique de développement, pour vos essais. Il demande en outre le plan Plus de myColis, voir [Plans et quotas](/docs/compte/plans-et-quotas), une connexion Colissimo par clé API et au moins un tarif point relais indiqué dans myColis, voir [Tarifs point relais](/docs/points-relais/tarifs-point-relais).
+
+Sans ces conditions, le client choisit son point après la commande, voir [Choix après la commande](/docs/points-relais/choix-apres-la-commande).
+
+## Ajouter le bloc au checkout
+
+1. Ouvrez **Paramètres > Paiement** dans votre admin Shopify.
+2. Personnalisez le checkout pour ouvrir l'éditeur.
+3. Ajoutez le bloc « myColis : point relais au checkout » aux options de livraison.
+4. Enregistrez.
+
+Le bouton **Ouvrir les paramètres de paiement**, dans la section **Livraison en point relais** des réglages de myColis, ouvre directement **Paramètres > Paiement**.
+
+## Activer la règle de paiement
+
+Le bloc permet au client de choisir son point. La règle l'empêche de payer sans point quand le bloc lui a proposé des points, ou avec un téléphone qui n'est pas un mobile valide.
+
+1. Ouvrez **Paramètres > Paiement**.
+2. Ajoutez la règle « myColis : point relais à choisir » aux règles du checkout.
+3. Activez-la.
+
+La règle n'agit qu'au moment du paiement, et seulement quand le client a choisi un tarif point relais. La livraison à domicile n'est jamais concernée. Dans la liste des règles du checkout, Shopify affiche sa description : « Bloque le paiement d'un tarif point relais sans point choisi alors que le bloc myColis du checkout propose des points, ou avec un téléphone qui n'est pas un mobile valide. Une panne ne bloque jamais : sans points proposés ni téléphone, le paiement passe. »
+
+## Rendre le téléphone obligatoire
+
+Recommandé : dans **Paramètres > Paiement**, rendez obligatoire le numéro de téléphone de l'adresse de livraison. Colissimo exige un mobile en point relais. La règle refuse un numéro qui n'est pas un mobile valide ; sans numéro, le paiement passe, et vous saisissez le mobile dans l'action **Créer l'étiquette (myColis)** avant de créer l'étiquette. Le bloc du checkout n'a pas de champ mobile : il compte sur ce champ de l'adresse de livraison.
+
+Ce réglage de Shopify vaut pour tout le checkout : le numéro sera demandé à tous les clients, y compris ceux qui se font livrer à domicile.
+
+## Ce que voit le client
+
+Quand le client sélectionne un tarif point relais, le bloc s'ouvre sous ce tarif, titré « Choisissez votre point relais ». La recherche est préremplie avec l'adresse de livraison et se lance aussitôt, puis de nouveau si le client change cette adresse. Le client peut la modifier avec les champs Adresse, Code postal, Ville et Pays. Pour les Pays-Bas, une aide s'affiche sous les champs : « Pays-Bas : code postal de 4 chiffres et 2 lettres, par exemple 1012 AB. »
+
+Chaque point de la liste affiche son nom, son adresse, son type et sa distance, et ses horaires de la semaine sous « Horaires ». Le client sélectionne « Choisir ce point relais ». Un point en congés affiche « Fermé pour congés » et ne peut pas être choisi.
+
+Le point choisi s'affiche sous « Votre point relais », avec le bouton « Changer de point relais ». Si le client passe à un tarif de livraison à domicile, le point est retiré : une commande à domicile ne garde jamais de point relais.
+
+Le bloc s'affiche en français ou en anglais selon la langue du checkout.
+
+## Au moment de payer
+
+Si le bloc a proposé des points au client et qu'il tente de payer sans en avoir choisi un, la règle l'arrête en haut de la page : « Choisissez votre point relais sous la livraison « … » avant de payer. Paiement express : passez par le paiement classique pour le choisir. »
+
+Les paiements express, comme Apple Pay ou Google Pay, dépendent de l'endroit où le client les lance. Lancé depuis le panier, avant le checkout, le paiement passe sans point, et la commande arrive dans le filtre **Relais à choisir** de la page **Envois**. Lancé du checkout après l'affichage des points, il est refusé, et le client est invité à revenir au paiement classique, le seul où le bloc s'affiche.
+
+La règle contrôle aussi le mobile, pris dans le téléphone de l'adresse de livraison, ou à défaut dans celui du client. Sans numéro, ou si Shopify ne le transmet pas, le paiement passe et vous saisissez le mobile dans l'action. Un numéro présent qui n'est pas un mobile valide est refusé : le message s'affiche sous le champ Téléphone de l'adresse de livraison, ou en haut de la page si le numéro vient du client.
+
+| Cas | Message affiché au client |
+|---|---|
+| Point en France, numéro qui ne commence pas par 06 ou 07 | « Livraison en point relais : saisissez dans le champ Téléphone de l'adresse de livraison un mobile français commençant par 06 ou 07. » |
+| Point en Belgique, numéro qui n'est pas un mobile belge | « Livraison en point relais : saisissez dans le champ Téléphone de l'adresse de livraison un mobile belge commençant par 04 ou +324. » |
+| Autre pays, numéro mal formé | « Livraison en point relais : saisissez dans le champ Téléphone de l'adresse de livraison votre mobile au format international (+…). » |
+| Chiffres qui se suivent ou se répètent | « Livraison en point relais : ce numéro de mobile n'est pas accepté, ses chiffres se suivent ou se répètent. Saisissez votre vrai mobile dans le champ Téléphone de l'adresse de livraison. » |
+
+Un client dont le checkout n'est pas en français voit ces messages en anglais. Le message sur le point et celui sur le mobile peuvent s'afficher ensemble.
+
+## Quand le choix est impossible
+
+Une panne ne bloque jamais le client. Si la recherche ne trouve aucun point, échoue ou n'est pas disponible, le bloc affiche la cause, puis « Vous pouvez payer sans point relais : il sera choisi après la commande. » Le paiement passe. Si le bloc ne peut pas enregistrer de point sur la commande, il affiche « Le point relais sera choisi après la commande. » Et si le bloc ne s'affiche pas, la règle laisse aussi passer.
+
+Dans tous ces cas, la commande arrive sans point dans le filtre **Relais à choisir** de la page **Envois**. Le client peut le choisir sur la page de remerciement et dans le suivi de commande, si vous y avez placé les blocs, voir [Choix après la commande](/docs/points-relais/choix-apres-la-commande). Sinon, vous le choisissez dans l'action **Créer l'étiquette (myColis)**.
+
+## Messages de la recherche
+
+| Message affiché au client | Cause |
+|---|---|
+| « Aucun point relais trouvé autour de cette adresse. Essayez un autre code postal ou une autre ville. » | Aucun point près de l'adresse. |
+| « Vérifiez le code postal et la ville. » | Code postal ou ville incorrect. |
+| « La livraison en point relais n'est pas proposée vers ce pays. » | Pays sans point relais. |
+| « Le choix du point relais n'est pas disponible pour le moment. » | La recherche est refusée par Colissimo pour votre compte, par exemple une clé API refusée ou un service Points relais non ouvert. |
+| « La recherche des points relais a échoué. Réessayez dans un instant. » | Erreur passagère de Colissimo. |
+| « Votre session a expiré. Rechargez la page pour choisir votre point relais. » | Le checkout est resté ouvert trop longtemps. |
+
+## Après la commande
+
+Le point choisi est enregistré sur la commande. Il apparaît dans l'action **Créer l'étiquette (myColis)** et dans le bloc **myColis** de la fiche commande. myColis le vérifie auprès de Colissimo au moment de créer l'étiquette, voir [Choisir le point dans l'admin](/docs/points-relais/choix-dans-l-admin).
+
+## Commandes créées dans l'admin
+
+La règle s'applique aussi aux commandes que vous créez dans l'admin Shopify. Une commande créée dans l'admin avec un tarif point relais n'a pas de point : elle arrive dans le filtre **Relais à choisir** de la page **Envois**. Si Shopify affiche « Unresolved business rules » à sa création, sélectionnez **Ignore and create order**, puis choisissez le point dans l'action **Créer l'étiquette (myColis)**.
+
+## Si le bloc ne s'affiche pas
+
+Vérifiez dans l'ordre : que votre boutique est sur le plan Plus de myColis, dans la page **Plans** ; que le tarif sélectionné par le client est coché dans **Livraison en point relais**, avec exactement le même nom ; que votre connexion Colissimo utilise une clé API ; que le mode test n'est pas activé sur une boutique réelle ; et que le bloc est bien placé dans les options de livraison de l'éditeur du checkout. Le bloc **Choix du point relais par le client** des réglages de myColis indique ce qui manque.
+
+Quand votre boutique quitte le plan Plus de myColis, le bloc disparaît du checkout et la règle cesse de bloquer le paiement. Les commandes à tarif point relais arrivent alors sans point dans **Relais à choisir**.
+
+## Pour aller plus loin
+
+- [Tarifs point relais](/docs/points-relais/tarifs-point-relais)
+- [Choix après la commande](/docs/points-relais/choix-apres-la-commande)
+- [Plans et quotas](/docs/compte/plans-et-quotas)

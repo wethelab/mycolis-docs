@@ -1,0 +1,74 @@
+---
+sidebar_position: 2
+title: "Générer des étiquettes en lot"
+description: "Créez les étiquettes de cinquante commandes au plus à la fois depuis la liste des commandes, et lisez le rapport."
+---
+
+# Générer des étiquettes en lot
+
+L'action groupée **Créer les étiquettes (myColis)** crée en une fois les étiquettes de plusieurs commandes sélectionnées dans la liste des commandes de Shopify. Cette page explique les règles qu'elle applique, comment lire son rapport et comment imprimer le lot.
+
+## Avant de commencer
+
+Il vous faut un expéditeur actif pour chaque emplacement concerné et vos réglages d'expédition à jour, car la génération groupée ne pose aucune question : elle applique vos réglages à chaque commande.
+
+## Lancer la génération
+
+1. Ouvrez **Commandes** dans votre admin Shopify.
+2. Cochez les commandes à expédier, 50 au plus.
+3. Sélectionnez **Créer les étiquettes (myColis)** dans les actions groupées.
+4. Sélectionnez **Générer** suivi du nombre d'étiquettes, par exemple **Générer 12 étiquettes**.
+5. Gardez la fenêtre ouverte jusqu'à la fin.
+
+La fenêtre suit l'avancement : « Génération en cours : 6 sur 12. Gardez cette fenêtre ouverte. » Au-delà de 50 commandes sélectionnées, elle refuse de commencer et vous demande de réduire la sélection.
+
+## Les règles appliquées
+
+Chaque commande reçoit le service par défaut de vos réglages et le poids calculé à partir de ses produits et de l'emballage. L'assurance automatique s'applique quand la valeur atteint votre seuil. Une commande passée avec un tarif point relais part en point relais si son point est choisi.
+
+Sur les plans Gratuit et Starter, les étiquettes se créent jusqu'à ce que le quota mensuel de votre plan soit atteint. Les commandes suivantes sont ignorées, voir [Plans et quotas](/docs/compte/plans-et-quotas). La fenêtre rappelle ces règles avant de commencer : « 12 commandes sélectionnées. Chaque commande reçoit le service par défaut de vos réglages (point relais pour un tarif point relais) et un poids calculé. Sont ignorées les commandes à plusieurs emplacements, déjà expédiées ou en attente, les commandes en point relais dont le point est à choisir ou refusé, ou sans prénom, email ou mobile valide, et celles au-delà du quota mensuel de votre plan. »
+
+Vous ne pouvez rien modifier commande par commande dans la fenêtre. Pour changer le poids, le service, l'assurance ou le DDP d'une commande, créez son étiquette depuis sa fiche avec l'action **Créer l'étiquette (myColis)**, voir [Créer une étiquette](/docs/etiquettes/creer-une-etiquette).
+
+## Lire le rapport
+
+À la fin, des badges résument le lot, par exemple **3 expédiées**, **1 en démo**, **2 à relancer**, **1 ignorée** et **1 erreur**, puis un tableau donne une ligne par commande avec les colonnes **Commande**, **Résultat**, **N° de colis** et **Détail**. Un message commun à toutes les commandes du lot s'affiche une seule fois en haut, au lieu de se répéter sur chaque ligne. Le message du quota s'y affiche aussi, avec le bouton **Voir les plans**.
+
+| Résultat | Signification |
+|---|---|
+| **Expédiée** | L'étiquette est créée et la commande marquée expédiée. |
+| **Démo, non expédiée** | Mode test sur une boutique réelle : une étiquette d'exemple est créée et la commande n'est pas modifiée. Sur une boutique de développement, la commande est marquée expédiée et compte parmi les **Expédiées**. |
+| **Expédition à relancer** | L'étiquette est créée, mais Shopify n'a pas marqué la commande expédiée. Relancez l'expédition depuis la commande ou depuis la page **Envois**. |
+| **Ignorée** | La commande n'a pas été traitée, pour la raison donnée dans **Détail**. Aucune étiquette n'est créée. |
+| **Erreur** | Colissimo ou myColis a refusé l'envoi. Le détail donne la cause. |
+
+## Pourquoi une commande est ignorée
+
+Une commande est ignorée quand la génération groupée ne peut pas la traiter sans vous. La colonne **Détail** donne la raison :
+
+| Raison | Message |
+|---|---|
+| Commande déjà expédiée ou vide | « Rien à expédier : la commande est déjà expédiée ou ne contient aucun article à envoyer. » |
+| Expédition en attente | « Expédition en attente dans Shopify. Libérez la commande avant de générer l'étiquette. » |
+| Retrait ou livraison locale | « Cette commande n'est pas livrée par transporteur (retrait ou livraison locale) : aucune étiquette à générer. » |
+| Plusieurs emplacements | « Commande expédiée depuis … emplacements : créez son étiquette depuis la commande, en choisissant l'emplacement. » |
+| Point relais à choisir | « Point relais à choisir : le client a choisi un tarif point relais sans point. Choisissez le point dans l'action myColis, ou expédiez à domicile. » |
+| Point relais refusé | Le point choisi par le client n'existe plus, est en congés ou ne peut pas recevoir le colis. |
+| Destinataire en point relais incomplet | Le prénom, l'email ou le mobile du destinataire manque ou est refusé. |
+| Quota du plan atteint | « Quota du plan Gratuit atteint : 10 étiquettes ce mois-ci. Choisissez un plan supérieur, ou attendez le 1er du mois prochain (heure de Paris). Le mode test reste illimité. » |
+
+Une commande en point relais n'est jamais expédiée à domicile en silence : traitez-la depuis sa fiche, où l'action vous laisse choisir le point et compléter le destinataire.
+
+Si la connexion à myColis échoue pendant le lot, les commandes concernées portent la mention « Impossible de joindre myColis pour cette commande. Relancez la génération pour elle. » Sélectionnez-les de nouveau dans la liste des commandes et relancez.
+
+## Imprimer le lot
+
+Le rapport se termine par le bouton **Imprimer les étiquettes**, qui ouvre dans un nouvel onglet un seul PDF avec les étiquettes du lot et leurs CN23. Les étiquettes en ZPL se téléchargent avec **Télécharger le fichier ZPL**, en un seul fichier.
+
+Si les liens d'impression ne sont pas disponibles, le rapport l'indique : « Liens d'impression indisponibles pour le moment. Imprimez depuis la page Envois de myColis. » La carte **Étiquettes à imprimer** de la page **Envois** reprend alors les étiquettes du lot.
+
+## Pour aller plus loin
+
+- [Imprimer les étiquettes](/docs/etiquettes/impression)
+- [La page Envois](/docs/envois/page-envois)
+- [Choisir le point dans l'admin](/docs/points-relais/choix-dans-l-admin)

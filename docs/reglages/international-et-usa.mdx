@@ -1,0 +1,69 @@
+---
+sidebar_position: 4
+title: "International et USA"
+description: "Réglez le DDP, les dimensions, la non-livraison hors Union européenne et les données douane utilisées hors de France."
+---
+
+# International et USA
+
+La section **International et USA** des réglages rassemble ce dont myColis a besoin pour les envois hors de France : le DDP vers les États-Unis, les dimensions du colis, la consigne en cas de non-livraison et les données douane de la CN23. Les valeurs que vous saisissez ici servent quand la commande ou le produit ne fournit pas l'information.
+
+Les modifications s'enregistrent avec la barre d'enregistrement de Shopify, comme les sections **Expédition** et **Étiquettes et douane**.
+
+## DDP vers les États-Unis
+
+En DDP, Colissimo avance les droits et taxes d'importation à la place du destinataire, puis vous les refacture. Sans DDP, le destinataire les paie à la livraison.
+
+L'interrupteur **USA : droits et taxes payés par l'expéditeur (DDP) par défaut** est désactivé à l'origine. Activez-le seulement si le DDP figure dans votre contrat Colissimo. Le choix reste modifiable pour chaque envoi vers les États-Unis, dans l'action **Créer l'étiquette (myColis)**.
+
+Un envoi en DDP demande les dimensions du colis. Les champs **Longueur**, **Largeur** et **Hauteur** de **Dimensions par défaut du colis** s'expriment en centimètres entiers, de 1 à 274. Ils servent quand vous ne saisissez pas de dimensions dans l'action. Remplissez les trois ou laissez-les tous vides pour les saisir à chaque envoi : « Dimensions invalides : renseignez les trois en cm entiers (de 1 à 274), ou laissez-les toutes vides. »
+
+La **Description générique en anglais (DDP)** résume le contenu de vos colis en anglais, par exemple Clothing, en 64 caractères au plus, sans accents. Elle est imprimée sur la CN23 des envois en DDP. Sans elle, myColis reprend la description du premier article.
+
+## Si le colis ne peut pas être livré
+
+Pour un envoi hors de l'Union européenne, Colissimo demande quoi faire d'un colis qui ne peut pas être livré. Le champ **Hors Union européenne, si le colis ne peut pas être livré** propose **Retour à l'expéditeur en prioritaire, payant**, le réglage d'origine, et **Ne pas retourner (colis abandonné)**.
+
+Selon le pays, Colissimo n'accepte qu'une des deux options : myColis applique alors l'autre, sans rien vous demander. La consigne choisie est imprimée sur l'étiquette.
+
+## Code SH et pays d'origine par défaut
+
+La CN23 indique pour chaque article son code SH, le code de la nomenclature douanière, et son pays d'origine. myColis les lit dans la fiche produit Shopify, rubrique Douane. Pour les produits qui n'en ont pas, il prend les valeurs par défaut de cette section.
+
+Le **Code SH par défaut** compte 6, 8 ou 10 chiffres, par exemple 330499. Le **Pays d'origine par défaut** est un code pays de 2 lettres, par exemple FR. Laissez un champ vide pour exiger la valeur sur chaque produit : une CN23 incomplète est alors refusée avant l'envoi à Colissimo, avec la liste des produits à compléter. Quand une valeur par défaut sert, l'action le signale : « CN23 : code SH ou pays d'origine par défaut des réglages appliqué à : … ».
+
+Une valeur par défaut doit rester juste pour les produits qu'elle couvre. Si vos produits relèvent de codes différents, renseignez-les dans chaque fiche produit.
+
+## Frais de port déclarés si la livraison est offerte
+
+Colissimo exige sur la CN23 le prix du transport, et refuse 0 €, même quand votre client n'a rien payé pour la livraison. Dans ce cas, myColis déclare le montant de **Frais de port à déclarer si la livraison est offerte**, de 0,01 à 500 €. Indiquez votre coût moyen d'un envoi Colissimo hors Union européenne, par exemple 14,90.
+
+Laissez le champ vide pour bloquer ces envois : l'étiquette d'une commande à livraison offerte qui demande une CN23 est alors refusée tant que vous ne saisissez pas de montant dans l'action. Quand le réglage sert, l'action l'indique : « Livraison offerte : … € de frais de port déclarés sur la CN23 (réglages). »
+
+## Données douane de vos produits
+
+L'encadré **Données douane de vos produits** résume ce qu'il faut renseigner dans Shopify.
+
+Dans chaque fiche produit Shopify, la rubrique Douane accueille le code SH, 6 chiffres au moins, et le pays d'origine. Ils sont obligatoires pour la CN23 ; à défaut, myColis applique les valeurs par défaut de la section.
+
+Pour une description douane en anglais, différente du titre du produit, créez une définition de métachamp produit :
+
+1. Ouvrez **Paramètres** dans votre admin Shopify, puis **Données personnalisées**, puis **Produits**.
+2. Sélectionnez **Ajouter une définition**.
+3. Nommez-la Description douane.
+4. Saisissez `mycolis.customs_description` comme espace de noms et clé.
+5. Choisissez le type texte sur une seule ligne, puis enregistrez.
+
+Renseignez ensuite ce champ en anglais sur vos produits, en 64 caractères au plus. Sans lui, myColis utilise le titre du produit. L'encadré indique si la définition existe : « Définition mycolis.customs_description trouvée. », ou « Définition mycolis.customs_description absente : les CN23 reprennent le titre des produits. »
+
+La description anglaise est exigée pour les envois vers les États-Unis et en DDP. Pour un produit qui n'en a pas, l'action avertit : « Description douane en anglais absente pour : … Le titre du produit est utilisé ; ajoutez le métachamp mycolis.customs_description à ces produits. »
+
+## Produits soumis à des obligations aux États-Unis
+
+La section rappelle : « USA : certains produits (jouets, articles pour enfants, cosmétiques...) relèvent d'obligations CPSC ou FDA. Vérifiez-les avant d'expédier. » Le lien **Conseils Colissimo pour les USA** ouvre la page de Colissimo consacrée aux envois vers les États-Unis.
+
+## Pour aller plus loin
+
+- [Déclaration CN23](/docs/international/declaration-cn23)
+- [Envois vers les États-Unis](/docs/international/etats-unis)
+- [Étiquettes et douane](/docs/reglages/etiquettes-et-douane)

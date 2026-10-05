@@ -1,0 +1,49 @@
+---
+sidebar_position: 3
+title: "Envois vers les États-Unis"
+description: "Préparez un envoi vers les États-Unis : EORI, État, mobile, description en anglais et DDP."
+---
+
+# Envois vers les États-Unis
+
+Un envoi vers les États-Unis demande plus d'informations qu'un envoi dans l'Union européenne : un n° EORI, une adresse complète avec l'État, le mobile du destinataire et des descriptions d'articles en anglais. Cette page les passe en revue, avec le choix du DDP.
+
+## Avant de commencer
+
+Renseignez votre n° EORI dans la section **Étiquettes et douane** des réglages, voir [Étiquettes et douane](/docs/reglages/etiquettes-et-douane). Sans lui, myColis refuse toute étiquette vers les États-Unis : « EORI de l'expéditeur obligatoire pour les envois vers les États-Unis. Renseignez-le dans Réglages > Étiquettes et douane. »
+
+## L'adresse et le mobile du destinataire
+
+L'adresse de livraison doit porter l'État, en code à 2 lettres comme NY ou CA. Shopify le renseigne d'ordinaire au checkout. S'il manque, l'étiquette est refusée : « État ou province du destinataire manquant (code à 2 lettres, obligatoire vers les États-Unis et le Canada). Corrigez l'adresse de livraison de la commande dans Shopify. »
+
+Colissimo exige le mobile du destinataire vers les États-Unis. myColis le transmet toujours pour ces envois, même si vous avez désactivé la transmission dans les réglages. S'il manque ou n'est pas valide : « Mobile du destinataire manquant ou invalide : Colissimo l'exige vers les États-Unis et en DDP. Ajoutez un numéro de mobile à l'adresse de livraison de la commande dans Shopify. »
+
+## Des descriptions en anglais
+
+Les articles d'un envoi vers les États-Unis doivent être décrits en anglais sur la CN23. myColis prend la description douane anglaise de chaque produit, un champ que vous créez dans Shopify sous le nom `mycolis.customs_description`, voir [International et USA](/docs/reglages/international-et-usa).
+
+Pour un produit qui n'a pas ce champ, myColis reprend le titre du produit et vous avertit : « Description douane en anglais absente pour : … Le titre du produit est utilisé ; ajoutez le métachamp mycolis.customs_description à ces produits. » Si vos titres sont en français, renseignez le champ pour les produits que vous expédiez aux États-Unis.
+
+## Avec ou sans DDP
+
+Sans DDP, le destinataire paie les droits et taxes d'importation à la livraison. En DDP, Colissimo les avance puis vous les refacture : votre client n'a rien à payer à réception. Le DDP doit figurer dans votre contrat Colissimo.
+
+Le réglage **USA : droits et taxes payés par l'expéditeur (DDP) par défaut**, dans la section **International et USA**, fixe le choix proposé. Pour chaque envoi, l'interrupteur **Droits et taxes payés par l'expéditeur (DDP)** de l'action le confirme ou le change.
+
+Un envoi en DDP demande aussi les dimensions du colis, saisies dans l'action ou reprises des dimensions par défaut de vos réglages. Colissimo accepte une longueur de 274 cm au plus, et une somme de la longueur, de deux fois la largeur et de deux fois la hauteur de 330 cm au plus. La CN23 d'un envoi en DDP porte en outre une description générique du contenu en anglais, par exemple Clothing, tirée du réglage **Description générique en anglais (DDP)** ou, à défaut, de la description du premier article.
+
+Sans dimensions, l'action les réclame : « Dimensions du colis obligatoires en DDP (longueur, largeur et hauteur en cm). Saisissez-les pour cet envoi ou définissez des dimensions par défaut dans les réglages. » Si le DDP n'est pas dans votre contrat, Colissimo le refuse : « Option DDP refusée : absente de votre contrat ou indisponible vers cette destination. Désactivez le DDP pour cet envoi ou dans les réglages. »
+
+## Produits soumis à des obligations
+
+À chaque envoi vers les États-Unis, l'action rappelle : « USA : certains produits (jouets, articles pour enfants, cosmétiques...) relèvent d'obligations CPSC ou FDA. Vérifiez vos produits avant d'expédier. » myColis ne vérifie pas ces obligations à votre place. Le lien **Conseils Colissimo pour les USA**, dans la section **International et USA** des réglages, ouvre la page de Colissimo consacrée aux envois vers les États-Unis.
+
+## Le reste de l'envoi
+
+Pour le reste, un envoi vers les États-Unis suit les règles de tout envoi hors de l'Union européenne : une CN23 jointe, avec les codes SH et les pays d'origine de vos produits, des frais de port déclarés jamais nuls et des valeurs converties en euros, voir [Déclaration CN23](/docs/international/declaration-cn23). Il part en Domicile avec signature, Colissimo ne proposant pas la livraison sans signature vers les États-Unis, et il ne peut pas partir en point relais.
+
+## Pour aller plus loin
+
+- [Déclaration CN23](/docs/international/declaration-cn23)
+- [International et USA](/docs/reglages/international-et-usa)
+- [Zones et services](/docs/international/zones-et-services)

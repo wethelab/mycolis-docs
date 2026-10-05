@@ -1,0 +1,55 @@
+---
+sidebar_position: 2
+title: "Réglages d'expédition"
+description: "Réglez le service, les poids, l'assurance et les notifications que myColis applique par défaut à vos étiquettes."
+---
+
+# Réglages d'expédition
+
+La section **Expédition** des réglages fixe ce que myColis applique à chaque étiquette sans que vous ayez à le choisir : le service, le calcul du poids, l'assurance et les notifications au client. Tout reste modifiable commande par commande dans l'action de création d'étiquette.
+
+## Enregistrer ces réglages
+
+Ouvrez myColis, puis **Réglages**, et modifiez les champs de la section **Expédition**. Dès le premier changement, la barre d'enregistrement de Shopify apparaît en haut de l'écran : enregistrez depuis cette barre. Le message **Réglages enregistrés** confirme l'enregistrement. La même barre enregistre aussi les sections **Étiquettes et douane** et **International et USA**.
+
+## Service par défaut
+
+Le **Service par défaut** est celui que l'action propose et que la génération groupée applique, au choix entre **Colissimo Domicile sans signature**, le réglage d'origine, et **Colissimo Domicile avec signature**.
+
+Il vaut pour les envois à domicile vers la France, Monaco, Andorre, l'outre-mer, la Belgique et la Suisse. Vers les autres pays, Colissimo ne propose pas la livraison sans signature : myColis passe alors l'envoi en Domicile avec signature, quel que soit le réglage, et l'action l'annonce par « Domicile sans signature non proposé vers ce pays (…) : envoi en Domicile avec signature. » Un envoi assuré part lui aussi toujours avec signature.
+
+## Poids du colis
+
+myColis additionne le poids des articles de la commande, tel qu'il figure dans Shopify, et le **Poids de l'emballage**, en grammes, de 0 à 30 000. Réglez-le sur le poids moyen de vos cartons et de leur calage.
+
+Un article sans poids dans Shopify compte pour le **Poids de secours par article**, 100 g par défaut, de 1 à 30 000 g. Ce poids s'ajoute aux poids connus et à l'emballage. L'action liste alors les articles concernés : « Articles sans poids : … (100 g comptés par article). Poids retenu : … g. Vérifiez-le avant d'expédier. » Le mieux reste de renseigner le poids de chaque produit dans Shopify.
+
+Le poids proposé se corrige dans l'action, en kilogrammes. Colissimo n'accepte pas plus de 30 kg par colis.
+
+## Assurance
+
+**Assurer automatiquement au-dessus de** fixe un montant en euros, sans centimes, jusqu'à 5 000 €. Quand la valeur des articles expédiés, taxes comprises et frais de port exclus, atteint ce montant, le colis est assuré. Laissez le champ vide pour n'assurer qu'à la demande, en cochant **Assurer le colis** dans l'action.
+
+Colissimo exige la signature du destinataire pour un colis assuré à domicile. Un envoi assuré part donc automatiquement en Domicile avec signature, et l'action l'indique : « Envoi assuré : Domicile avec signature appliqué, comme l'exige Colissimo. »
+
+Le **Plafond d'assurance de votre contrat** est le palier le plus élevé que votre contrat autorise, au choix de **Jusqu'à 150 €** à **Jusqu'à 5 000 €** (le réglage d'origine). myColis retient le plus petit palier qui couvre la valeur du colis, sans dépasser ce plafond. Au-delà, le colis est assuré jusqu'au plafond seulement, avec l'avertissement « Valeur des articles supérieure au plafond d'assurance : colis assuré jusqu'à … € seulement. »
+
+En point relais, Colissimo plafonne l'assurance à 1 000 €, et le service ne change pas. Pour une boutique dans une autre devise que l'euro, la valeur est convertie en euros au taux de référence de la BCE, sauf si le client a payé en euros. Si ce taux n'est pas disponible alors que l'assurance peut s'appliquer, l'étiquette est refusée le temps qu'il le redevienne : « Taux de change … vers EUR indisponible (taux de référence BCE), nécessaire pour la CN23 ou pour assurer le colis. Réessayez dans quelques minutes. »
+
+Si Colissimo refuse l'assurance, c'est que l'option n'est pas dans votre contrat ou que le palier est trop élevé : baissez le plafond, ou retirez l'assurance pour cet envoi.
+
+## Notifications au client
+
+myColis n'envoie jamais d'email à vos clients. Deux réglages décident qui les prévient.
+
+**Notifier le client à l'expédition**, activé par défaut, demande à Shopify d'envoyer son email de confirmation d'expédition au moment où myColis marque la commande comme expédiée. L'email contient le lien de suivi Colissimo, construit par Shopify à partir du n° de colis. Désactivé, la commande est marquée expédiée sans email de Shopify.
+
+**Transmettre l'email et le mobile du client à Colissimo**, activé par défaut, permet à Colissimo d'envoyer ses propres notifications de livraison par email et SMS. Colissimo les exige pour un envoi vers les États-Unis, un envoi en DDP et une livraison en point relais : dans ces cas, myColis les transmet même si le réglage est désactivé, et l'action le signale.
+
+Un email ou un téléphone que myColis ne reconnaît pas comme valide n'est pas transmis, avec un avertissement dans l'action, par exemple « Téléphone du destinataire non reconnu comme un numéro français : il n'est pas transmis à Colissimo. »
+
+## Pour aller plus loin
+
+- [Créer une étiquette](/docs/etiquettes/creer-une-etiquette)
+- [Étiquettes et douane](/docs/reglages/etiquettes-et-douane)
+- [Zones et services](/docs/international/zones-et-services)

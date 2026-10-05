@@ -1,0 +1,59 @@
+---
+sidebar_position: 3
+title: "Imprimer les étiquettes"
+description: "Imprimez une étiquette ou un lot depuis Shopify ou myColis, en PDF ou sur une imprimante thermique en ZPL."
+---
+
+# Imprimer les étiquettes
+
+Une étiquette myColis s'imprime depuis la commande, depuis une sélection de commandes ou depuis la page **Envois**, autant de fois que nécessaire. Cette page décrit chaque chemin et la différence entre une étiquette PDF et un fichier ZPL.
+
+## Imprimer depuis une commande
+
+1. Ouvrez la commande dans Shopify.
+2. Ouvrez le menu **Imprimer**.
+3. Sélectionnez **Étiquettes myColis**.
+
+La fenêtre indique « Préparation des étiquettes… », puis « Étiquette …, prête à imprimer. », avec le n° de colis, et affiche l'étiquette dans l'aperçu de Shopify, que vous imprimez avec le bouton d'impression de Shopify. Si la commande n'a pas d'étiquette myColis, la fenêtre l'indique : « Aucune étiquette myColis pour cette commande. Créez-la depuis Plus d'actions, Créer l'étiquette (myColis). »
+
+L'action de création d'étiquette et le bloc **myColis** de la fiche commande proposent aussi un bouton **Imprimer** ou **Imprimer l'étiquette**, qui ouvre le PDF dans un nouvel onglet.
+
+## Imprimer plusieurs commandes
+
+1. Ouvrez **Commandes** dans votre admin Shopify.
+2. Cochez les commandes, 50 au plus.
+3. Ouvrez **Imprimer** dans les actions groupées, puis sélectionnez **Étiquettes myColis**.
+
+Les étiquettes arrivent dans un seul PDF, dans l'ordre de votre sélection : « 12 étiquettes dans un seul PDF, prêtes à imprimer. », ou « 1 étiquette dans le PDF, prête à imprimer. » si une seule commande en a une. Les commandes sélectionnées qui n'ont pas d'étiquette myColis sont signalées et laissées de côté, par exemple « 2 commandes n'ont pas d'étiquette myColis : elles ne sont pas imprimées. »
+
+## La CN23
+
+Quand un envoi a une déclaration douanière séparée, elle suit son étiquette dans le même fichier : vous imprimez les deux d'un coup. Avec un format « avec CN23 sur la même page », la déclaration fait partie de l'étiquette.
+
+## Étiquettes en ZPL
+
+Un navigateur ne sait pas imprimer le ZPL. Si vos étiquettes sont en ZPL, la fenêtre d'impression affiche **Format ZPL** à la place de l'aperçu : « 1 étiquette au format ZPL : le navigateur ne peut pas l'imprimer. Téléchargez le fichier et envoyez-le à votre imprimante thermique. » Sélectionnez **Télécharger le fichier ZPL** : vous obtenez un fichier `.zpl`, une seule pièce pour tout le lot.
+
+Envoyez ensuite le fichier à l'imprimante, qui doit comprendre le ZPL et avoir la résolution du format choisi, 203 ou 300 dpi : avec Zebra Setup Utilities sous Windows, avec la commande `lp -o raw` sous macOS, ou par le port 9100 d'une imprimante réseau.
+
+Si vous préférez imprimer depuis Shopify avec l'aperçu, choisissez le format **PDF 10 x 15 cm** et imprimez en taille réelle avec le pilote de votre imprimante thermique, voir [Étiquettes et douane](/docs/reglages/etiquettes-et-douane).
+
+## Imprimer depuis la page Envois
+
+Dans la page **Envois** de myColis, chaque ligne a un bouton **Imprimer**, ou **Télécharger le ZPL**. Le filtre **À imprimer** liste les étiquettes jamais ouvertes, et sa carte **Étiquettes à imprimer** les réunit en un seul fichier, des plus anciennes aux plus récentes, par lots de 50 : **Imprimer** suivi du nombre d'étiquettes, ou **Télécharger** suivi du nombre d'étiquettes ZPL. Quand plus de 50 étiquettes attendent, la carte le précise et le lot suivant s'affiche une fois celles-ci ouvertes.
+
+## Étiquette imprimée ou à imprimer
+
+Une étiquette passe en imprimée dès que son fichier est ouvert, quel que soit le chemin utilisé, et quitte le filtre **À imprimer**. Si l'impression a échoué, remettez-la dans la liste depuis la page **Envois** : dans le menu de la ligne, sélectionnez **Marquer comme à imprimer**. L'inverse, **Marquer comme imprimée**, sert pour une étiquette imprimée par un autre moyen.
+
+Une réimpression ne compte pas dans le quota d'étiquettes de votre plan, voir [Plans et quotas](/docs/compte/plans-et-quotas).
+
+## Lien d'impression expiré
+
+Les fichiers s'ouvrent par un lien valable 10 minutes. Un lien trop ancien affiche « Lien d'impression expiré (valable 10 minutes). Relancez l'impression depuis Shopify ou depuis la page Envois de myColis. » Relancez l'impression : un nouveau lien est créé à chaque fois.
+
+## Pour aller plus loin
+
+- [Étiquettes et douane](/docs/reglages/etiquettes-et-douane)
+- [La page Envois](/docs/envois/page-envois)
+- [Créer une étiquette](/docs/etiquettes/creer-une-etiquette)

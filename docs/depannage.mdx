@@ -1,0 +1,187 @@
+---
+sidebar_position: 10
+title: "Dépannage"
+description: "Les problèmes les plus fréquents avec myColis, du symptôme à la cause et à la solution."
+---
+
+# Dépannage
+
+Cette page reprend les problèmes que vous risquez de rencontrer avec myColis, chacun avec le message affiché, sa cause et les vérifications qui le règlent. Commencez ici quand une étiquette, un point relais ou une impression ne se comporte pas comme prévu.
+
+## Le test de connexion échoue
+
+Le bandeau du test de connexion ne dit pas **Connexion réussie**.
+
+1. Lisez le titre du bandeau. **Identifiants refusés** désigne le n° client ou la clé API ; **Requête de test refusée**, les données de l'envoi fictif, le plus souvent l'adresse de l'expéditeur ; **Test impossible pour le moment**, une absence de réponse de Colissimo.
+2. Vérifiez votre n° client, six chiffres visibles dans Colissimo Box, et votre clé API, générée dans Colissimo Box, rubrique Mon profil. Collez la clé de nouveau et sélectionnez **Enregistrer et tester la connexion**.
+3. Patientez quelques minutes si le message dit « Trop de tentatives avec des identifiants incorrects » : Colissimo bloque l'authentification après plusieurs échecs.
+4. Corrigez l'expéditeur si le message le désigne, dans la section **Expéditeurs**, puis sélectionnez **Tester la connexion**.
+5. Configurez un expéditeur si le message dit « Identifiants enregistrés. Configurez au moins un expéditeur pour tester la connexion. » : le test en a besoin, voir [Expéditeurs](/docs/reglages/expediteurs).
+
+## L'étape « Connecter et vérifier » reste ouverte
+
+La carte **Configuration de myColis** ne coche pas l'étape **Connecter et vérifier votre compte Colissimo**.
+
+1. Vérifiez le mode test. Tant qu'il est activé, l'étape reste ouverte, même avec des identifiants vérifiés : désactivez-le quand vous passez aux vraies étiquettes, voir [Mode test](/docs/prise-en-main/mode-test).
+2. Vérifiez le dernier test de connexion. L'étape ne se coche qu'après un test réussi, mode test désactivé.
+
+## L'action refuse de créer l'étiquette
+
+L'action affiche un message bloquant avant même d'interroger Colissimo.
+
+| Message | Que faire |
+|---|---|
+| « Connectez votre compte Colissimo dans les réglages, ou activez le mode test. » | Enregistrez vos identifiants, voir [Connecter votre contrat Colissimo](/docs/prise-en-main/connexion-colissimo). |
+| « Aucun expéditeur actif pour l'emplacement « … ». Configurez-le dans les réglages. » | Configurez ou activez l'expéditeur de cet emplacement, voir [Expéditeurs](/docs/reglages/expediteurs). |
+| « Expédition en attente dans Shopify. Libérez la commande avant de générer l'étiquette. » | Levez la mise en attente de l'expédition sur la commande dans Shopify. |
+| « Rien à expédier : la commande est déjà expédiée ou ne contient aucun article à envoyer. » | Rien à faire : la commande est déjà traitée, par myColis ou autrement. |
+| « Cette commande n'est pas livrée par transporteur (retrait ou livraison locale) : aucune étiquette à générer. » | Rien à faire : le client a choisi le retrait ou la livraison locale. |
+| « L'emplacement assigné à cette commande n'existe plus dans Shopify. Réassignez la commande à un emplacement. » | Changez l'emplacement de la commande dans Shopify. |
+| « Une étiquette est déjà en cours de génération pour cette commande. Patientez quelques instants. » | Attendez la fin de la génération en cours, puis rouvrez l'action. |
+| « Commande introuvable dans Shopify. myColis n'accède qu'aux commandes des 60 derniers jours : pour une commande plus ancienne ou supprimée, créez l'étiquette dans Colissimo Box. » | Créez l'étiquette de cette commande dans Colissimo Box : Shopify ne donne pas accès à myColis aux commandes de plus de 60 jours. |
+| « Quota du plan Gratuit atteint : 10 étiquettes ce mois-ci. Choisissez un plan supérieur, ou attendez le 1er du mois prochain (heure de Paris). Le mode test reste illimité. » | Choisissez un plan supérieur avec **Voir les plans**, puis **Changer de plan** : il s'applique tout de suite. Sinon, attendez le 1er du mois, voir [Plans et quotas](/docs/compte/plans-et-quotas). |
+
+## L'adresse du destinataire est refusée
+
+La génération s'arrête sur un message qui renvoie à l'adresse de livraison de la commande.
+
+1. Raccourcissez une adresse trop longue. Colissimo accepte 35 caractères par ligne : « Adresse du destinataire trop longue (… caractères, 35 maximum). Raccourcissez la ligne Adresse de la commande dans Shopify, par exemple en déplaçant le complément dans la ligne Appartement, suite, etc. »
+2. Vérifiez le code postal. En France, à Monaco et en outre-mer, il compte 5 chiffres ; ailleurs, il est obligatoire.
+3. Ajoutez l'État ou la province, en code à 2 lettres, pour les États-Unis et le Canada.
+4. Modifiez l'adresse de livraison sur la fiche commande dans Shopify, puis rouvrez l'action : myColis relit la commande à chaque ouverture.
+5. Vérifiez l'étiquette quand l'action signale « L'adresse contient des caractères non latins, convertis en caractères latins. Vérifiez l'étiquette. » : une adresse en cyrillique ou en grec, par exemple, est transcrite en lettres latines.
+
+## Le poids du colis est faux ou refusé
+
+Le poids proposé ne correspond pas au colis, ou l'étiquette est refusée pour son poids.
+
+1. Lisez l'avertissement « Articles sans poids » : ces articles comptent pour le poids de secours de vos réglages, 100 g par défaut. Renseignez leur poids dans leur fiche produit Shopify.
+2. Vérifiez le **Poids de l'emballage** dans la section **Expédition** des réglages, voir [Réglages d'expédition](/docs/reglages/expedition).
+3. Corrigez le **Poids du colis** dans l'action pour cet envoi.
+4. Répartissez la commande en plusieurs colis si le poids dépasse 30 kg, le maximum de Colissimo : « Colis trop lourd : … g pour 30 kg maximum chez Colissimo. Vérifiez le poids du colis et celui des produits. »
+
+## La CN23 bloque l'étiquette
+
+Un envoi hors de l'Union européenne ou vers l'outre-mer est refusé à cause de sa déclaration douanière.
+
+1. Renseignez le code SH et le pays d'origine des produits cités, dans leur fiche produit Shopify, rubrique Douane, ou définissez des valeurs par défaut dans la section **International et USA** des réglages.
+2. Saisissez les frais de port à déclarer si la livraison était offerte : Colissimo refuse 0 €. Saisissez-les dans l'action, ou réglez **Frais de port à déclarer si la livraison est offerte**.
+3. Expédiez en plusieurs colis si la commande compte trop d'articles différents pour les 10 lignes de la CN23.
+4. Corrigez le poids du colis s'il est trop faible pour ses articles.
+5. Réessayez quelques minutes plus tard si le taux de change de la BCE est indisponible.
+
+Le détail de chaque cas est dans [Déclaration CN23](/docs/international/declaration-cn23).
+
+## L'envoi vers les États-Unis est refusé
+
+1. Renseignez votre n° EORI dans la section **Étiquettes et douane** des réglages : myColis l'exige pour tout envoi vers les États-Unis.
+2. Ajoutez à l'adresse de livraison l'État, en code à 2 lettres, et un numéro de mobile.
+3. Saisissez les dimensions du colis si le DDP est activé, ou désactivez le DDP s'il ne figure pas dans votre contrat.
+
+Voir [Envois vers les États-Unis](/docs/international/etats-unis).
+
+## « Domicile sans signature » est grisé ou remplacé
+
+1. Vérifiez la destination. Hors de France, de Monaco, d'Andorre et de l'outre-mer, Colissimo ne livre sans signature que vers la Belgique et la Suisse. Ailleurs, myColis passe l'envoi en Domicile avec signature.
+2. Vérifiez l'assurance. Un colis assuré à domicile part toujours avec signature, comme l'exige Colissimo : décochez **Assurer le colis** si vous voulez un envoi sans signature.
+
+## « Point relais » est grisé dans l'action
+
+La raison s'affiche sous l'option.
+
+| Message | Que faire |
+|---|---|
+| « La recherche de points relais nécessite une clé API Colissimo. Enregistrez-la dans Réglages > Connexion Colissimo à la place du mot de passe. » | Passez de **Mot de passe (secours)** à **Clé API (recommandé)** dans la section **Connexion Colissimo** des réglages. |
+| « Pour enregistrer le point relais sur la commande, myColis a besoin d'une nouvelle autorisation (modification des commandes). Ouvrez myColis depuis le menu Applications pour l'accepter. » | Ouvrez myColis depuis **Applications** dans votre admin Shopify et acceptez l'autorisation demandée. |
+| « Livraison en point relais impossible depuis cet emplacement : l'expéditeur doit être en France métropolitaine ou à Monaco. » | Expédiez à domicile : la livraison en point relais ne part que de France métropolitaine ou de Monaco. |
+
+## Le point relais est refusé à la génération
+
+L'étiquette d'une commande en point relais n'est pas créée à cause du point.
+
+| Message | Que faire |
+|---|---|
+| « Le point relais choisi par le client n'existe plus chez Colissimo. Choisissez-en un autre dans l'action myColis. » | Choisissez un autre point dans l'action, voir [Choisir le point dans l'admin](/docs/points-relais/choix-dans-l-admin). |
+| « Le point relais choisi par le client est fermé pour congés. Choisissez-en un autre dans l'action myColis. » | Choisissez un autre point dans l'action. |
+| « Le point relais choisi par le client ne peut pas recevoir ce colis. Choisissez-en un autre dans l'action myColis. » | Choisissez un autre point dans l'action. |
+| « Impossible de vérifier auprès de Colissimo le point relais choisi par le client. Réessayez dans quelques minutes. » | Réessayez plus tard : Colissimo ne répond pas. |
+| « Le point relais a été choisi par le client : myColis doit le vérifier auprès de Colissimo, ce qui demande une clé API. Enregistrez-la dans Réglages > Connexion Colissimo. » | Enregistrez une clé API dans la section **Connexion Colissimo** des réglages. |
+| « Le point relais de la commande est un point fictif du mode test. Choisissez un vrai point relais dans l'action myColis. » | Choisissez un vrai point dans l'action. |
+| « Livraison en point relais impossible vers ce point (…) depuis cet expéditeur : pays non couvert, territoire soumis à déclaration en douane ou expédition depuis l'outre-mer. » | Choisissez un autre point, ou expédiez à domicile. |
+
+## Le client ne voit pas le choix du point au checkout
+
+1. Vérifiez votre plan Shopify et votre plan myColis. Le choix au checkout demande Shopify Plus et le plan Plus de myColis ; sinon, le client choisit après la commande, voir [Choix après la commande](/docs/points-relais/choix-apres-la-commande).
+2. Vérifiez que le tarif choisi par le client est coché dans la section **Livraison en point relais** des réglages, avec exactement le même nom qu'au checkout.
+3. Vérifiez que le bloc « myColis : point relais au checkout » est placé dans les options de livraison de l'éditeur du checkout.
+4. Vérifiez que votre connexion Colissimo utilise une clé API.
+5. Vérifiez le mode test : sur une boutique réelle, il masque le choix du point aux clients.
+
+Le bloc **Choix du point relais par le client** des réglages de myColis indique ce qui manque à votre boutique.
+
+## Le client ne peut pas payer
+
+Sur Shopify Plus, avec le plan Plus de myColis, la règle « myColis : point relais à choisir » arrête le paiement d'un tarif point relais dans deux cas seulement : le bloc a proposé des points et le client n'en a choisi aucun, ou le téléphone n'est pas un mobile valide. Une recherche en échec, un téléphone absent ou un paiement express lancé depuis le panier laissent passer le paiement.
+
+1. Lisez le message affiché au client. Si des points lui sont proposés, il doit en choisir un sous le tarif point relais. Si son numéro est refusé, il doit saisir un mobile valide dans le champ Téléphone de l'adresse de livraison.
+2. Invitez le client qui paie par paiement express depuis le checkout, comme Apple Pay ou Google Pay, à revenir au paiement classique : c'est là qu'il choisit son point.
+3. Rendez obligatoire le téléphone de l'adresse de livraison dans **Paramètres > Paiement**, pour que le champ s'affiche toujours au checkout.
+
+Les messages exacts sont dans [Choix au checkout](/docs/points-relais/choix-au-checkout).
+
+## Shopify affiche « Unresolved business rules »
+
+À la création d'une commande dans l'admin Shopify, avec un tarif point relais, Shopify signale que la règle « myColis : point relais à choisir » n'est pas satisfaite. La règle s'applique aussi aux commandes créées dans l'admin.
+
+1. Sélectionnez **Ignore and create order**.
+2. Ouvrez la commande créée : elle figure dans le filtre **Relais à choisir** de la page **Envois**.
+3. Choisissez le point dans l'action **Créer l'étiquette (myColis)**, voir [Choisir le point dans l'admin](/docs/points-relais/choix-dans-l-admin).
+
+## Le mobile du destinataire est refusé
+
+L'action affiche la section **Destinataire du point relais**, ou la génération groupée ignore la commande.
+
+1. Saisissez un portable : 06 ou 07 pour un point en France, 04 ou +324 suivi de 8 chiffres pour un point en Belgique, avec l'indicatif du pays ailleurs.
+2. Remplacez un numéro dont les chiffres se suivent ou se répètent, comme 0612345678 : Colissimo le rejette.
+3. Vérifiez un numéro prérempli depuis l'adresse de facturation, que l'action signale par « Prérempli avec le téléphone de l'adresse de facturation : vérifiez qu'il s'agit du mobile du destinataire. Jamais enregistré. »
+4. Rendez obligatoire le téléphone de l'adresse de livraison dans **Paramètres > Paiement**, pour que les prochaines commandes aient un mobile.
+
+## La commande n'est pas marquée expédiée
+
+L'étiquette existe, mais la commande n'apparaît pas comme expédiée dans Shopify.
+
+1. Vérifiez le mode test. Sur une boutique réelle, une étiquette d'exemple ne modifie jamais la commande : c'est le comportement prévu.
+2. Relancez l'expédition si le statut est **Expédition à relancer** : depuis l'action, le bloc **myColis** ou la page **Envois**, avec **Relancer l'expédition**. L'étiquette déjà créée est réutilisée.
+3. Lisez le message si la relance échoue. « Cette commande n'a plus d'article à expédier depuis cet emplacement » signifie que la commande a été expédiée ou déplacée en dehors de myColis : l'étiquette est détachée, et vous pouvez en créer une nouvelle si besoin.
+
+## L'impression ne fonctionne pas
+
+1. Téléchargez le fichier si vos étiquettes sont en ZPL : aucun aperçu ne s'affiche, et le fichier s'envoie à votre imprimante thermique. Vous pouvez aussi passer au format PDF 10 x 15 cm, voir [Imprimer les étiquettes](/docs/etiquettes/impression).
+2. Relancez l'impression si le message dit « Lien d'impression expiré (valable 10 minutes) » : un nouveau lien est créé à chaque fois.
+3. Créez l'étiquette d'une commande qui n'en a pas : une commande sélectionnée sans étiquette myColis n'est pas imprimée.
+4. Contactez le support myColis à [support@webesencia.com](mailto:support@webesencia.com), avec le n° de colis, si le message dit « Fichier d'étiquette introuvable sur le serveur ».
+
+## Le bordereau ne se génère pas ou ne s'imprime pas
+
+1. Rechargez la page **Bordereaux de dépôt** et refaites la sélection si le message dit « La liste des colis a changé (colis déjà sur un bordereau ou abandonné). Rechargez la page puis recommencez. »
+2. Contactez le support myColis si un bordereau a été créé sans PDF et que vous en avez besoin : il ne peut pas être imprimé depuis myColis.
+3. Utilisez votre copie si le bordereau affiche **PDF indisponible** après l'effacement des données d'un client dont un colis y figure : myColis a supprimé le PDF, voir [Données de vos clients](/docs/compte/donnees-de-vos-clients).
+
+## Le lien de l'export a expiré
+
+Le lien d'une demande d'accès affiche « Lien de téléchargement expiré (valable 10 minutes). Rechargez l'accueil de myColis et relancez le téléchargement. »
+
+1. Rechargez la page **Envois** de myColis.
+2. Sélectionnez de nouveau **Télécharger l'export (JSON)** dans le bandeau de la demande.
+
+## L'étiquette a été créée avec le bouton de Shopify
+
+Une étiquette achetée avec le bouton de Shopify « Créer des étiquettes d'expédition » utilise le contrat Shopify Shipping, pas votre contrat Colissimo, et myColis n'en a pas connaissance. La commande étant marquée expédiée, l'action myColis répond qu'il n'y a rien à expédier.
+
+1. Gérez cette étiquette dans Shopify, selon les conditions de Shopify Shipping.
+2. Créez vos prochaines étiquettes avec l'action **Créer l'étiquette (myColis)**, dans **Plus d'actions**, ou avec le bloc **myColis**.
+
+## Pour aller plus loin
+
+- [Codes d'erreur Colissimo](/docs/reference/codes-erreur)
+- [Questions fréquentes](/docs/faq)

@@ -1,0 +1,58 @@
+---
+sidebar_position: 2
+title: "Données de vos clients"
+description: "Ce que myColis garde des données de vos clients, et comment répondre à une demande d'accès ou d'effacement transmise par Shopify."
+---
+
+# Données de vos clients
+
+myColis garde peu de données sur vos clients, et répond pour vous aux demandes d'effacement que Shopify lui transmet. Cette page dit ce qu'il garde, comment répondre à une demande d'accès et ce qui disparaît après un effacement ou une désinstallation.
+
+## Ce que myColis garde
+
+myColis lit le nom, l'adresse, l'email et le téléphone du client sur la commande au moment de créer l'étiquette, et ne les enregistre pas dans sa base. Il garde, pour chaque envoi, la commande, le n° de colis, le service, le pays, le poids, l'assurance, le statut et le point relais éventuel.
+
+Les fichiers que myColis conserve pour la réimpression contiennent, eux, des données du client : l'étiquette et la CN23 portent le nom, l'adresse et les coordonnées du destinataire tels qu'envoyés à Colissimo, et le bordereau de dépôt liste le colis. Le point relais choisi est aussi enregistré sur la commande, dans le métachamp « Point relais (myColis) ».
+
+Le prénom, l'email et le mobile que vous saisissez dans l'action pour un point relais servent à l'étiquette seulement : myColis ne les enregistre pas.
+
+## Répondre à une demande d'accès
+
+Un client peut demander quelles données vous détenez sur lui. Shopify transmet sa demande à myColis, qui l'affiche en haut de la page **Envois** s'il détient des envois pour ses commandes. Le bandeau **Demande d'accès aux données d'un client** l'explique : « Shopify a transmis le … la demande d'un client qui veut connaître ses données. myColis détient des envois pour la commande …. Téléchargez l'export, transmettez-le au client avant le …, puis marquez la demande comme traitée. »
+
+1. Ouvrez myColis, sur la page **Envois**.
+2. Sélectionnez **Télécharger l'export (JSON)** dans le bandeau de la demande.
+3. Transmettez le fichier au client avant la date indiquée, 30 jours après la demande.
+4. Sélectionnez **Marquer comme traitée**.
+
+Le message « Demande marquée comme traitée » confirme, et le bandeau disparaît.
+
+## Le fichier d'export
+
+L'export est un fichier JSON qui reprend, pour chaque commande du client, ce que myColis détient sur ses envois : date, service, pays, n° de colis, point relais, poids, assurance, statut, n° du bordereau de dépôt, et la présence d'un fichier d'étiquette ou de CN23. Une note en tête du fichier précise que myColis n'enregistre ni le nom, ni l'adresse, ni l'email, ni le téléphone du client dans sa base.
+
+L'export ne contient pas les fichiers eux-mêmes. Si le client les demande, imprimez l'étiquette et la CN23 depuis la page **Envois**, et le bordereau depuis la page **Bordereaux de dépôt**.
+
+Le lien de téléchargement est créé à l'ouverture de la page **Envois** et vaut 10 minutes. Passé ce délai, il affiche « Lien de téléchargement expiré (valable 10 minutes). Rechargez l'accueil de myColis et relancez le téléchargement. » Si les données du client ont été effacées entre-temps, il affiche « Demande introuvable : les données du client ont pu être effacées entre-temps. Rechargez l'accueil de myColis. »
+
+## Quand un client demande l'effacement de ses données
+
+Quand vous effacez un client dans Shopify, Shopify demande à myColis d'effacer ses données. myColis supprime alors, pour les commandes de ce client, les fichiers d'étiquette et de CN23 et les envois, qui quittent la page **Envois**. Il supprime aussi le PDF de chaque bordereau de dépôt où figure un de ses colis : le bordereau reste dans l'**Historique des bordereaux**, avec son numéro et son nombre de colis, mais affiche **PDF indisponible**, pour tous les colis qu'il liste.
+
+L'effacement ne change pas le compteur d'étiquettes de votre plan, voir [Plans et quotas](/docs/compte/plans-et-quotas).
+
+## Quand vous désinstallez myColis
+
+À la désinstallation, les liens d'impression et d'export cessent de fonctionner. 48 heures plus tard, Shopify demande à myColis d'effacer les données de votre boutique : réglages, identifiants Colissimo, expéditeurs, envois, fichiers d'étiquette et de CN23, bordereaux. Si vous réinstallez myColis avant, rien n'est effacé.
+
+Les commandes expédiées gardent leur n° de colis dans Shopify.
+
+## Gardez vos CN23 et vos bordereaux
+
+myColis ne peut redemander à Colissimo ni la CN23 ni le PDF d'un bordereau : il les réimprime à partir des fichiers qu'il conserve. Ces fichiers disparaissent à l'effacement des données du client ou après la désinstallation. Si vous devez les garder, pour la douane ou comme preuve de dépôt, enregistrez une copie de chaque PDF au moment où vous l'imprimez, et conservez l'exemplaire du bordereau tamponné par La Poste.
+
+## Pour aller plus loin
+
+- [Bordereaux de dépôt](/docs/envois/bordereaux)
+- [Déclaration CN23](/docs/international/declaration-cn23)
+- [Installer l'app](/docs/prise-en-main/installation)

@@ -1,0 +1,61 @@
+---
+sidebar_position: 3
+title: "Mode test"
+description: "Essayez myColis sans expédier, avec des étiquettes d'exemple marquées DEMO, puis passez aux vraies étiquettes."
+---
+
+# Mode test
+
+Le mode test vous laisse essayer tout le parcours de myColis sans créer une seule étiquette chez Colissimo, même sans contrat. Cette page explique ce qu'il change, ce qu'il ne change pas, et comment passer aux vraies étiquettes.
+
+## Activer le mode test
+
+1. Ouvrez myColis, puis **Réglages**.
+2. Activez l'interrupteur **Mode test** dans la section **Connexion Colissimo**.
+
+Le réglage est enregistré dès le basculement, sans autre bouton, et un message confirme **Mode test activé**. Le n° client et la clé API deviennent facultatifs : vous pouvez laisser les champs vides.
+
+## Ce que fait le mode test
+
+Tant qu'il est actif, la section affiche ce bandeau : « Mode test activé : myColis génère des étiquettes d'exemple marquées DEMO, avec un numéro fictif, sans jamais créer d'étiquette chez Colissimo. Sur une boutique de développement, la commande est marquée comme expédiée sans notifier le client ; sur une boutique réelle, elle n'est pas modifiée. Si vos identifiants sont enregistrés et vérifiés, Colissimo contrôle les données de chaque envoi sans créer d'étiquette. »
+
+L'étiquette d'exemple a le format choisi dans vos réglages, PDF ou ZPL, et porte la mention « ÉTIQUETTE D'EXEMPLE : DEMO ». Elle n'est pas valable pour un envoi : ne la collez jamais sur un colis. Un envoi qui demande une déclaration douanière reçoit aussi une CN23 d'exemple, marquée DEMO de la même façon.
+
+Sur une boutique de développement, la commande est marquée comme expédiée avec le numéro fictif, sans que Shopify prévienne le client. Sur une boutique réelle, la commande reste telle quelle : elle n'est ni marquée expédiée, ni modifiée, et vos clients ne reçoivent rien. L'action de création d'étiquette et la génération groupée le rappellent dans un bandeau avant chaque génération.
+
+Le mode test est illimité, sur tous les plans : les étiquettes d'exemple ne comptent pas dans le quota de votre plan, voir [Plans et quotas](/docs/compte/plans-et-quotas).
+
+Si vos identifiants sont enregistrés et vérifiés, myColis demande quand même à Colissimo de contrôler les données de chaque envoi, sans créer d'étiquette. Vous voyez ainsi les erreurs qu'un envoi réel produirait, par exemple une adresse refusée. Si ce contrôle ne peut pas avoir lieu, l'étiquette d'exemple est générée sans lui, avec le message « Mode test : Colissimo n'a pas pu vérifier les données pour le moment. Étiquette d'exemple générée sans cette vérification. »
+
+## Où retrouver les étiquettes d'exemple
+
+Dans la page **Envois**, les étiquettes d'exemple portent le badge **Démo**, ou le statut **Démo, non expédié** quand la commande n'a pas été marquée expédiée. Le filtre **Démo** les regroupe toutes. Elles s'impriment comme les autres, depuis Shopify ou depuis la page **Envois**.
+
+La page **Bordereaux de dépôt** produit des bordereaux d'exemple à partir de ces étiquettes, avec le bandeau « Mode test : bordereaux d'exemple DEMO avec les étiquettes d'exemple, à ne pas remettre à La Poste. »
+
+## Les points relais en mode test
+
+La recherche de points relais ne contacte pas Colissimo. Elle renvoie cinq points fictifs situés autour de l'adresse recherchée, dont un en congés, que vous ne pouvez pas choisir. Dans l'admin, et dans les blocs du client sur une boutique de développement, ils portent le badge **Point fictif**.
+
+Sur une boutique réelle, le point choisi dans l'action sert seulement à l'étiquette d'exemple et n'est pas enregistré sur la commande, ce que l'action signale : « Mode test sur une boutique réelle : le point n'est pas enregistré sur la commande, il sert seulement à l'étiquette DEMO. » Le choix du point par le client, au checkout ou après la commande, n'est proposé que sur une boutique de développement : vos clients ne voient jamais de points fictifs.
+
+## Pourquoi la configuration reste incomplète
+
+L'étape **Connecter et vérifier votre compte Colissimo** de la page **Envois** ne se coche jamais en mode test, même avec des identifiants vérifiés. Tant que la connexion n'est pas vérifiée, la carte de configuration l'explique : « Mode test activé : cette étape se termine une fois le mode test désactivé et la connexion vérifiée. »
+
+Une fois la connexion vérifiée, l'étape porte le badge **Connexion vérifiée** et la carte précise : « Mode test actif : étiquettes d'exemple seulement, aucun colis n'est expédié. Désactivez le mode test pour terminer cette étape. » Son bouton **Désactiver le mode test** ouvre la section **Connexion Colissimo** des réglages, où se trouve l'interrupteur **Mode test**.
+
+## Passer aux vraies étiquettes
+
+1. Enregistrez votre n° client et votre clé API, voir [Connecter votre contrat Colissimo](/docs/prise-en-main/connexion-colissimo).
+2. Désactivez l'interrupteur **Mode test**.
+3. Sélectionnez **Tester la connexion** et attendez **Connexion réussie**.
+
+Le message « Mode test désactivé : les prochaines étiquettes seront réelles » confirme le changement. Dès lors, chaque étiquette est créée chez Colissimo sur votre contrat, et compte dans le quota de votre plan myColis.
+
+Sur une boutique réelle, une commande qui n'avait reçu qu'une étiquette d'exemple n'a pas été marquée expédiée : elle peut recevoir sa vraie étiquette, et l'étiquette d'exemple est alors remplacée, avec la mention « Étiquette d'exemple remplacée par une étiquette réelle après la désactivation du mode test. » Un point relais fictif resté sur une commande est refusé à la génération : « Le point relais de la commande est un point fictif du mode test. Choisissez un vrai point relais dans l'action myColis. »
+
+## Pour aller plus loin
+
+- [Créer votre première étiquette](/docs/prise-en-main/premiere-etiquette)
+- [Connecter votre contrat Colissimo](/docs/prise-en-main/connexion-colissimo)

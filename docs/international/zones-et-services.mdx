@@ -1,0 +1,76 @@
+---
+sidebar_position: 1
+title: "Zones et services"
+description: "Comment myColis détermine la zone, le service et la déclaration douanière selon l'expéditeur et le destinataire."
+---
+
+# Zones et services
+
+myColis déduit de l'adresse de l'expéditeur et de celle du destinataire la zone de l'envoi, le produit Colissimo à utiliser et la nécessité d'une déclaration douanière. Cette page explique ces règles, pour que vous sachiez à quoi vous attendre avant d'ouvrir l'action.
+
+## La ligne Destination de l'action
+
+L'action **Créer l'étiquette (myColis)** résume ce que myColis a déduit sur une ligne **Destination** : la zone, le pays et le code du produit Colissimo retenu. Les zones sont **France**, **Monaco**, **Outre-mer**, **Union européenne** et **International**.
+
+| Code affiché | Produit Colissimo |
+|---|---|
+| DOM | Domicile sans signature |
+| DOS | Domicile avec signature |
+| COM | Domicile sans signature, outre-mer |
+| CDS | Domicile avec signature, outre-mer |
+| HD | Point relais |
+
+## Depuis la France métropolitaine ou Monaco
+
+| Destination | Zone | Sans signature possible | Déclaration douanière (CN23) |
+|---|---|---|---|
+| France métropolitaine, Corse comprise | France | oui | non |
+| Monaco | Monaco | oui | non |
+| Belgique | Union européenne | oui | non |
+| Autre pays de l'Union européenne | Union européenne | non | non, sauf territoire particulier |
+| Andorre | International | oui | oui |
+| Suisse | International | oui | oui |
+| Autre pays hors de l'Union européenne | International | non | oui |
+| Outre-mer | Outre-mer | oui | oui |
+
+Monaco est traité comme la France : mêmes produits, aucune déclaration douanière. Une adresse française dont le code postal commence par 980 est reconnue comme monégasque.
+
+L'outre-mer comprend la Guadeloupe, la Martinique, la Guyane, La Réunion, Mayotte, Saint-Pierre-et-Miquelon, Saint-Martin, Saint-Barthélemy, Wallis-et-Futuna, la Polynésie française, la Nouvelle-Calédonie et les Terres australes et antarctiques françaises. myColis les reconnaît à leur code pays ou à un code postal français en 97 ou 98.
+
+## Sans signature hors de France
+
+Hors de France, de Monaco, d'Andorre et de l'outre-mer, Colissimo ne livre sans signature que vers la Belgique et la Suisse. Vers les autres pays, myColis passe l'envoi en Domicile avec signature, même si **Domicile sans signature** est votre service par défaut, et l'action l'annonce : « Domicile sans signature non proposé vers ce pays (…) : envoi en Domicile avec signature. » L'option **Domicile sans signature** y est grisée.
+
+## Territoires particuliers de l'Union européenne
+
+Certains territoires de l'Union européenne sont hors de son territoire douanier : un envoi vers eux demande une CN23, comme hors de l'Union. myColis les reconnaît à leur code postal ou à leur province : les îles Canaries, Ceuta et Melilla pour l'Espagne, le mont Athos pour la Grèce, Heligoland et Büsingen pour l'Allemagne, Campione d'Italia et Livigno pour l'Italie, et les îles Åland pour la Finlande.
+
+Aucun de ces territoires n'est desservi en point relais.
+
+## Depuis l'outre-mer ou Andorre
+
+Un expéditeur en outre-mer expédie vers la métropole et Monaco, avec une CN23, et vers son propre territoire, sans CN23. Une autre destination est refusée : « Envoi de … vers … non pris en charge : depuis l'outre-mer, myColis expédie vers la métropole, Monaco et le même territoire. »
+
+Un expéditeur en Andorre joint une CN23 à tout envoi qui quitte Andorre.
+
+Ni l'un ni l'autre ne peut expédier en point relais : la livraison en point relais part de la France métropolitaine ou de Monaco.
+
+## Consigne de non-livraison
+
+Pour un envoi vers Andorre ou hors de l'Union européenne, Colissimo demande quoi faire d'un colis qui ne peut pas être livré : le retourner à l'expéditeur en prioritaire, avec un retour payant, ou l'abandonner. myColis applique le réglage **Hors Union européenne, si le colis ne peut pas être livré**, sauf si Colissimo n'accepte que l'autre option pour ce pays, voir [International et USA](/docs/reglages/international-et-usa).
+
+## Quand Colissimo refuse l'acheminement
+
+myColis ne tient pas de liste des pays livrables à domicile : c'est Colissimo, selon votre contrat, qui accepte ou refuse la destination. Les refus les plus fréquents :
+
+| Code | Message | Que faire |
+|---|---|---|
+| 30312 | « Colissimo ne trouve aucun acheminement vers cette adresse avec ce service. Vérifiez l'adresse de livraison ou utilisez Domicile avec signature pour cet envoi. » | Vérifiez l'adresse, ou choisissez **Domicile avec signature**. |
+| 30316 | « Colissimo ne livre pas ce pays avec ce service. Utilisez Domicile avec signature pour cet envoi ; si le refus persiste, la destination n'est pas couverte par votre contrat. » | Choisissez **Domicile avec signature**, puis voyez avec votre interlocuteur Colissimo. |
+| 30317 | « Une option de l'envoi (signature, assurance, DDP) n'est pas disponible vers ce pays. Utilisez Domicile avec signature ou retirez l'option pour cet envoi. » | Retirez l'assurance ou le DDP, ou changez de service. |
+
+## Pour aller plus loin
+
+- [Déclaration CN23](/docs/international/declaration-cn23)
+- [Envois vers les États-Unis](/docs/international/etats-unis)
+- [Pays couverts](/docs/reference/pays-couverts)

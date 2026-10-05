@@ -1,0 +1,59 @@
+---
+sidebar_position: 5
+title: "Choix après la commande"
+description: "Sur tous les plans Shopify, laissez le client choisir son point relais sur la page de remerciement et dans le suivi de commande."
+---
+
+# Choix après la commande <PlanBadge plan="tous" />
+
+Sur tous les plans Shopify et tous les plans myColis, le client qui a choisi un tarif point relais peut choisir son point juste après avoir payé, sur la page de remerciement, puis le changer depuis le suivi de commande. Cette page explique comment placer les deux blocs et ce que voit le client.
+
+## Avant de commencer
+
+Il vous faut une connexion Colissimo par clé API et au moins un tarif point relais indiqué dans myColis, voir [Tarifs point relais](/docs/points-relais/tarifs-point-relais). En mode test, ces blocs ne fonctionnent que sur une boutique de développement.
+
+## Ajouter le bloc à la page de remerciement
+
+1. Ouvrez **Paramètres > Paiement** dans votre admin Shopify.
+2. Personnalisez la page de remerciement.
+3. Ajoutez le bloc « myColis : point relais après la commande ».
+4. Enregistrez.
+
+## Ajouter le bloc au suivi de commande
+
+1. Ouvrez **Paramètres > Comptes clients** dans votre admin Shopify.
+2. Personnalisez la page de suivi de commande.
+3. Ajoutez le bloc « myColis : point relais dans le suivi de commande ».
+4. Enregistrez.
+
+Ce bloc n'apparaît qu'au client connecté à son compte : la page de suivi de commande ouverte sans connexion n'affiche aucun bloc d'app.
+
+## Ce que voit le client
+
+Les blocs ne s'affichent que pour une commande passée avec un tarif point relais. Sous le titre « Livraison en point relais », le client sans point lit « Vous avez choisi la livraison en point relais : choisissez le point où retirer votre colis. », puis trouve la recherche, préremplie avec son adresse de livraison. Pour les Pays-Bas, une aide rappelle le format du code postal : « Pays-Bas : code postal de 4 chiffres et 2 lettres, par exemple 1012 AB. »
+
+La liste et le choix fonctionnent comme au checkout : chaque point affiche son nom, son adresse, son type, sa distance et ses horaires, et le client sélectionne « Choisir ce point relais ». Le point choisi s'affiche sous « Votre point relais », avec le bouton « Changer de point relais ». Juste après ce choix, le bloc confirme : « Votre point relais est enregistré. Vous pouvez le changer tant que votre colis n'est pas en préparation. » Cette phrase n'apparaît qu'après un choix fait sur la page : si le point a déjà été choisi au checkout, ou lors d'une visite précédente, le bloc affiche le point sans cette phrase.
+
+Le client peut changer de point tant qu'aucune étiquette n'existe et que la commande n'est pas expédiée. Ensuite, le bloc affiche le point sans possibilité de le modifier : « Votre colis est en préparation : le point relais ne peut plus être changé. »
+
+Les blocs s'affichent en français ou en anglais selon la langue de la page. Ils couvrent aussi les commandes payées par paiement express, comme Apple Pay ou Google Pay.
+
+## Juste après le paiement
+
+Sur la page de remerciement, la commande peut mettre quelques secondes à être enregistrée par Shopify. Le bloc réessaie pendant une trentaine de secondes. Si la commande n'est toujours pas prête, il affiche « Votre commande est en cours d'enregistrement. Réessayez dans quelques instants pour choisir votre point relais. » et le bouton « Réessayer », qui relance la vérification. Dès que la commande est enregistrée, le bloc propose le choix du point.
+
+## Les commandes restées sans point
+
+Tous les clients ne choisissent pas leur point, et le choix au checkout peut être impossible, par exemple quand la recherche échoue : la commande arrive alors sans point. La page **Envois** de myColis regroupe ces commandes dans le filtre **Relais à choisir** : ouvrez chacune et choisissez le point dans l'action **Créer l'étiquette (myColis)**, voir [Choisir le point dans l'admin](/docs/points-relais/choix-dans-l-admin).
+
+La génération groupée ignore ces commandes au lieu de les expédier à domicile. Elle ignore aussi une commande dont le mobile du destinataire manque : complétez-le dans l'action, qui le préremplit avec le téléphone de l'adresse de facturation quand il existe. Rendre obligatoire le téléphone de l'adresse de livraison, dans **Paramètres > Paiement**, évite ce cas, mais le numéro est alors demandé à tous les clients.
+
+## Le point à l'étiquette
+
+Un point choisi par le client est vérifié auprès de Colissimo au moment de créer l'étiquette. S'il n'existe plus, est fermé pour congés ou ne peut pas recevoir le colis, l'étiquette n'est pas créée et l'action vous invite à en choisir un autre.
+
+## Pour aller plus loin
+
+- [Fonctionnement des points relais](/docs/points-relais/fonctionnement)
+- [Choix au checkout](/docs/points-relais/choix-au-checkout)
+- [La page Envois](/docs/envois/page-envois)

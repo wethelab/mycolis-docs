@@ -1,0 +1,69 @@
+---
+sidebar_position: 1
+title: "Installer l'app"
+description: "Installez myColis depuis le Shopify App Store, comprenez les accès demandés et trouvez vos repères au premier lancement."
+---
+
+# Installer l'app
+
+Cette page vous mène de la fiche myColis sur le Shopify App Store jusqu'à l'app ouverte dans votre admin Shopify. À la fin, vous savez ce que l'app peut lire dans votre boutique, ce que montre le premier écran et par quoi commencer.
+
+## Avant de commencer
+
+Il vous faut une boutique Shopify et un compte autorisé à y installer des apps. Un contrat Colissimo n'est pas nécessaire pour essayer l'app : le mode test fonctionne sans, voir [Mode test](/docs/prise-en-main/mode-test).
+
+## Installer depuis le Shopify App Store
+
+1. Ouvrez la fiche myColis sur le Shopify App Store.
+2. Sélectionnez **Installer**.
+3. Connectez-vous à la boutique sur laquelle vous installez l'app, si Shopify vous le demande.
+4. Lisez les accès demandés sur l'écran d'autorisation.
+5. Confirmez l'installation.
+6. Attendez que myColis s'ouvre dans votre admin Shopify.
+
+## Les accès demandés par l'app
+
+myColis lit vos commandes pour préparer l'étiquette : les articles à expédier, leur emplacement, le tarif de livraison choisi par le client et l'adresse de livraison. Shopify ne lui donne accès qu'aux commandes des 60 derniers jours : pour une commande plus ancienne, créez l'étiquette dans Colissimo Box. Il n'écrit sur la commande que pour enregistrer le point relais choisi, quand la commande part en point relais.
+
+L'app lit et met à jour le traitement des commandes, ce qui lui permet de marquer une commande comme expédiée avec le numéro de colis Colissimo une fois l'étiquette créée. Elle lit vos produits pour leur poids et, à l'international, pour leur code SH, leur pays d'origine et leur description douane. Elle lit vos emplacements, parce que chaque emplacement d'où partent vos colis devient un expéditeur.
+
+L'étiquette porte le nom et l'adresse du destinataire, et Colissimo exige son prénom, son email et son mobile pour une livraison en point relais. C'est pourquoi myColis demande aussi l'accès aux données client protégées : nom, adresse, email et téléphone. Si Shopify ne les fournit pas à l'app, l'action de création d'étiquette l'indique par ce message : « Shopify masque certaines données client à myColis (accès aux données client protégées non accordé à l'app) : les champs concernés sont traités comme absents. »
+
+L'app ne demande aucun accès à votre thème ni à vos fiches clients, et elle n'envoie jamais d'email à vos clients.
+
+## Ce que vous voyez au premier lancement
+
+L'app s'ouvre sur la page **Envois**. En haut, une carte rappelle votre plan, d'abord le plan Gratuit, avec le nombre d'étiquettes réelles créées dans le mois et le lien **Voir le plan**, voir [Plans et quotas](/docs/compte/plans-et-quotas).
+
+Tant que la configuration n'est pas terminée, une carte **Configuration de myColis** suit, avec la phrase « Quelques étapes pour relier votre boutique à votre contrat Colissimo. » et un compteur des étapes obligatoires, par exemple **0 étape terminée sur 2**.
+
+La carte liste trois étapes, chacune terminée par un bouton **Configurer** qui ouvre le bon endroit des réglages, ou par la mention **Terminé**. **Configurer un expéditeur** porte sur l'emplacement Shopify d'où partent vos colis et sur son adresse, voir [Expéditeurs](/docs/reglages/expediteurs). **Connecter et vérifier votre compte Colissimo** demande votre n° client, votre clé API et un test de connexion réussi, voir [Connecter votre contrat Colissimo](/docs/prise-en-main/connexion-colissimo). **Renseigner votre EORI**, marquée **Facultatif**, n'est nécessaire que pour expédier hors de l'Union européenne, voir [Étiquettes et douane](/docs/reglages/etiquettes-et-douane).
+
+Les étapes se cochent d'elles-mêmes, d'après vos réglages. La carte disparaît quand les deux étapes obligatoires sont faites. En mode test, l'étape de connexion reste ouverte, même avec des identifiants vérifiés : elle se termine une fois le mode test désactivé et la connexion vérifiée. Si la connexion est déjà vérifiée, elle porte le badge **Connexion vérifiée**, et son bouton **Désactiver le mode test** ouvre l'interrupteur des réglages.
+
+Le menu de l'app compte quatre entrées : **Envois** pour la liste de vos étiquettes, **Bordereaux** pour les bordereaux de dépôt, **Réglages**, et **Plans** pour votre plan myColis.
+
+## Rouvrir l'app
+
+1. Ouvrez votre admin Shopify.
+2. Sélectionnez **Applications** dans le menu de gauche.
+3. Sélectionnez **myColis**.
+
+Une partie de myColis vit ailleurs que dans l'app : l'action **Créer l'étiquette (myColis)** dans **Plus d'actions** sur la fiche commande, le bloc **myColis** de la fiche commande, l'action groupée **Créer les étiquettes (myColis)** de la liste des commandes et l'entrée **Étiquettes myColis** du menu **Imprimer**. Si le bloc **myColis** n'apparaît pas sur la fiche commande, ajoutez-le parmi les blocs d'apps de la page : Shopify laisse chaque marchand choisir et placer les blocs des apps qu'il installe.
+
+## Désinstaller l'app
+
+1. Ouvrez votre admin Shopify.
+2. Sélectionnez **Paramètres**, puis **Applications et canaux de vente**.
+3. Sélectionnez myColis.
+4. Sélectionnez **Désinstaller**.
+
+L'action, le bloc et les entrées d'impression disparaissent de vos commandes, tout comme les blocs que vous aviez placés au checkout, sur la page de remerciement ou dans le suivi de commande. Les commandes déjà expédiées gardent leur numéro de colis dans Shopify, et Colissimo achemine normalement les colis déjà déposés.
+
+La désinstallation vous remet au plan Gratuit, et les liens d'impression cessent de fonctionner. 48 heures plus tard, Shopify demande à myColis d'effacer les données de votre boutique : réglages, identifiants, expéditeurs, envois, fichiers d'étiquette et de CN23, bordereaux. Si vous réinstallez myColis avant, rien n'est effacé. Gardez une copie des CN23 et des bordereaux dont vous avez besoin, voir [Données de vos clients](/docs/compte/donnees-de-vos-clients).
+
+## Pour aller plus loin
+
+- [Connecter votre contrat Colissimo](/docs/prise-en-main/connexion-colissimo)
+- [Mode test](/docs/prise-en-main/mode-test)
+- [Créer votre première étiquette](/docs/prise-en-main/premiere-etiquette)

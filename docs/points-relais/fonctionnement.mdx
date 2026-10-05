@@ -1,0 +1,65 @@
+---
+sidebar_position: 1
+title: "Fonctionnement des points relais"
+description: "Ce qu'il faut pour livrer en point relais avec myColis, dans quels pays, et à quels moments le point se choisit."
+---
+
+# Fonctionnement des points relais
+
+Avec myColis, un colis peut partir vers un point relais Colissimo au lieu du domicile du client. Cette page réunit ce qu'il faut pour l'activer, les pays couverts et les trois moments où le point se choisit.
+
+## Ce qu'il faut
+
+La livraison en point relais demande trois conditions. Votre connexion Colissimo doit utiliser une clé API : avec un mot de passe, la recherche de points relais ne fonctionne pas. Le service Points relais doit être ouvert sur votre contrat Colissimo. L'expéditeur doit être en France métropolitaine ou à Monaco.
+
+Pour que myColis reconnaisse les commandes à livrer en point relais, et pour que le client puisse choisir son point, indiquez aussi dans les réglages quels tarifs de livraison de votre boutique livrent en point relais, voir [Tarifs point relais](/docs/points-relais/tarifs-point-relais).
+
+Si l'une de ces conditions manque, l'option **Point relais** de l'action de création d'étiquette reste grisée, avec la raison. Par exemple, avec un mot de passe : « La recherche de points relais nécessite une clé API Colissimo. Enregistrez-la dans Réglages > Connexion Colissimo à la place du mot de passe. »
+
+## Pays couverts
+
+myColis propose des points relais en France et dans 19 pays d'Europe : Allemagne, Autriche, Belgique, Danemark, Espagne, Estonie, Hongrie, Irlande, Italie, Lettonie, Lituanie, Luxembourg, Pays-Bas, Pologne, Portugal, République tchèque, Slovaquie, Slovénie et Suède. Il n'y en a pas en outre-mer, ni vers un territoire qui demande une déclaration douanière, comme les Canaries. Aux Pays-Bas, le code postal compte 4 chiffres et 2 lettres : la recherche le rappelle sous ses champs, « Pays-Bas : code postal de 4 chiffres et 2 lettres, par exemple 1012 AB. »
+
+Votre contrat doit aussi ouvrir le pays à la livraison en point relais. Sinon, la recherche répond : « Ce pays n'est pas ouvert à la livraison en point relais sur votre contrat (Colissimo Europe). Contactez votre interlocuteur commercial Colissimo. »
+
+## Trois moments pour choisir le point
+
+Au checkout, sur Shopify Plus avec le plan Plus de myColis, le client choisit son point sous le tarif point relais et ne peut pas payer sans l'avoir choisi dès que des points lui sont proposés. Si la recherche échoue, il paie sans point, et la commande arrive dans le filtre **Relais à choisir** de la page **Envois**, voir [Choix au checkout](/docs/points-relais/choix-au-checkout).
+
+Après la commande, sur tous les plans Shopify, le client choisit ou change son point sur la page de remerciement et dans le suivi de commande, tant qu'aucune étiquette n'existe, voir [Choix après la commande](/docs/points-relais/choix-apres-la-commande).
+
+Dans l'admin, à tout moment avant l'étiquette, vous choisissez, changez ou retirez le point depuis l'action de création d'étiquette, voir [Choisir le point dans l'admin](/docs/points-relais/choix-dans-l-admin). C'est aussi le recours pour une commande restée sans point, y compris une commande que vous créez dans l'admin Shopify avec un tarif point relais : la page **Envois** les regroupe dans le filtre **Relais à choisir**.
+
+## Le destinataire : prénom, email et mobile
+
+L'étiquette est adressée au point relais, au nom du client. Colissimo exige en plus le prénom, l'email et le mobile du destinataire, pour le prévenir de l'arrivée du colis. myColis les transmet toujours pour un point relais, même si vous avez désactivé la transmission dans les réglages.
+
+Le mobile suit les règles de Colissimo : un numéro commençant par 06 ou 07 pour un point en France, un mobile belge pour un point en Belgique, au format +324 suivi de 8 chiffres ou 04 suivi de 8 chiffres, et un numéro au format international ailleurs. Un numéro dont les chiffres se suivent ou se répètent, comme 0612345678 ou 0600000000, est refusé.
+
+Recommandé : rendez obligatoire le numéro de téléphone de l'adresse de livraison, dans **Paramètres > Paiement** de votre admin Shopify. Le client le saisit alors au checkout, et myColis le reprend. Il sera demandé à tous les clients, y compris ceux qui se font livrer à domicile.
+
+Sans ce numéro, le mobile peut manquer sur la commande. Le paiement passe tout de même : la règle du checkout ne refuse qu'un numéro présent qui n'est pas un mobile valide. Vous saisissez alors le mobile dans l'action avant de créer l'étiquette, qui le préremplit avec le téléphone de l'adresse de facturation quand il existe, à vérifier. La génération groupée laisse la commande de côté.
+
+## La vérification du point à l'étiquette
+
+Un point choisi par le client, au checkout ou après la commande, est vérifié auprès de Colissimo au moment de créer l'étiquette. Si le point n'existe plus, est fermé pour congés ou ne peut pas recevoir le colis, l'étiquette n'est pas créée et l'action vous invite à en choisir un autre, par exemple : « Le point relais choisi par le client est fermé pour congés. Choisissez-en un autre dans l'action myColis. » Un point que vous choisissez vous-même dans l'admin vient d'une recherche faite à l'instant et ne repasse pas par cette vérification.
+
+## Les points relais proposés
+
+La recherche renvoie les points autour d'une adresse, avec leur distance, leur adresse et leurs horaires. Leur type est l'un de ceux-ci : relais ou consigne Pickup, bureau de poste, agence La Poste Colissimo, centre de distribution La Poste, commerce de proximité ou consigne. Un point en congés reste affiché mais ne peut pas être choisi.
+
+## Assurance, tarif et domicile
+
+Un colis en point relais peut être assuré jusqu'à 1 000 €, le plafond de Colissimo pour ce mode de livraison, sans changer de service.
+
+Une commande passée avec un tarif point relais part en point relais. Si le point relais n'est pas disponible pour elle, par exemple faute de clé API, l'action vous prévient que l'envoi partira à domicile. À l'inverse, un point resté sur une commande passée avec un autre tarif est ignoré, et l'envoi part à domicile sauf si vous choisissez **Point relais** dans l'action.
+
+## En mode test
+
+En mode test, la recherche renvoie cinq points fictifs autour de l'adresse, sans contacter Colissimo, et le choix par le client n'est proposé que sur une boutique de développement, voir [Mode test](/docs/prise-en-main/mode-test).
+
+## Pour aller plus loin
+
+- [Tarifs point relais](/docs/points-relais/tarifs-point-relais)
+- [Choisir le point dans l'admin](/docs/points-relais/choix-dans-l-admin)
+- [Choix après la commande](/docs/points-relais/choix-apres-la-commande)

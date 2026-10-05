@@ -1,0 +1,194 @@
+---
+sidebar_position: 3
+title: "Codes d'erreur Colissimo"
+description: "Les messages d'erreur de Colissimo tels que myColis les affiche, avec ce qu'il faut faire pour chacun."
+---
+
+# Codes d'erreur Colissimo
+
+Quand Colissimo refuse une étiquette, un test de connexion, un bordereau ou une recherche de points relais, myColis traduit sa réponse en un message qui dit quoi corriger. Cette page liste ces messages par code, regroupés par sujet.
+
+## Où voir le code
+
+Dans l'action **Créer l'étiquette (myColis)** et dans le rapport de la génération groupée, le code de Colissimo suit le message entre parenthèses, par exemple « … Corrigez l'adresse de livraison de la commande dans Shopify. (30211) ». Cherchez ce code dans les tableaux ci-dessous. Un message sans code vient de myColis lui-même, qui a repéré le problème avant d'interroger Colissimo : il est décrit dans [Dépannage](/docs/depannage).
+
+Dans les tableaux, « … » remplace une valeur propre à l'envoi, comme un nom de produit ou un détail donné par Colissimo.
+
+## Identifiants et compte
+
+Ces erreurs empêchent toute étiquette. Vérifiez votre n° client et votre clé API dans la section **Connexion Colissimo** des réglages, puis relancez le test de connexion.
+
+| Code | Message |
+|---|---|
+| 30000 | Le n° client et la clé API (ou le mot de passe) ne correspondent à aucun compte Colissimo. Vérifiez-les ; la clé API se génère dans Colissimo Box, rubrique Mon profil. |
+| 30001 | Le n° de compte transmis à Colissimo est incorrect. Vérifiez votre n° client. |
+| 30007 | Votre compte Colissimo est inactif. Contactez votre interlocuteur commercial Colissimo. |
+| 30008 | Ce service n'est pas autorisé pour vos identifiants. Contactez votre interlocuteur commercial Colissimo pour réinitialiser votre compte client. |
+| 30013 | Trop de tentatives avec des identifiants incorrects : Colissimo bloque temporairement l'authentification. Patientez quelques minutes, vérifiez vos identifiants puis réessayez. |
+
+## Contrat, produit et format
+
+Ces erreurs concernent ce que votre contrat autorise. Elles se règlent avec votre interlocuteur commercial Colissimo, ou en changeant de format d'étiquette.
+
+| Code | Message |
+|---|---|
+| 30009 | Ce produit n'est pas autorisé sur votre contrat. Contactez votre interlocuteur commercial Colissimo. |
+| 30014 | Colissimo n'a pas reçu le code produit. Contactez le support myColis. |
+| 30015 | Code produit refusé par Colissimo. Vérifiez les produits inclus dans votre contrat. |
+| 30700 | Ce produit ne figure pas dans votre contrat Colissimo. Vérifiez les produits inclus avec votre interlocuteur commercial. |
+| 30025 | Colissimo n'a pas reçu le format d'étiquette. Choisissez un format dans les réglages. |
+| 30026 | Format d'étiquette refusé par Colissimo. Choisissez un autre format dans les réglages. |
+
+## Date de dépôt et poids
+
+| Code | Message |
+|---|---|
+| 30002 | Colissimo refuse la date de dépôt (antérieure à aujourd'hui). Réessayez ; si le problème persiste, contactez le support myColis. |
+| 30010 | Colissimo n'a pas reçu la date de dépôt. Contactez le support myColis. |
+| 30300 | Colissimo n'a pas reçu le poids du colis. |
+| 30301 | Poids du colis refusé par Colissimo (30 kg maximum). |
+
+## Expéditeur
+
+Ces erreurs portent sur l'adresse de l'expéditeur. Corrigez-la dans la section **Expéditeurs** des réglages.
+
+| Code | Message |
+|---|---|
+| 30043 | Prénom de l'expéditeur manquant. Complétez l'expéditeur dans les réglages. |
+| 30045 | Email de l'expéditeur manquant. Complétez l'expéditeur dans les réglages. |
+| 30046 | Email de l'expéditeur refusé par Colissimo. Corrigez l'expéditeur dans les réglages. |
+| 30047 | Téléphone de l'expéditeur refusé par Colissimo. Corrigez l'expéditeur dans les réglages. |
+| 30065 | Nom de l'expéditeur manquant. Complétez l'expéditeur dans les réglages. |
+| 30085 | Téléphone fixe de l'expéditeur refusé par Colissimo. Corrigez l'expéditeur dans les réglages. |
+| 30100 | Adresse de l'expéditeur manquante (numéro et voie). Complétez l'expéditeur dans les réglages. |
+| 30102 | Pays de l'expéditeur manquant. Complétez l'expéditeur dans les réglages. |
+| 30103 | Pays de l'expéditeur refusé par Colissimo. Corrigez l'expéditeur dans les réglages. |
+| 30104 | Ville de l'expéditeur manquante. Complétez l'expéditeur dans les réglages. |
+| 30106 | Code postal de l'expéditeur manquant. Complétez l'expéditeur dans les réglages. |
+| 30107 | Code postal de l'expéditeur refusé par Colissimo. Corrigez l'expéditeur dans les réglages. |
+| 30108 | Le code postal de l'expéditeur ne correspond pas à son pays. Corrigez l'expéditeur dans les réglages. |
+| 30109 | Le pays ou le code postal de l'expéditeur n'est pas accepté pour ce produit. Vérifiez l'expéditeur dans les réglages. |
+| 31000 | Le code postal de l'expéditeur ne permet pas d'étiqueter. Vérifiez l'expéditeur ou contactez votre interlocuteur commercial Colissimo. |
+| 30018 | Nom commercial absent : Colissimo l'exige pour un point relais. Renseignez la société de l'expéditeur dans les réglages. |
+
+## Destinataire
+
+Ces erreurs portent sur l'adresse de livraison de la commande. Corrigez-la dans Shopify, sur la fiche commande, puis recréez l'étiquette.
+
+| Code | Message |
+|---|---|
+| 30200 | Nom du destinataire manquant. Corrigez l'adresse de livraison de la commande dans Shopify. |
+| 30202 | Prénom du destinataire manquant. Corrigez l'adresse de livraison de la commande dans Shopify. |
+| 30204 | Adresse du destinataire manquante (numéro et voie). Corrigez l'adresse de livraison de la commande dans Shopify. |
+| 30206 | Pays du destinataire manquant. Corrigez l'adresse de livraison de la commande dans Shopify. |
+| 30207 | Pays du destinataire refusé par Colissimo. Corrigez l'adresse de livraison de la commande dans Shopify. |
+| 30208 | Ville du destinataire manquante. Corrigez l'adresse de livraison de la commande dans Shopify. |
+| 30210 | Code postal du destinataire manquant. Corrigez l'adresse de livraison de la commande dans Shopify. |
+| 30211 | Code postal du destinataire refusé par Colissimo. Corrigez l'adresse de livraison de la commande dans Shopify. |
+| 30212 | Le code postal du destinataire ne correspond pas à son pays. Corrigez l'adresse de livraison de la commande dans Shopify. |
+| 30213 | Le pays ou le code postal du destinataire n'est pas accepté pour ce service. Vérifiez l'adresse de livraison ou utilisez un autre service pour cet envoi. |
+| 30214 | Ville du destinataire refusée par Colissimo. Corrigez l'adresse de livraison de la commande dans Shopify. |
+| 30220 | Mobile du destinataire obligatoire pour cet envoi. Corrigez l'adresse de livraison de la commande dans Shopify. |
+| 30221 | Mobile du destinataire refusé par Colissimo. Corrigez l'adresse de livraison de la commande dans Shopify. |
+| 30222 | Email du destinataire obligatoire pour cet envoi. Corrigez l'adresse de livraison de la commande dans Shopify. |
+| 30223 | Email du destinataire refusé par Colissimo. Corrigez l'adresse de livraison de la commande dans Shopify. |
+| 30224 | L'État ou la province ne correspond pas au code postal du destinataire. Corrigez l'adresse de livraison de la commande dans Shopify. |
+
+## Acheminement et options
+
+Ces erreurs portent sur la destination, le service ou une option de l'envoi.
+
+| Code | Message |
+|---|---|
+| 30312 | Colissimo ne trouve aucun acheminement vers cette adresse avec ce service. Vérifiez l'adresse de livraison ou utilisez Domicile avec signature pour cet envoi. |
+| 30316 | Colissimo ne livre pas ce pays avec ce service. Utilisez Domicile avec signature pour cet envoi ; si le refus persiste, la destination n'est pas couverte par votre contrat. |
+| 30317 | Une option de l'envoi (signature, assurance, DDP) n'est pas disponible vers ce pays. Utilisez Domicile avec signature ou retirez l'option pour cet envoi. |
+| 30309 | Assurance refusée par Colissimo : option absente de votre contrat ou palier trop élevé. Baissez le plafond d'assurance dans les réglages ou retirez l'assurance pour cet envoi. |
+| 30323 | Colissimo exige un choix en cas de non-livraison vers ce pays. Réessayez ; si le problème persiste, contactez le support myColis. |
+| 30324 | Le choix en cas de non-livraison n'est pas accepté vers ce pays. Changez-le dans Réglages > International et USA. |
+| 30328 | Option DDP refusée : absente de votre contrat ou indisponible vers cette destination. Désactivez le DDP pour cet envoi ou dans les réglages. |
+| 30329 à 30335 | Dimensions du colis manquantes ou refusées, obligatoires en DDP (longueur 274 cm au plus, longueur + 2 x largeur + 2 x hauteur 330 cm au plus). Saisissez-les en cm pour cet envoi ou dans les réglages. |
+| 30557 | Description générique en anglais obligatoire en DDP. Renseignez-la dans Réglages > International et USA. |
+
+## Point relais à l'étiquette
+
+Ces erreurs surviennent à la création d'une étiquette en point relais. Rechoisissez le point dans l'action **Créer l'étiquette (myColis)**.
+
+| Code | Message |
+|---|---|
+| 30400, 30403 | Point relais non transmis à Colissimo. Rechoisissez le point relais de la commande dans l'action myColis. |
+| 30401 | Point relais refusé par Colissimo (identifiant inconnu ou point fermé). Choisissez un autre point relais dans l'action myColis. |
+| 30402, 30900 à 30904 | Adresse du point relais incomplète pour Colissimo. Rechoisissez le point relais dans l'action myColis. |
+| 30404 | Colissimo n'attend pas de point relais pour ce service. Contactez le support myColis. |
+
+## Déclaration douanière et EORI
+
+Ces erreurs portent sur la CN23. Les données des articles viennent de vos fiches produits Shopify, voir [Déclaration CN23](/docs/international/declaration-cn23).
+
+| Code | Message |
+|---|---|
+| 30020 | Colissimo n'a pas reçu les frais de port de la CN23. Vérifiez la ligne d'expédition de la commande ; si le problème persiste, contactez le support myColis. |
+| 30506, 30523 | Trop d'articles pour une CN23 (10 au plus). Expédiez la commande en plusieurs colis. |
+| 30507, 30540 | Le poids des articles dépasse le poids du colis. Corrigez le poids du colis ou celui des produits dans Shopify. |
+| 30510, 30511 | Description d'un article refusée par Colissimo. Vérifiez le titre du produit ou sa description douane (métachamp mycolis.customs_description). |
+| 30514, 30515 | Poids d'un article manquant ou refusé par Colissimo. Renseignez le poids des produits dans Shopify. |
+| 30516, 30517 | Valeur d'un article manquante ou refusée par Colissimo. Vérifiez le prix des articles de la commande. |
+| 30518, 30519 | Code SH d'un article manquant ou refusé (6, 8 ou 10 chiffres). Corrigez-le dans la fiche produit Shopify, rubrique Douane. |
+| 30520, 30521 | Pays d'origine d'un article manquant ou refusé. Renseignez-le dans la fiche produit Shopify, rubrique Douane. |
+| 30536 | La valeur des marchandises dépasse le seuil accepté par Colissimo vers cette destination. Expédiez en plusieurs colis ou contactez votre interlocuteur commercial Colissimo. |
+| 30500, 30503, 30504, 30505, 30512, 30513, 30524, 30537, 30544 | Déclaration douanière refusée par Colissimo (…). Contactez le support myColis. |
+| 30561 | EORI de l'expéditeur obligatoire pour cet envoi. Renseignez-le dans les réglages. |
+| 30562 | EORI refusé : Colissimo attend 2 lettres (code pays) suivies de 9 chiffres. Corrigez-le dans les réglages. |
+| 30600 | Un champ contient un caractère refusé par Colissimo. Détail : … |
+
+## Disponibilité de Colissimo
+
+Ces erreurs ne viennent pas de vos données. Réessayez quelques minutes plus tard.
+
+| Code | Message |
+|---|---|
+| 1 | Colissimo n'a pas précisé la cause. Réessayez ; si le problème persiste, contactez le support myColis. |
+| 40015 | Colissimo est momentanément indisponible. Réessayez dans quelques minutes. |
+| 40018 | Service Colissimo non disponible. Contactez le support client Colissimo. |
+
+## Recherche de points relais
+
+Ces messages viennent du service Points relais de Colissimo, lors d'une recherche dans l'action ou d'une vérification à l'étiquette.
+
+| Code | Message |
+|---|---|
+| 300, 301 | Aucun point relais trouvé autour de cette adresse. Essayez un autre code postal ou une autre ville. |
+| 203 | Colissimo ne propose pas de point relais dans ce pays. |
+| 124 | Ce point relais n'est plus proposé pour cette adresse. Relancez la recherche et choisissez un autre point. |
+| 104, 105, 145 | Saisissez un code postal. |
+| 117 | Choisissez le pays de recherche. |
+| 125 | Code postal incorrect : en France, saisissez 5 chiffres, de 01000 à 95999 (pas de point relais en outre-mer). |
+| 129 | Adresse non reconnue par Colissimo. Cherchez plutôt par code postal et ville. |
+| 143, 144 | Code postal au mauvais format pour ce pays. Vérifiez-le et relancez la recherche. |
+| 101, 102, 201 | Le service Points relais de Colissimo refuse la clé API. Vérifiez-la dans Réglages > Connexion Colissimo. |
+| 202 | Le service Points relais n'est pas ouvert sur ce compte Colissimo. Demandez son activation à votre interlocuteur commercial Colissimo. |
+| 146 | Ce pays n'est pas ouvert à la livraison en point relais sur votre contrat (Colissimo Europe). Contactez votre interlocuteur commercial Colissimo. |
+| 1000 | Le service Points relais de Colissimo rencontre une erreur. Réessayez dans quelques minutes. |
+
+## Messages sans code
+
+Ces messages ne correspondent pas à un code de Colissimo, mais à une réponse absente, illisible ou inattendue.
+
+| Situation | Message |
+|---|---|
+| Clé refusée sans autre précision | La clé API est invalide, ou le compte Colissimo est inactif ou résilié. Vérifiez vos identifiants. |
+| Colissimo ne répond pas à temps | Colissimo n'a pas répondu à temps. Réessayez dans quelques minutes. |
+| Colissimo injoignable | Impossible de joindre Colissimo. Réessayez dans quelques minutes. |
+| Service momentanément indisponible | Colissimo est indisponible pour le moment (HTTP …). Réessayez dans quelques minutes. |
+| Réponse inexploitable | Réponse de Colissimo illisible. Réessayez ; si le problème persiste, contactez le support myColis. |
+| Requête refusée par Colissimo | Colissimo a refusé le format de la requête. Contactez le support myColis. |
+| Code non répertorié par myColis | Code Colissimo … : … |
+| Code de recherche de points relais non répertorié | Recherche de points relais refusée par Colissimo (code … : …). Contactez le support myColis si le problème persiste. |
+
+Pour un code non répertorié, le message reprend le code et le texte de Colissimo tels quels. Si vous ne voyez pas quoi corriger, écrivez au support myColis à [support@webesencia.com](mailto:support@webesencia.com), en indiquant le code et le n° de commande.
+
+## Pour aller plus loin
+
+- [Dépannage](/docs/depannage)
+- [Connecter votre contrat Colissimo](/docs/prise-en-main/connexion-colissimo)
+- [Déclaration CN23](/docs/international/declaration-cn23)

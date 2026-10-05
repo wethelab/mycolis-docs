@@ -1,0 +1,58 @@
+---
+sidebar_position: 2
+title: "Tarifs point relais"
+description: "Indiquez quels tarifs de livraison de votre boutique livrent en point relais, pour que myColis les reconnaisse."
+---
+
+# Tarifs point relais
+
+Un tarif point relais est un tarif de livraison de votre boutique qui livre le client en point relais. Cette page explique comment les indiquer à myColis et ce que cela change pour vos commandes et pour vos clients.
+
+## Pourquoi indiquer vos tarifs
+
+myColis ne lit pas la configuration de livraison de votre boutique. Il reconnaît une commande à livrer en point relais au tarif choisi par le client, d'après le nom de ce tarif sur la commande. Vous lui dites donc quels noms de tarif valent point relais.
+
+Une fois vos tarifs indiqués, une commande passée avec l'un d'eux part en point relais. L'action de création d'étiquette présélectionne **Point relais**, même si le client n'a pas encore choisi de point. La page **Envois** regroupe les commandes sans point dans le filtre **Relais à choisir**. Et le client peut choisir son point au checkout sur Shopify Plus avec le plan Plus de myColis, ou après la commande sur tous les plans.
+
+## Indiquer vos tarifs point relais
+
+1. Ouvrez myColis, puis **Réglages**.
+2. Repérez la liste **Vos tarifs de livraison : cochez ceux qui livrent en point relais**, dans la section **Livraison en point relais**.
+3. Cochez les tarifs qui livrent en point relais.
+4. Sélectionnez **Enregistrer les tarifs**.
+
+Le message **Tarifs point relais enregistrés** confirme l'enregistrement. Cette section a son propre bouton : elle ne passe pas par la barre d'enregistrement de Shopify.
+
+La liste propose les noms de tarif trouvés sur vos commandes des 60 derniers jours, chacun avec le nombre de commandes récentes passées avec lui. Les tarifs déjà enregistrés apparaissent en premier, cochés.
+
+## Ajouter un tarif absent de la liste
+
+Un tarif qui n'a servi à aucune commande récente n'apparaît pas dans les propositions, par exemple un tarif que vous venez de créer.
+
+1. Saisissez son nom dans **Ajouter un tarif**.
+2. Sélectionnez **Ajouter**.
+3. Vérifiez qu'il est coché, puis sélectionnez **Enregistrer les tarifs**.
+
+Saisissez le nom exact du tarif, tel qu'il s'affiche au checkout. myColis ignore les majuscules et les espaces, mais pas les mots : « Point relais » et « Livraison en point relais » sont deux tarifs différents. Un tarif coché qui n'apparaît sur aucune commande récente porte l'avertissement « Aucune commande récente avec ce tarif : vérifiez qu'il porte exactement ce nom au checkout. »
+
+Vous pouvez indiquer 20 tarifs au plus, de 100 caractères chacun au plus. Si vous renommez un tarif dans Shopify, mettez son nom à jour ici.
+
+## Le choix du point par le client
+
+Sous la liste, le bloc **Choix du point relais par le client** indique ce que vos clients peuvent faire sur votre boutique et ce qu'il vous reste à installer. Il n'apparaît qu'une fois au moins un tarif coché, et son contenu dépend de votre boutique.
+
+Sur Shopify Plus, ou sur une boutique de développement, avec le plan Plus de myColis, le bloc commence ainsi : « Avec Shopify Plus, le client choisit son point relais au checkout, sous le tarif point relais, et ne peut pas payer sans l'avoir choisi dès que des points lui sont proposés. Si la recherche échoue, le paiement passe : la commande arrive dans Envois, filtre « Relais à choisir ». Pour l'activer : » Il détaille ensuite les trois réglages du choix au checkout : le bloc du checkout à placer, la règle à activer et le téléphone à rendre obligatoire, voir [Choix au checkout](/docs/points-relais/choix-au-checkout). Il précise enfin le cas du paiement express : « Paiement express (Apple Pay, Google Pay) : lancé depuis le panier, la commande passe sans point et arrive dans « Relais à choisir » ; lancé du checkout après l'affichage des points, le client est invité à passer par le paiement classique pour choisir son point. »
+
+Sur Shopify Plus ou sur une boutique de développement sans le plan Plus de myColis, le bloc l'indique : « Le choix du point relais dans le checkout et la règle de paiement font partie du plan Plus de myColis. Sur votre plan, le client choisit son point après la commande, sur la page de remerciement et dans le suivi de commande ; sinon, vous le choisissez dans l'action myColis. » Le bouton **Voir les plans** ouvre la page **Plans**, voir [Plans et quotas](/docs/compte/plans-et-quotas).
+
+Sur les autres plans Shopify, il l'explique ainsi : « Le choix au checkout est réservé à Shopify Plus. Sur votre plan, le client choisit son point après la commande, sur la page de remerciement et dans le suivi de commande ; sinon, vous le choisissez dans l'action myColis. »
+
+Dans ces trois cas, il décrit ensuite le choix après la commande, ouvert sur tous les plans, voir [Choix après la commande](/docs/points-relais/choix-apres-la-commande), et propose le bouton **Ouvrir les paramètres de paiement**, qui ouvre **Paramètres > Paiement** dans votre admin Shopify.
+
+Le bloc affiche un autre message quand le choix par le client n'est pas possible. Sans clé API : « Le client ne peut choisir son point relais qu'avec une clé API Colissimo : enregistrez-la dans Réglages > Connexion Colissimo. » En mode test sur une boutique réelle : « En mode test, le choix par le client n'est proposé que sur une boutique de développement : vos clients ne voient jamais de points fictifs. » Et si la configuration n'a pas pu être transmise à Shopify : « La configuration du choix par le client n'a pas pu être envoyée à Shopify. Rechargez la page. »
+
+## Pour aller plus loin
+
+- [Choix au checkout](/docs/points-relais/choix-au-checkout)
+- [Choix après la commande](/docs/points-relais/choix-apres-la-commande)
+- [Choisir le point dans l'admin](/docs/points-relais/choix-dans-l-admin)

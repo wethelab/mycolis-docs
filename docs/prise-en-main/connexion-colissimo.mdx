@@ -1,0 +1,57 @@
+---
+sidebar_position: 2
+title: "Connecter votre contrat Colissimo"
+description: "Enregistrez votre n° client et votre clé API dans myColis, puis vérifiez la connexion avec Colissimo."
+---
+
+# Connecter votre contrat Colissimo
+
+Cette page relie myColis à votre contrat Colissimo, pour que vos étiquettes soient créées et facturées sur votre compte. À la fin, vos identifiants sont enregistrés et un test de connexion a confirmé que Colissimo les accepte.
+
+## Avant de commencer
+
+Il vous faut votre n° client Colissimo, six chiffres visibles dans Colissimo Box, et une clé API générée dans Colissimo Box, rubrique Mon profil. Configurez aussi au moins un expéditeur avant le test, car le test s'en sert, voir [Expéditeurs](/docs/reglages/expediteurs).
+
+## Enregistrer vos identifiants
+
+1. Ouvrez myColis, puis **Réglages**.
+2. Saisissez votre **N° client Colissimo** dans la section **Connexion Colissimo**.
+3. Laissez **Clé API (recommandé)** sélectionné sous **Méthode d'authentification**.
+4. Collez votre clé dans le champ **Clé API**.
+5. Sélectionnez **Enregistrer et tester la connexion**.
+
+myColis enregistre vos identifiants puis lance le test aussitôt. Ils sont chiffrés et ne sont jamais réaffichés : une fois la clé enregistrée, le champ reste vide et indique « Une clé est enregistrée. Laissez vide pour la conserver. » Pour remplacer la clé, collez la nouvelle et enregistrez de nouveau.
+
+Un n° client qui n'a pas six chiffres est refusé avec le message « N° client invalide : 6 chiffres. », et un champ de clé vide lors du premier enregistrement avec « Saisissez votre clé API. »
+
+## Ce que fait le test
+
+Le test demande à Colissimo de contrôler un envoi fictif en Colissimo Domicile, de votre expéditeur vers lui-même. Colissimo vérifie vos identifiants et les données de l'envoi sans créer d'étiquette ni de frais. C'est pour cette raison qu'il faut un expéditeur : sans expéditeur, myColis enregistre vos identifiants et affiche « Identifiants enregistrés. Configurez au moins un expéditeur pour tester la connexion. »
+
+Une fois les identifiants enregistrés, le bouton **Tester la connexion** relance le test sans rien modifier, par exemple après avoir corrigé l'adresse de l'expéditeur.
+
+## Lire le résultat
+
+Le résultat s'affiche dans un bandeau de la section, suivi de la mention **Dernier test :** avec la date et l'heure du test. Il reste affiché quand vous revenez sur la page, et il prend l'une de ces quatre formes.
+
+**Connexion réussie** : Colissimo accepte vos identifiants. L'étape **Connecter et vérifier votre compte Colissimo** de la page **Envois** se coche, sauf si le mode test est activé : elle porte alors le badge **Connexion vérifiée** et le bouton **Désactiver le mode test**.
+
+**Identifiants refusés** : le n° client ou la clé ne correspondent à aucun compte, ou le compte n'est pas utilisable. Le bandeau reprend le message de Colissimo. Le plus fréquent est « Le n° client et la clé API (ou le mot de passe) ne correspondent à aucun compte Colissimo. Vérifiez-les ; la clé API se génère dans Colissimo Box, rubrique Mon profil. » Après plusieurs essais avec de mauvais identifiants, Colissimo bloque l'authentification quelques minutes : « Trop de tentatives avec des identifiants incorrects : Colissimo bloque temporairement l'authentification. Patientez quelques minutes, vérifiez vos identifiants puis réessayez. »
+
+**Requête de test refusée** : vos identifiants passent, mais Colissimo refuse les données de l'envoi fictif. Le message désigne le champ en cause, le plus souvent dans l'adresse de l'expéditeur, par exemple « Code postal de l'expéditeur refusé par Colissimo. Corrigez l'expéditeur dans les réglages. » Corrigez l'expéditeur puis sélectionnez **Tester la connexion**.
+
+**Test impossible pour le moment** : Colissimo n'a pas répondu, ou pas à temps, par exemple « Colissimo n'a pas répondu à temps. Réessayez dans quelques minutes. » Rien n'est à corriger de votre côté : relancez le test plus tard.
+
+Si vos identifiants sont enregistrés mais n'ont jamais été testés, le bandeau s'intitule **Connexion non testée** et invite à lancer un test. La signification de chaque code de Colissimo est détaillée dans [Codes d'erreur Colissimo](/docs/reference/codes-erreur).
+
+## Clé API ou mot de passe
+
+myColis accepte aussi votre mot de passe Colissimo, avec l'option **Mot de passe (secours)**, à utiliser seulement si vous ne pouvez pas générer de clé API. Le formulaire l'accompagne d'un avertissement, **Méthode obsolète** : « La documentation Colissimo marque l'authentification par mot de passe comme obsolète : elle peut cesser de fonctionner sans préavis. Utilisez de préférence une clé API. La recherche de points relais ne fonctionne qu'avec une clé API. »
+
+Avec un mot de passe, les étiquettes à domicile fonctionnent, mais la livraison en point relais reste indisponible, que le point soit choisi dans l'admin ou par le client. Pour passer à la clé API, sélectionnez **Clé API (recommandé)**, collez la clé et enregistrez.
+
+## Pour aller plus loin
+
+- [Mode test](/docs/prise-en-main/mode-test)
+- [Créer votre première étiquette](/docs/prise-en-main/premiere-etiquette)
+- [Codes d'erreur Colissimo](/docs/reference/codes-erreur)
