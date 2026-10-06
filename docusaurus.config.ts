@@ -158,6 +158,10 @@ const config: Config = {
               label: 'Site web',
               href: 'https://www.webesencia.com',
             },
+            {
+              label: 'Politique de confidentialité',
+              to: '/confidentialite',
+            },
           ],
         },
       ],
