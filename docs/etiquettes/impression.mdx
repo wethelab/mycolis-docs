@@ -6,7 +6,7 @@ description: "Imprimez une étiquette ou un lot depuis Shopify ou myColis, en PD
 
 # Imprimer les étiquettes
 
-Une étiquette myColis s'imprime depuis la commande, depuis une sélection de commandes ou depuis la page **Envois**, autant de fois que nécessaire. Cette page décrit chaque chemin et la différence entre une étiquette PDF et un fichier ZPL.
+Une étiquette myColis s'imprime depuis la commande, depuis une sélection de commandes ou depuis la page **Envois**, autant de fois que nécessaire tant que son fichier existe : myColis le supprime 30 jours après la création de l'étiquette, ou 90 jours pour un envoi avec CN23. Cette page décrit chaque chemin et la différence entre une étiquette PDF et un fichier ZPL.
 
 ## Imprimer depuis une commande
 
@@ -16,7 +16,7 @@ Une étiquette myColis s'imprime depuis la commande, depuis une sélection de co
 
 La fenêtre indique « Préparation des étiquettes… », puis « Étiquette …, prête à imprimer. », avec le n° de colis, et affiche l'étiquette dans l'aperçu de Shopify, que vous imprimez avec le bouton d'impression de Shopify. Si la commande n'a pas d'étiquette myColis, la fenêtre l'indique : « Aucune étiquette myColis pour cette commande. Créez-la depuis Plus d'actions, Créer l'étiquette (myColis). »
 
-L'action de création d'étiquette et le bloc **myColis** de la fiche commande proposent aussi un bouton **Imprimer** ou **Imprimer l'étiquette**, qui ouvre le PDF dans un nouvel onglet.
+L'action de création d'étiquette et le bloc **myColis** de la fiche commande proposent aussi un bouton **Imprimer** ou **Imprimer l'étiquette**, qui ouvre le PDF dans un nouvel onglet, tant que le fichier de l'étiquette existe.
 
 ## Imprimer plusieurs commandes
 
@@ -47,6 +47,16 @@ Dans la page **Envois** de myColis, chaque ligne a un bouton **Imprimer**, ou **
 Une étiquette passe en imprimée dès que son fichier est ouvert, quel que soit le chemin utilisé, et quitte le filtre **À imprimer**. Si l'impression a échoué, remettez-la dans la liste depuis la page **Envois** : dans le menu de la ligne, sélectionnez **Marquer comme à imprimer**. L'inverse, **Marquer comme imprimée**, sert pour une étiquette imprimée par un autre moyen.
 
 Une réimpression ne compte pas dans le quota d'étiquettes de votre plan, voir [Plans et quotas](/docs/compte/plans-et-quotas).
+
+## Étiquette supprimée
+
+myColis supprime le fichier d'une étiquette 30 jours après sa création. Pour un envoi avec CN23, l'étiquette et la CN23 sont gardées 90 jours. L'envoi reste ensuite dans la page **Envois**, mais l'étiquette ne s'imprime plus depuis myColis.
+
+Depuis le menu **Imprimer** de Shopify, la fenêtre l'indique pour une commande, par exemple « 1 commande a une étiquette supprimée après sa durée de conservation (30 jours, 90 avec une CN23) : elle ne peut plus être imprimée depuis myColis. » Dans une sélection, ces commandes sont laissées de côté, le message donne leur nombre, et les autres étiquettes s'impriment.
+
+L'action de création d'étiquette et le bloc **myColis** de la fiche commande n'affichent plus de bouton d'impression, mais un message : « Étiquette … supprimée 30 jours après sa création (durée de conservation de myColis) : elle ne peut plus être imprimée depuis myColis. », avec le n° de colis. Dans la page **Envois**, la ligne affiche **Étiquette supprimée après 30 jours**, ou **Étiquette supprimée après 90 jours** pour un envoi avec CN23, à la place du bouton **Imprimer**.
+
+Un lien d'impression créé avant la suppression affiche « Étiquette supprimée après sa durée de conservation (30 jours, 90 avec une CN23) : elle ne peut plus être imprimée depuis myColis. »
 
 ## Lien d'impression expiré
 

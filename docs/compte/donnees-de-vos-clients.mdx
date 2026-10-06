@@ -14,6 +14,8 @@ myColis lit le nom, l'adresse, l'email et le téléphone du client sur la comman
 
 Les fichiers que myColis conserve pour la réimpression contiennent, eux, des données du client : l'étiquette et la CN23 portent le nom, l'adresse et les coordonnées du destinataire tels qu'envoyés à Colissimo, et le bordereau de dépôt liste le colis. Le point relais choisi est aussi enregistré sur la commande, dans le métachamp « Point relais (myColis) ».
 
+Ces fichiers ne sont pas gardés indéfiniment. myColis supprime le fichier d'une étiquette 30 jours après sa création, l'étiquette et la CN23 d'un envoi avec CN23 90 jours après, et le PDF d'un bordereau de dépôt 90 jours après sa création. L'envoi reste ensuite dans la page **Envois**, sans fichier.
+
 Le prénom, l'email et le mobile que vous saisissez dans l'action pour un point relais servent à l'étiquette seulement : myColis ne les enregistre pas.
 
 ## Répondre à une demande d'accès
@@ -29,9 +31,9 @@ Le message « Demande marquée comme traitée » confirme, et le bandeau dispara
 
 ## Le fichier d'export
 
-L'export est un fichier JSON qui reprend, pour chaque commande du client, ce que myColis détient sur ses envois : date, service, pays, n° de colis, point relais, poids, assurance, statut, n° du bordereau de dépôt, et la présence d'un fichier d'étiquette ou de CN23. Une note en tête du fichier précise que myColis n'enregistre ni le nom, ni l'adresse, ni l'email, ni le téléphone du client dans sa base.
+L'export est un fichier JSON qui reprend, pour chaque commande du client, ce que myColis détient sur ses envois : date, service, pays, n° de colis, point relais, poids, assurance, statut, n° du bordereau de dépôt, et la présence d'un fichier d'étiquette ou de CN23. Une note en tête du fichier précise que myColis n'enregistre ni le nom, ni l'adresse, ni l'email, ni le téléphone du client dans sa base, et rappelle ces durées de conservation.
 
-L'export ne contient pas les fichiers eux-mêmes. Si le client les demande, imprimez l'étiquette et la CN23 depuis la page **Envois**, et le bordereau depuis la page **Bordereaux de dépôt**.
+L'export ne contient pas les fichiers eux-mêmes. Si le client les demande, imprimez l'étiquette et la CN23 depuis la page **Envois**, et le bordereau depuis la page **Bordereaux de dépôt**, tant qu'ils existent.
 
 Le lien de téléchargement est créé à l'ouverture de la page **Envois** et vaut 10 minutes. Passé ce délai, il affiche « Lien de téléchargement expiré (valable 10 minutes). Rechargez l'accueil de myColis et relancez le téléchargement. » Si les données du client ont été effacées entre-temps, il affiche « Demande introuvable : les données du client ont pu être effacées entre-temps. Rechargez l'accueil de myColis. »
 
@@ -49,7 +51,7 @@ Les commandes expédiées gardent leur n° de colis dans Shopify.
 
 ## Gardez vos CN23 et vos bordereaux
 
-myColis ne peut redemander à Colissimo ni la CN23 ni le PDF d'un bordereau : il les réimprime à partir des fichiers qu'il conserve. Ces fichiers disparaissent à l'effacement des données du client ou après la désinstallation. Si vous devez les garder, pour la douane ou comme preuve de dépôt, enregistrez une copie de chaque PDF au moment où vous l'imprimez, et conservez l'exemplaire du bordereau tamponné par La Poste.
+myColis ne peut redemander à Colissimo ni la CN23 ni le PDF d'un bordereau : il les réimprime à partir des fichiers qu'il conserve. Ces fichiers disparaissent 90 jours après leur création, et plus tôt à l'effacement des données du client ou après la désinstallation. Si vous devez les garder, pour la douane ou comme preuve de dépôt, enregistrez une copie de chaque PDF au moment où vous l'imprimez, et conservez l'exemplaire du bordereau tamponné par La Poste.
 
 ## Pour aller plus loin
 

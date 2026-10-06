@@ -62,7 +62,7 @@ Vérifiez les champs et les messages, puis sélectionnez **Générer l'étiquett
 
 Quand tout se passe bien, la fenêtre affiche **Étiquette créée** et le n° de colis. myColis marque la commande comme expédiée dans Shopify, avec Colissimo comme transporteur et le n° de colis comme numéro de suivi. Si **Notifier le client à l'expédition** est activé dans vos réglages, Shopify envoie au client son email de confirmation d'expédition, avec le lien de suivi.
 
-Sélectionnez ensuite **Imprimer l'étiquette** pour ouvrir le PDF dans un nouvel onglet, ou **Télécharger le fichier ZPL** si vos étiquettes sont en ZPL. La CN23 éventuelle est dans le même fichier. Vous pourrez réimprimer l'étiquette plus tard depuis le menu **Imprimer** de la commande ou depuis la page **Envois**.
+Sélectionnez ensuite **Imprimer l'étiquette** pour ouvrir le PDF dans un nouvel onglet, ou **Télécharger le fichier ZPL** si vos étiquettes sont en ZPL. La CN23 éventuelle est dans le même fichier. Vous pourrez réimprimer l'étiquette plus tard depuis le menu **Imprimer** de la commande ou depuis la page **Envois**, pendant 30 jours, ou 90 jours pour un envoi avec CN23 : myColis supprime ensuite le fichier.
 
 Si Colissimo ou myColis refuse l'envoi, la fenêtre affiche **Étiquette non créée** et les messages qui expliquent pourquoi. Corrigez la cause, par exemple l'adresse de livraison de la commande dans Shopify, puis sélectionnez **Modifier et réessayer**. Les messages les plus fréquents sont détaillés dans [Dépannage](/docs/depannage) et [Codes d'erreur Colissimo](/docs/reference/codes-erreur).
 
@@ -74,7 +74,7 @@ Sélectionnez **Relancer l'expédition**. myColis réutilise l'étiquette déjà
 
 ## Une étiquette par commande et par emplacement
 
-Une fois la commande expédiée, l'action n'a plus rien à générer pour cet emplacement : elle affiche **Dernière étiquette de la commande** avec son n° de colis et un bouton pour la réimprimer.
+Une fois la commande expédiée, l'action n'a plus rien à générer pour cet emplacement : elle affiche **Dernière étiquette de la commande** avec son n° de colis et un bouton pour la réimprimer. Une fois le fichier supprimé, le bouton laisse place au message « Étiquette … supprimée 30 jours après sa création (durée de conservation de myColis) : elle ne peut plus être imprimée depuis myColis. », voir [Imprimer les étiquettes](/docs/etiquettes/impression).
 
 Pour remplacer une étiquette qui n'a pas encore servi, abandonnez-la d'abord dans la page **Envois**, tant que la commande n'est pas expédiée, voir [La page Envois](/docs/envois/page-envois). Une étiquette non déposée n'est pas facturée.
 
