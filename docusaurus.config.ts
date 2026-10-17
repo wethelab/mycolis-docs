@@ -110,6 +110,11 @@ const config: Config = {
           position: 'left',
           label: 'Documentation',
         },
+        {
+          to: '/tarifs-et-frais-colissimo',
+          position: 'left',
+          label: 'Tarifs',
+        },
         // Explicit search item: renders the bar within the right-side items,
         // before the color mode toggle, which the theme always appends after.
         {
@@ -157,6 +162,10 @@ const config: Config = {
             {
               label: 'Site web',
               href: 'https://www.webesencia.com',
+            },
+            {
+              label: "Tarifs et frais d'envoi Colissimo",
+              to: '/tarifs-et-frais-colissimo',
             },
             {
               label: 'Politique de confidentialité',
