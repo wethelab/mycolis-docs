@@ -17,7 +17,7 @@ Le réglage est enregistré dès le basculement, sans autre bouton, et un messag
 
 ## Ce que fait le mode test
 
-Tant qu'il est actif, la section affiche ce bandeau : « Mode test activé : myColis génère des étiquettes d'exemple marquées DEMO, avec un numéro fictif, sans jamais créer d'étiquette chez Colissimo. Sur une boutique de développement, la commande est marquée comme expédiée sans notifier le client ; sur une boutique réelle, elle n'est pas modifiée. Si vos identifiants sont enregistrés et vérifiés, Colissimo contrôle les données de chaque envoi sans créer d'étiquette. »
+Tant qu'il est actif, la section affiche ce bandeau : « Mode test activé : myColis génère des étiquettes d'exemple marquées DEMO, avec un numéro fictif, sans jamais créer d'étiquette chez Colissimo. Sur une boutique de développement, la commande est marquée comme expédiée sans notifier le client ; sur une boutique réelle, elle n'est pas modifiée. Aucun identifiant Colissimo n'est nécessaire en mode test. »
 
 L'étiquette d'exemple a le format choisi dans vos réglages, PDF ou ZPL, et porte la mention « ÉTIQUETTE D'EXEMPLE : DEMO ». Elle n'est pas valable pour un envoi : ne la collez jamais sur un colis. Un envoi qui demande une déclaration douanière reçoit aussi une CN23 d'exemple, marquée DEMO de la même façon.
 
@@ -35,19 +35,25 @@ La page **Bordereaux de dépôt** produit des bordereaux d'exemple à partir de 
 
 ## Les points relais en mode test
 
-La recherche de points relais ne contacte pas Colissimo. Elle renvoie cinq points fictifs situés autour de l'adresse recherchée, dont un en congés, que vous ne pouvez pas choisir. Dans l'admin, et dans les blocs du client sur une boutique de développement, ils portent le badge **Point fictif**.
+Dans l'action myColis, la recherche de points relais ne contacte pas Colissimo. Elle renvoie cinq points fictifs situés autour de l'adresse recherchée, dont un en congés, que vous ne pouvez pas choisir. Ils portent le badge **Point fictif**. Sur une boutique réelle, le point choisi dans l'action sert seulement à l'étiquette d'exemple et n'est pas enregistré sur la commande, ce que l'action signale : « Mode test sur une boutique réelle : le point n'est pas enregistré sur la commande, il sert seulement à l'étiquette DEMO. »
 
-Sur une boutique réelle, le point choisi dans l'action sert seulement à l'étiquette d'exemple et n'est pas enregistré sur la commande, ce que l'action signale : « Mode test sur une boutique réelle : le point n'est pas enregistré sur la commande, il sert seulement à l'étiquette DEMO. » Le choix du point par le client, au checkout ou après la commande, n'est proposé que sur une boutique de développement : vos clients ne voient jamais de points fictifs.
+Vos clients voient eux aussi des points fictifs, y compris sur une boutique réelle, quand trois conditions sont réunies : le mode test est activé, aucune clé API n'a été vérifiée par un test de connexion réussi, et au moins un tarif point relais est indiqué dans myColis. Les blocs que vous avez placés, au checkout, sur la page de remerciement ou dans le suivi de commande, leur proposent alors des points fictifs badgés **Point fictif**, sous le bandeau « Mode test : points relais fictifs » sauf sur une boutique de développement. Le point choisi par le client est enregistré sur la commande.
+
+En mode test sans clé API vérifiée, les pages **Envois** et **Réglages** l'annoncent par un bandeau orange : « Mode test actif : vos clients voient des points relais fictifs. Avant de vendre, désactivez le mode test dans Réglages. » Son bouton **Voir le mode test** ouvre la section **Connexion Colissimo** des réglages.
+
+Pour l'éviter pendant que vous préparez une boutique réelle, n'indiquez aucun tarif point relais avant de passer aux vraies étiquettes, voir [Tarifs point relais](/docs/points-relais/tarifs-point-relais). Vous pouvez aussi enregistrer votre clé API et obtenir **Connexion réussie** au test de connexion : vos clients voient alors les vrais points, même en mode test, et vos étiquettes restent des exemples.
+
+Une commande restée avec un point fictif ne reçoit pas de vraie étiquette une fois le mode test désactivé. La création est refusée avec le message « Le point relais de la commande est un point fictif du mode test. Choisissez un vrai point relais dans l'action myColis. » Choisissez alors un vrai point dans l'action, voir [Choix dans l'admin](/docs/points-relais/choix-dans-l-admin).
 
 ## Pourquoi la configuration reste incomplète
 
-L'étape **Connecter et vérifier votre compte Colissimo** de la page **Envois** ne se coche jamais en mode test, même avec des identifiants vérifiés. Tant que la connexion n'est pas vérifiée, la carte de configuration l'explique : « Mode test activé : cette étape se termine une fois le mode test désactivé et la connexion vérifiée. »
+En mode test, l'étape **Connecter et vérifier votre compte Colissimo** de la page **Envois** est facultative : elle porte le badge **Facultatif** et la mention « Facultatif en mode test : l'app fonctionne sans compte. », et le compteur des étapes obligatoires ne la compte pas. Elle ne se coche jamais en mode test, même avec des identifiants vérifiés, et la carte **Configuration de myColis** reste affichée tant que le mode test est actif. Vous pouvez la fermer avec sa croix, en haut à droite : elle ne revient plus ensuite, voir [Installer l'app](/docs/prise-en-main/installation).
 
-Une fois la connexion vérifiée, l'étape porte le badge **Connexion vérifiée** et la carte précise : « Mode test actif : étiquettes d'exemple seulement, aucun colis n'est expédié. Désactivez le mode test pour terminer cette étape. » Son bouton **Désactiver le mode test** ouvre la section **Connexion Colissimo** des réglages, où se trouve l'interrupteur **Mode test**.
+Une fois la connexion vérifiée, l'étape porte aussi le badge **Connexion vérifiée** et la carte précise : « Mode test actif : étiquettes d'exemple seulement, aucun colis n'est expédié. Désactivez le mode test pour terminer cette étape. » Son bouton **Désactiver le mode test** ouvre la section **Connexion Colissimo** des réglages, où se trouve l'interrupteur **Mode test**.
 
 ## Passer aux vraies étiquettes
 
-1. Enregistrez votre n° client et votre clé API, voir [Connecter votre contrat Colissimo](/docs/prise-en-main/connexion-colissimo).
+1. Configurez un expéditeur, puis enregistrez votre n° client et votre clé API ou votre mot de passe, voir [Connecter votre contrat Colissimo](/docs/prise-en-main/connexion-colissimo).
 2. Désactivez l'interrupteur **Mode test**.
 3. Sélectionnez **Tester la connexion** et attendez **Connexion réussie**.
 

@@ -10,7 +10,7 @@ Sur Shopify Plus, avec le plan Plus de myColis, le client choisit son point rela
 
 ## Avant de commencer
 
-Ce choix demande Shopify Plus : Shopify réserve aux boutiques Plus les blocs d'apps dans les étapes du checkout. Il fonctionne aussi sur une boutique de développement, pour vos essais. Il demande en outre le plan Plus de myColis, voir [Plans et quotas](/docs/compte/plans-et-quotas), une connexion Colissimo par clé API et au moins un tarif point relais indiqué dans myColis, voir [Tarifs point relais](/docs/points-relais/tarifs-point-relais).
+Ce choix demande Shopify Plus : Shopify réserve aux boutiques Plus les blocs d'apps dans les étapes du checkout. Il fonctionne aussi sur une boutique de développement, pour vos essais. Il demande en outre le plan Plus de myColis, voir [Plans et quotas](/docs/compte/plans-et-quotas), au moins un tarif point relais indiqué dans myColis, voir [Tarifs point relais](/docs/points-relais/tarifs-point-relais), et, hors mode test, une connexion Colissimo par clé API. En mode test, tant qu'aucune clé API n'est vérifiée par un test de connexion réussi, le bloc propose des points fictifs, y compris sur une boutique réelle, voir [Mode test](/docs/prise-en-main/mode-test).
 
 Sans ces conditions, le client choisit son point après la commande, voir [Choix après la commande](/docs/points-relais/choix-apres-la-commande).
 
@@ -93,7 +93,7 @@ La règle s'applique aussi aux commandes que vous créez dans l'admin Shopify. U
 
 ## Si le bloc ne s'affiche pas
 
-Vérifiez dans l'ordre : que votre boutique est sur le plan Plus de myColis, dans la page **Plans** ; que le tarif sélectionné par le client est coché dans **Livraison en point relais**, avec exactement le même nom ; que votre connexion Colissimo utilise une clé API ; que le mode test n'est pas activé sur une boutique réelle ; et que le bloc est bien placé dans les options de livraison de l'éditeur du checkout. Le bloc **Choix du point relais par le client** des réglages de myColis indique ce qui manque.
+Vérifiez dans l'ordre : que votre boutique est sur le plan Plus de myColis, dans la page **Plans** ; que le tarif sélectionné par le client est coché dans **Livraison en point relais**, avec exactement le même nom ; que votre connexion Colissimo utilise une clé API, hors mode test ; et que le bloc est bien placé dans les options de livraison de l'éditeur du checkout. Le bloc **Choix du point relais par le client** des réglages de myColis indique ce qui manque.
 
 Quand votre boutique quitte le plan Plus de myColis, le bloc disparaît du checkout et la règle cesse de bloquer le paiement. Les commandes à tarif point relais arrivent alors sans point dans **Relais à choisir**.
 
