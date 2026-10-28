@@ -49,7 +49,9 @@ Sur les autres plans Shopify, il l'explique ainsi : « Le choix au checkout est 
 
 Dans ces trois cas, il décrit ensuite le choix après la commande, ouvert sur tous les plans, voir [Choix après la commande](/docs/points-relais/choix-apres-la-commande), et propose le bouton **Ouvrir les paramètres de paiement**, qui ouvre **Paramètres > Paiement** dans votre admin Shopify.
 
-Le bloc affiche un autre message quand le choix par le client n'est pas possible. Sans clé API : « Le client ne peut choisir son point relais qu'avec une clé API Colissimo : enregistrez-la dans Réglages > Connexion Colissimo. » En mode test sur une boutique réelle : « En mode test, le choix par le client n'est proposé que sur une boutique de développement : vos clients ne voient jamais de points fictifs. » Et si la configuration n'a pas pu être transmise à Shopify : « La configuration du choix par le client n'a pas pu être envoyée à Shopify. Rechargez la page. »
+Le bloc affiche un autre message quand le choix par le client n'est pas possible. Hors mode test, sans clé API : « Hors mode test, le client ne peut choisir son point relais qu'avec une clé API Colissimo : enregistrez-la dans Réglages > Connexion Colissimo. » Et si la configuration n'a pas pu être transmise à Shopify : « La configuration du choix par le client n'a pas pu être envoyée à Shopify. Rechargez la page. »
+
+En mode test, le choix par le client reste proposé. Tant qu'aucune clé API n'est vérifiée par un test de connexion réussi, vos clients voient des points fictifs, y compris sur une boutique réelle, et un bandeau orange le signale en haut des pages **Envois** et **Réglages**. Pour l'éviter, n'indiquez aucun tarif point relais avant de passer aux vraies étiquettes, ou faites vérifier votre clé API, voir [Mode test](/docs/prise-en-main/mode-test).
 
 ## Pour aller plus loin
 
