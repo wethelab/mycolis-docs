@@ -12,18 +12,25 @@ Cette page reprend les problèmes que vous risquez de rencontrer avec myColis, c
 
 Le bandeau du test de connexion ne dit pas **Connexion réussie**.
 
-1. Lisez le titre du bandeau. **Identifiants refusés** désigne le n° client ou la clé API ; **Requête de test refusée**, les données de l'envoi fictif, le plus souvent l'adresse de l'expéditeur ; **Test impossible pour le moment**, une absence de réponse de Colissimo.
+1. Lisez le titre du bandeau. **Identifiants refusés** désigne le n° client, la clé API ou le mot de passe ; **Requête de test refusée**, les données de l'envoi fictif, le plus souvent l'adresse de l'expéditeur ; **Test impossible pour le moment**, une absence de réponse de Colissimo.
 2. Vérifiez votre n° client, six chiffres visibles dans Colissimo Box, et votre clé API, générée dans Colissimo Box, rubrique Mon profil. Collez la clé de nouveau et sélectionnez **Enregistrer et tester la connexion**.
 3. Patientez quelques minutes si le message dit « Trop de tentatives avec des identifiants incorrects » : Colissimo bloque l'authentification après plusieurs échecs.
 4. Corrigez l'expéditeur si le message le désigne, dans la section **Expéditeurs**, puis sélectionnez **Tester la connexion**.
-5. Configurez un expéditeur si le message dit « Identifiants enregistrés. Configurez au moins un expéditeur pour tester la connexion. » : le test en a besoin, voir [Expéditeurs](/docs/reglages/expediteurs).
+5. Configurez un expéditeur si la section affiche « Configurez d'abord un expéditeur : le test de connexion en a besoin. » ou « Identifiants enregistrés. Configurez au moins un expéditeur pour tester la connexion. » : le test en a besoin, et **Tester la connexion** reste indisponible sans lui. Le bouton **Configurer un expéditeur** mène à la section **Expéditeurs**, voir [Expéditeurs](/docs/reglages/expediteurs).
 
 ## L'étape « Connecter et vérifier » reste ouverte
 
 La carte **Configuration de myColis** ne coche pas l'étape **Connecter et vérifier votre compte Colissimo**.
 
-1. Vérifiez le mode test. Tant qu'il est activé, l'étape reste ouverte, même avec des identifiants vérifiés : désactivez-le quand vous passez aux vraies étiquettes, voir [Mode test](/docs/prise-en-main/mode-test).
+1. Vérifiez le mode test. Tant qu'il est activé, l'étape reste ouverte et marquée **Facultatif**, même avec des identifiants vérifiés : désactivez-le quand vous passez aux vraies étiquettes, voir [Mode test](/docs/prise-en-main/mode-test).
 2. Vérifiez le dernier test de connexion. L'étape ne se coche qu'après un test réussi, mode test désactivé.
+
+## La carte « Configuration de myColis » n'apparaît plus
+
+La page **Envois** n'affiche plus la carte **Configuration de myColis**.
+
+1. Vérifiez si la configuration est terminée. La carte disparaît d'elle-même une fois l'expéditeur configuré et la connexion vérifiée, mode test désactivé.
+2. Sinon, la carte a été fermée avec sa croix, depuis votre compte ou celui d'un autre membre de l'équipe. Elle ne revient plus, sur aucun appareil. Poursuivez la configuration dans **Réglages** : sections **Expéditeurs**, **Connexion Colissimo** et **Étiquettes et douane**, voir [Installer l'app](/docs/prise-en-main/installation).
 
 ## L'action refuse de créer l'étiquette
 

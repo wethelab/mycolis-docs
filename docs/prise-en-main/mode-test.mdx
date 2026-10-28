@@ -41,13 +41,13 @@ Sur une boutique réelle, le point choisi dans l'action sert seulement à l'éti
 
 ## Pourquoi la configuration reste incomplète
 
-L'étape **Connecter et vérifier votre compte Colissimo** de la page **Envois** ne se coche jamais en mode test, même avec des identifiants vérifiés. Tant que la connexion n'est pas vérifiée, la carte de configuration l'explique : « Mode test activé : cette étape se termine une fois le mode test désactivé et la connexion vérifiée. »
+En mode test, l'étape **Connecter et vérifier votre compte Colissimo** de la page **Envois** est facultative : elle porte le badge **Facultatif** et la mention « Facultatif en mode test : l'app fonctionne sans compte. », et le compteur des étapes obligatoires ne la compte pas. Elle ne se coche jamais en mode test, même avec des identifiants vérifiés, et la carte **Configuration de myColis** reste affichée tant que le mode test est actif. Vous pouvez la fermer avec sa croix, en haut à droite : elle ne revient plus ensuite, voir [Installer l'app](/docs/prise-en-main/installation).
 
-Une fois la connexion vérifiée, l'étape porte le badge **Connexion vérifiée** et la carte précise : « Mode test actif : étiquettes d'exemple seulement, aucun colis n'est expédié. Désactivez le mode test pour terminer cette étape. » Son bouton **Désactiver le mode test** ouvre la section **Connexion Colissimo** des réglages, où se trouve l'interrupteur **Mode test**.
+Une fois la connexion vérifiée, l'étape porte aussi le badge **Connexion vérifiée** et la carte précise : « Mode test actif : étiquettes d'exemple seulement, aucun colis n'est expédié. Désactivez le mode test pour terminer cette étape. » Son bouton **Désactiver le mode test** ouvre la section **Connexion Colissimo** des réglages, où se trouve l'interrupteur **Mode test**.
 
 ## Passer aux vraies étiquettes
 
-1. Enregistrez votre n° client et votre clé API, voir [Connecter votre contrat Colissimo](/docs/prise-en-main/connexion-colissimo).
+1. Configurez un expéditeur, puis enregistrez votre n° client et votre clé API ou votre mot de passe, voir [Connecter votre contrat Colissimo](/docs/prise-en-main/connexion-colissimo).
 2. Désactivez l'interrupteur **Mode test**.
 3. Sélectionnez **Tester la connexion** et attendez **Connexion réussie**.
 

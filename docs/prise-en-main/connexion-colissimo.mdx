@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
 title: "Connecter votre contrat Colissimo"
-description: "Enregistrez votre n° client et votre clé API dans myColis, puis vérifiez la connexion avec Colissimo."
+description: "Enregistrez votre n° client et votre clé API ou votre mot de passe dans myColis, puis vérifiez la connexion avec Colissimo."
 ---
 
 # Connecter votre contrat Colissimo
@@ -10,7 +10,7 @@ Cette page relie myColis à votre contrat Colissimo, pour que vos étiquettes so
 
 ## Avant de commencer
 
-Il vous faut votre n° client Colissimo, six chiffres visibles dans Colissimo Box, et une clé API générée dans Colissimo Box, rubrique Mon profil. Configurez aussi au moins un expéditeur avant le test, car le test s'en sert, voir [Expéditeurs](/docs/reglages/expediteurs).
+Configurez d'abord un expéditeur, voir [Expéditeurs](/docs/reglages/expediteurs) : le test de connexion s'en sert. Il vous faut aussi votre n° client Colissimo, six chiffres visibles dans Colissimo Box, et une clé API générée dans Colissimo Box, rubrique Mon profil, ou, à défaut, votre mot de passe Colissimo, voir la section **Clé API ou mot de passe** de cette page.
 
 ## Enregistrer vos identifiants
 
@@ -26,9 +26,15 @@ Un n° client qui n'a pas six chiffres est refusé avec le message « N° client
 
 ## Ce que fait le test
 
-Le test demande à Colissimo de contrôler un envoi fictif en Colissimo Domicile, de votre expéditeur vers lui-même. Colissimo vérifie vos identifiants et les données de l'envoi sans créer d'étiquette ni de frais. C'est pour cette raison qu'il faut un expéditeur : sans expéditeur, myColis enregistre vos identifiants et affiche « Identifiants enregistrés. Configurez au moins un expéditeur pour tester la connexion. »
+Le test demande à Colissimo de contrôler un envoi fictif en Colissimo Domicile, de votre expéditeur vers lui-même. Colissimo vérifie vos identifiants et les données de l'envoi sans créer d'étiquette ni de frais. C'est pour cette raison qu'il faut un expéditeur actif, à l'adresse complète.
 
 Une fois les identifiants enregistrés, le bouton **Tester la connexion** relance le test sans rien modifier, par exemple après avoir corrigé l'adresse de l'expéditeur.
+
+## Sans expéditeur
+
+Tant qu'aucun expéditeur n'est configuré, la section **Connexion Colissimo** l'annonce en tête : « Configurez d'abord un expéditeur : le test de connexion en a besoin. » Le bouton **Configurer un expéditeur** fait défiler la page jusqu'à la section **Expéditeurs**, sans effacer ce que vous avez déjà saisi.
+
+Vous pouvez quand même enregistrer vos identifiants : le bouton d'enregistrement s'intitule alors **Enregistrer les identifiants**, et myColis les enregistre sans les tester, avec le message « Identifiants enregistrés. Configurez au moins un expéditeur pour tester la connexion. » Le bouton **Tester la connexion** reste indisponible. Une fois l'expéditeur enregistré, le message de tête disparaît, le bouton redevient **Enregistrer et tester la connexion**, et **Tester la connexion** lance le test.
 
 ## Lire le résultat
 

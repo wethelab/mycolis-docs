@@ -19,7 +19,8 @@ Il vous faut une boutique Shopify et un compte autorisé à y installer des apps
 3. Connectez-vous à la boutique sur laquelle vous installez l'app, si Shopify vous le demande.
 4. Lisez les accès demandés sur l'écran d'autorisation.
 5. Confirmez l'installation.
-6. Attendez que myColis s'ouvre dans votre admin Shopify.
+6. Choisissez votre plan quand Shopify affiche la page des plans de myColis, par exemple le plan Gratuit.
+7. Attendez que myColis s'ouvre dans votre admin Shopify.
 
 ## Les accès demandés par l'app
 
@@ -33,13 +34,15 @@ L'app ne demande aucun accès à votre thème ni à vos fiches clients, et elle 
 
 ## Ce que vous voyez au premier lancement
 
-L'app s'ouvre sur la page **Envois**. En haut, une carte rappelle votre plan, d'abord le plan Gratuit, avec le nombre d'étiquettes réelles créées dans le mois et le lien **Voir le plan**, voir [Plans et quotas](/docs/compte/plans-et-quotas).
+Après le choix du plan, myColis s'ouvre sur la page **Plans**, qui le confirme, par exemple « Plan Gratuit activé. » Tant que la configuration n'est pas terminée, le même bandeau ajoute « Terminez la configuration de myColis depuis l'accueil. » et le bouton **Continuer la configuration**, qui ouvre la page **Envois**, l'accueil de myColis.
 
-Tant que la configuration n'est pas terminée, une carte **Configuration de myColis** suit, avec la phrase « Quelques étapes pour relier votre boutique à votre contrat Colissimo. » et un compteur des étapes obligatoires, par exemple **0 étape terminée sur 2**.
+En haut de la page **Envois**, la carte **Configuration de myColis** affiche la phrase « Quelques étapes pour relier votre boutique à votre contrat Colissimo. » et un compteur des étapes obligatoires, par exemple **0 étape terminée sur 1**. Plus bas, une carte rappelle votre plan, avec le nombre d'étiquettes réelles créées dans le mois et le lien **Voir le plan**, voir [Plans et quotas](/docs/compte/plans-et-quotas).
 
-La carte liste trois étapes, chacune terminée par un bouton **Configurer** qui ouvre le bon endroit des réglages, ou par la mention **Terminé**. **Configurer un expéditeur** porte sur l'emplacement Shopify d'où partent vos colis et sur son adresse, voir [Expéditeurs](/docs/reglages/expediteurs). **Connecter et vérifier votre compte Colissimo** demande votre n° client, votre clé API et un test de connexion réussi, voir [Connecter votre contrat Colissimo](/docs/prise-en-main/connexion-colissimo). **Renseigner votre EORI**, marquée **Facultatif**, n'est nécessaire que pour expédier hors de l'Union européenne, voir [Étiquettes et douane](/docs/reglages/etiquettes-et-douane).
+La carte liste trois étapes, chacune terminée par un bouton **Configurer** qui ouvre le bon endroit des réglages, ou par la mention **Terminé**. **Configurer un expéditeur** porte sur l'emplacement Shopify d'où partent vos colis et sur son adresse, voir [Expéditeurs](/docs/reglages/expediteurs). Commencez par elle : le test de connexion a besoin d'un expéditeur. **Connecter et vérifier votre compte Colissimo** demande votre n° client, votre clé API ou, à défaut, votre mot de passe Colissimo, et un test de connexion réussi, voir [Connecter votre contrat Colissimo](/docs/prise-en-main/connexion-colissimo). **Renseigner votre EORI**, marquée **Facultatif**, n'est nécessaire que pour expédier hors de l'Union européenne, voir [Étiquettes et douane](/docs/reglages/etiquettes-et-douane).
 
-Les étapes se cochent d'elles-mêmes, d'après vos réglages. La carte disparaît quand les deux étapes obligatoires sont faites. En mode test, l'étape de connexion reste ouverte, même avec des identifiants vérifiés : elle se termine une fois le mode test désactivé et la connexion vérifiée. Si la connexion est déjà vérifiée, elle porte le badge **Connexion vérifiée**, et son bouton **Désactiver le mode test** ouvre l'interrupteur des réglages.
+Les étapes se cochent d'elles-mêmes, d'après vos réglages. La carte disparaît d'elle-même quand les deux étapes obligatoires sont faites, mode test désactivé. Le mode test est actif à l'installation : l'étape de connexion y porte le badge **Facultatif** et la mention « Facultatif en mode test : l'app fonctionne sans compte. », le compteur ne compte que l'expéditeur, et la carte reste affichée tant que le mode test est actif. Si la connexion est déjà vérifiée en mode test, l'étape porte aussi le badge **Connexion vérifiée**, et son bouton **Désactiver le mode test** ouvre la section **Connexion Colissimo** des réglages, où se trouve l'interrupteur **Mode test**.
+
+Pour fermer la carte à tout moment, sélectionnez la croix en haut à droite de la carte. Une fois fermée, elle ne revient plus, même si la configuration n'est pas terminée : ce choix vaut pour toute la boutique, sur tous les appareils et pour tous les comptes de l'équipe. Les étapes restent accessibles dans **Réglages**, sections **Expéditeurs**, **Connexion Colissimo** et **Étiquettes et douane**.
 
 Le menu de l'app compte quatre entrées : **Envois** pour la liste de vos étiquettes, **Bordereaux** pour les bordereaux de dépôt, **Réglages**, et **Plans** pour votre plan myColis.
 
